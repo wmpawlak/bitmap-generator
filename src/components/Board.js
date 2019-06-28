@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Painter } from "./Painter";
+import { Painter } from "./ColorsPallete";
 
 function Board(_) {
   const { colors, color } = React.useContext(Painter);

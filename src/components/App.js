@@ -2,7 +2,7 @@ import React from "react";
 import ColorPicker from "./ColorPicker";
 import Board from "./Board";
 import ColorPreview from "./ColorPreview";
-import { colors, Painter } from "./Painter";
+import { colors, Painter } from "./ColorsPallete";
 
 function App() {
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Painter } from './Painter';
+import { Painter } from './ColorsPallete';
 
 function ColorPreview() {
   const {color} = React.useContext(Painter);
