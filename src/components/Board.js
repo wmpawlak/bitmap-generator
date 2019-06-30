@@ -24,7 +24,7 @@ function Board(_) {
     grid[i][j] = color;
     setGrid([...grid]);
   };
-
+  
   const resetBtn = () => {
     return (
       <div className="column">
@@ -71,5 +71,7 @@ function Board(_) {
     </React.Fragment>
   );
 }
+
+
 
 export default Board;

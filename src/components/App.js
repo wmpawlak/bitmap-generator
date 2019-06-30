@@ -3,6 +3,7 @@ import ColorPicker from "./ColorPicker";
 import Board from "./Board";
 import ColorPreview from "./ColorPreview";
 import { colors, Painter } from "./Painter";
+import Downloadbutton from "./array";
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
           <ColorPicker />
           <ColorPreview />
         </div>
+
+        <Downloadbutton />
 
       </Painter.Provider>
 
