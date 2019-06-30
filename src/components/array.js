@@ -1,7 +1,7 @@
 import React from "react";
 import { saveAs } from 'file-saver';
 
-const Downloadbutton = () => {
+const Downloadbutton2 = () => {
 
     const downloadFile = async () => {
         const arr = [['bacon',232,12], ['letuce',435,'wefwef'], [54,'tomatoes']]
@@ -31,4 +31,4 @@ const Downloadbutton = () => {
 };
 
 
-export default Downloadbutton;
+export default Downloadbutton2;

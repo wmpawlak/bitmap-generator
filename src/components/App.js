@@ -1,32 +1,20 @@
 import React from "react";
-import ColorPicker from "./ColorPicker";
-import Board from "./Board";
-import ColorPreview from "./ColorPreview";
-import { colors, Painter } from "./Painter";
-import Downloadbutton from "./array";
+import ColorsPalette from "./ColorsPalette";
+import Board from './Board';
+import ResetButton from "./ResetButton";
+import DownloadButton from "./DownloadButton";
+import DownloadButton2 from "./array";
+
 
 function App() {
 
-  const [color, setColor] = React.useState(colors[0]);
-
   return (
     <div className="app">
-
-      <Painter.Provider value={{colors, color, setColor}}>
-
-        <div className="board">
-          <Board />
-        </div>
-
-        <div className="pickPrev">
-          <ColorPicker />
-          <ColorPreview />
-        </div>
-
-        <Downloadbutton />
-
-      </Painter.Provider>
-
+      <ColorsPalette />
+      <Board />
+      <ResetButton />
+      <DownloadButton />
+      <DownloadButton2 />
     </div>
   );
 }
