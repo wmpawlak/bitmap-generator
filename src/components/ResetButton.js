@@ -5,7 +5,7 @@ class ResetButton extends React.Component {
     render() {
         return (
             <button
-                className="function-btn"
+                className="small ui grey basic button"
                 onClick={() => this.setState({ value: 'X' })}
             >
                 Reset frame

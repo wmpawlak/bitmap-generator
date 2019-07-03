@@ -9,11 +9,28 @@ import DownloadButton from "./DownloadButton";
 function App() {
 
   return (
-    <div className="app">
-      <ColorsPalette />
-      <Board />
-      <ResetButton />
-      <DownloadButton />
+    <div>
+      
+      <div className="brd">
+        <div className="ui raised segment">
+          <Board />
+        </div>
+        <div className="ui basic segment">
+          <ColorsPalette />
+        </div>
+      </div>
+      
+      <div className="brd">
+        <div className="ui basic segment">
+          <div >
+            <div className="ui raised  segment">
+              <DownloadButton />  
+              <ResetButton />
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
