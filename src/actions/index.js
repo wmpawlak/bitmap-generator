@@ -3,12 +3,12 @@ export const colorAssigned = (color) => ({
     color
 });
 
-export const frameReseted = (frame) => ({
-    type: 'RESET_FRAME',
-    frame
-});
+// export const frameReseted = (frame) => ({
+//     type: 'RESET_FRAME',
+//     frame
+// });
 
-export const framesDownloaded = (bitmap) => ({
-    type: 'DOWNLOAD_FRAMES',
-    frame
-});
+// export const framesDownloaded = (frame) => ({
+//     type: 'DOWNLOAD_FRAMES',
+//     frame
+// });
