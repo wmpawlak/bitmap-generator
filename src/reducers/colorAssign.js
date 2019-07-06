@@ -1,15 +1,16 @@
-const colorAssign = (state = [], action) => {
+const defaultState = {
+    squares: Array(16).fill([255, 255, 255])
+}
+
+const reducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'ADD_COLOR':
-            return [
-                ...state,
-                {
-                    color: [ , , ]
-                }
-            ]
+        case 'ASSIGN_COLOR':
+            const squaresCopy = [...state.squares]
+            squaresCopy[action.index] = action.color
+            return { ...state, squares: squaresCopy }
         default:
             return state;
     }
 }
 
-export default colorAssign;
+export default reducer;

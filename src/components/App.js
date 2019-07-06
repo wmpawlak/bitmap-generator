@@ -1,8 +1,7 @@
 import React from "react";
-import ColorsPalette from "./ColorsPalette";
-import Board from './Board';
 import ResetButton from "./ResetButton";
 import DownloadButton from "./DownloadButton";
+import ColorBoard from './ColorBoard';
 
 
 
@@ -10,21 +9,12 @@ function App() {
 
   return (
     <div>
-      
-      <div className="brd">
-        <div className="ui raised segment">
-          <Board />
-        </div>
-        <div className="ui basic segment">
-          <ColorsPalette />
-        </div>
-      </div>
-      
+      <ColorBoard />
       <div className="brd">
         <div className="ui basic segment">
           <div >
             <div className="ui raised  segment">
-              <DownloadButton />  
+              <DownloadButton />
               <ResetButton />
             </div>
           </div>
