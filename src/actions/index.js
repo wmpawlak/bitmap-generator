@@ -1,14 +1,5 @@
-export const colorAssigned = (color) => ({
+export const colorAssigned = (index, color) => ({
     type: 'ASSIGN_COLOR',
+    index,
     color
 });
-
-// export const frameReseted = (frame) => ({
-//     type: 'RESET_FRAME',
-//     frame
-// });
-
-// export const framesDownloaded = (frame) => ({
-//     type: 'DOWNLOAD_FRAMES',
-//     frame
-// });

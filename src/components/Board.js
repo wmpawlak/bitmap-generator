@@ -3,7 +3,11 @@ import Square from './Square';
 
 class Board extends React.Component {
     renderSquare(i) {
-        return <Square value={i} />;
+        return <Square
+            value={i}
+            color={this.props.squares[i]}
+            onClick={() => this.props.onSquareClick(i)}
+        />;
     }
 
     render() {
@@ -35,6 +39,7 @@ class Board extends React.Component {
                     {this.renderSquare(15)}
                 </div>
             </div>
+
         );
     }
 }

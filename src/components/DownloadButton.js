@@ -8,7 +8,7 @@ class DownloadButton extends React.Component {
             <button
                 className="small ui grey basic button"
                 //        onClick={() => this.setState({ value: 'X' })}
-                onClick={downloadFile}
+                //onClick={downloadFile}
             >
                 Download JSON
             </button>
