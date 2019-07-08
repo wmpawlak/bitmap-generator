@@ -1,5 +1,5 @@
 import React from "react";
-import downloadFile from '../reducers/downloadBoard'
+//import downloadFile from '../reducers/downloadBoard'
 
 class DownloadButton extends React.Component {
 
@@ -7,7 +7,7 @@ class DownloadButton extends React.Component {
         return (
             <button
                 className="small ui grey basic button"
-                //        onClick={() => this.setState({ value: 'X' })}
+                //onClick={() => this.setState({ value: 'X' })}
                 //onClick={downloadFile}
             >
                 Download JSON

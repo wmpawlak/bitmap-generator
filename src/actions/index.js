@@ -3,3 +3,8 @@ export const colorAssigned = (index, color) => ({
     index,
     color
 });
+
+export const resetBoard = (squares) => ({
+    type: 'RESET_BOARD',
+    squares
+});

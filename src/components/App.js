@@ -1,7 +1,7 @@
 import React from "react";
 import ResetButton from "./ResetButton";
 import DownloadButton from "./DownloadButton";
-import ColorBoard from './ColorBoard';
+import ColoredBoard from './ColoredBoard';
 
 
 
@@ -9,11 +9,11 @@ function App() {
 
   return (
     <div>
-      <ColorBoard />
+      <ColoredBoard />
       <div className="brd">
         <div className="ui basic segment">
           <div >
-            <div className="ui raised  segment">
+            <div className="ui raised segment">
               <DownloadButton />
               <ResetButton />
             </div>
