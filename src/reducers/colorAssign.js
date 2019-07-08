@@ -7,11 +7,7 @@ const reducer = (state = defaultState, action) => {
             squaresCopy[action.index] = action.color
             return { ...state, squares: squaresCopy }
         case 'RESET_BOARD':
-            let squaresClean = [...state.squares]
-            //squaresClean[action.squares] = Array(16).fill([255, 255, 255]) //to jest zle
-            squaresClean = state.squares.map((i) => {
-                return state.squares[i] = [255,255,255]
-            })
+            const squaresClean = state.squares.map(() => [255, 255, 255])
             return { ...state, squares: squaresClean }
         default:
             return state;
