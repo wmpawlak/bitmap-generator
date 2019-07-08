@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { colorAssigned } from '../actions';
 
 
-class ColorBoard extends React.Component {
+class ColoredBoard extends React.Component {
     state = {
         color: undefined
     }
@@ -38,7 +38,6 @@ class ColorBoard extends React.Component {
             ]
             this.props.colorAssigned(index, newColor)
         }
-
     }
 }
 
@@ -51,4 +50,4 @@ const mapDispatchToProps = dispatch => ({
     colorAssigned: (index, color) => dispatch(colorAssigned(index, color))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ColorBoard)
+export default connect(mapStateToProps, mapDispatchToProps)(ColoredBoard)
