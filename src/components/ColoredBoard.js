@@ -4,7 +4,7 @@ import Board from "./Board";
 import ResetButton from "./ResetButton";
 import DownloadButton from "./DownloadButton";
 import { connect } from "react-redux";
-import { colorAssigned } from "../actions";
+import { colorAssigned, resetBoard } from "../actions";
 
 class ColoredBoard extends React.Component {
     state = {
@@ -31,12 +31,19 @@ class ColoredBoard extends React.Component {
                     <div>
                         <div className="ui raised segment">
                             <DownloadButton />
-                            <ResetButton />
+                            <ResetButton 
+                                squares={this.props.squares}
+                                onResetClick={this.onResetClick}
+                            />
                         </div>
                     </div>
                 </div>
             </div>
         );
+    }
+
+    onResetClick = (squares) => {
+        this.props.resetBoard(squares);
     }
 
     onSquareClick = index => {
@@ -56,10 +63,15 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    colorAssigned: (index, color) => dispatch(colorAssigned(index, color))
+    colorAssigned: (index, color) => dispatch(colorAssigned(index, color)),
+    resetBoard: (squares) => dispatch(resetBoard(squares))
 });
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(ColoredBoard);
+
+
+
+
