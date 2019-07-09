@@ -1,4 +1,5 @@
 import { defaultState } from './index';
+import { saveAs } from 'file-saver';
 
 const reducer = (state = defaultState, action) => {
     switch (action.type) {
@@ -7,16 +8,20 @@ const reducer = (state = defaultState, action) => {
             squaresCopy[action.index] = action.color
             return { ...state, squares: squaresCopy }
         case 'RESET_BOARD':
-            let squaresClean = [...state.squares]
-            //squaresClean[action.squares] = Array(16).fill([255, 255, 255]) //to jest zle
-            squaresClean = state.squares.map((i) => {
-                return state.squares[i] = [255,255,255]
-            })
+            const squaresClean = state.squares.map(() => [255, 255, 255])
             return { ...state, squares: squaresClean }
+        case 'DOWNLOAD_BOARD':
+            const squaresDownload = JSON.stringify(state.squares)
+            const fileName = "file";
+            const fileToSave = new Blob([squaresDownload], {
+                type: 'application/json',
+                name: fileName
+            });      
+            saveAs(fileToSave, fileName);
+            return { ...state }
         default:
             return state;
     }
 }
-
 
 export default reducer;
