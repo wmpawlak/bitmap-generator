@@ -1,4 +1,5 @@
 import { defaultState } from './index';
+import { saveAs } from 'file-saver';
 
 const reducer = (state = defaultState, action) => {
     switch (action.type) {
@@ -9,10 +10,18 @@ const reducer = (state = defaultState, action) => {
         case 'RESET_BOARD':
             const squaresClean = state.squares.map(() => [255, 255, 255])
             return { ...state, squares: squaresClean }
+        case 'DOWNLOAD_BOARD':
+            const squaresDownload = JSON.stringify(state.squares)
+            const fileName = "file";
+            const fileToSave = new Blob([squaresDownload], {
+                type: 'application/json',
+                name: fileName
+            });      
+            saveAs(fileToSave, fileName);
+            return { ...state }
         default:
             return state;
     }
 }
-
 
 export default reducer;
