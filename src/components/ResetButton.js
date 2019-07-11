@@ -5,10 +5,10 @@ class ResetButton extends React.Component {
     render() {
         return (
             <button
-                className="small ui grey basic button"
+                className="small ui grey button"
                 onClick={() => this.props.onResetClick()}
             >
-                Reset frame
+                RESET FRAME
             </button>
         );
     }

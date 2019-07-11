@@ -14,30 +14,32 @@ class ColoredBoard extends React.Component {
     render() {
         return (
             <div className="brd">
-                <div className="ui raised segment">
+                <div className="ui raised segment" id="gridOne">
                     <Board
                         squares={this.props.squares}
                         onSquareClick={this.onSquareClick}
                     />
                 </div>
-                <div className="ui basic segment">
-                    <ColorsPalette
-                        color={this.state.color}
-                        onChange={color => this.setState({ color })}
-                    />
-                </div>
-                
-                <div className="ui basic segment">
-                    <div>
-                        <div className="ui raised segment">
-                            <DownloadButton 
-                                squares={this.props.squares}
-                                onDownloadClick={this.onDownloadClick}
-                            />
-                            <ResetButton 
-                                squares={this.props.squares}
-                                onResetClick={this.onResetClick}
-                            />
+                <div id="gridTwo">
+                    <div  id="gridThree">
+                        <ColorsPalette
+                            color={this.state.color}
+                            onChange={color => this.setState({ color })}
+                        />
+                    </div>
+                    
+                    <div id="gridFour">
+                        <div>
+                            <div className="ui raised segment vertical buttons">
+                                <DownloadButton 
+                                    squares={this.props.squares}
+                                    onDownloadClick={this.onDownloadClick}
+                                />
+                                <ResetButton 
+                                    squares={this.props.squares}
+                                    onResetClick={this.onResetClick}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

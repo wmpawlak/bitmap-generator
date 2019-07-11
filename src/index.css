@@ -1,6 +1,7 @@
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
+    background: rgb(34, 34, 34)
 }
 
 ol,
@@ -26,8 +27,8 @@ ul {
     font-size: 24px;
     font-weight: bold;
     line-height: 34px;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
@@ -101,8 +102,36 @@ ul {
     top: 1px;
 }
 
-.brd {
-    display: flex;
+.brd { 
+    display: grid;
+    grid-template-columns: 430px 220px;
+    grid-template-rows: 430px;
+    grid-template-areas: "gridOne gridTwo";
+}
+
+#gridOne {
+    grid-area: gridOne;
+    padding-left: 17px;
+    padding-top: 17px;
+}
+
+#gridTwo { 
+    display: grid;
+    grid-template-columns: 220px;
+    grid-template-rows: 300px 1fr;
+    grid-template-areas: "gridThree" "gridFour";
+    grid-area: gridTwo;
+}
+
+#gridThree { 
+    grid-area: gridThree;
+    margin-left: 10px;
+}
+
+#gridFour { 
+    grid-area: gridFour;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
 .ui.segment:first-child {
@@ -114,8 +143,129 @@ ul {
     margin-top: 0;
 }
 
-.small.ui.grey.basic.button:hover {
-    background-color: rgb(223, 223, 223) !important;
-    color: black !important;
-    opacity:0.5;
+.small.ui.grey.button:first-child {
+    color: black;
+    background: rgb(95, 95, 95);
+    border: 1px solid rgb(140, 140, 140) !important;
+    border-bottom: 2px solid rgb(140, 140, 140) !important;
 }
+
+.small.ui.grey.button:last-child {
+    color: black;
+    background: rgb(95, 95, 95);
+    border: 1px solid rgb(140, 140, 140) !important;
+    border-top: 2px solid rgb(140, 140, 140) !important;
+}   
+
+.small.ui.grey.button:hover {
+    color: rgb(199, 199, 3);
+}
+
+.small.ui.grey.button:hover:last-child {
+    color: rgb(151, 5, 5);
+}
+
+.ui.raised.segment {
+    background: rgb(140, 140, 140);
+}
+
+.ui.raised.segment.vertical.buttons {
+    padding: 15px;
+    margin: 0 !important;
+    border-radius: 5px;
+    width: 220px;
+    height: 115px;
+}
+
+.sketch-picker {
+    background: rgb(140, 140, 140) !important;
+}
+
+.header {
+    height: 70px;
+    width: 660px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-top: 13px;
+    padding-left: 30px;
+    background: rgb(140, 140, 140);
+    position: relative;
+}
+
+.innerHeader {
+    height: 45px;
+    width: 600px;
+    border-radius: 5px;
+    background: rgb(95, 95, 95);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px;
+    letter-spacing: 12px;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+}
+
+@media screen and (max-width: 700px) {
+
+    .header {
+        height: 70px;
+        width: 430px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background: rgb(140, 140, 140);
+    }
+
+    .innerHeader {
+        height: 45px;
+        width: 370px;
+        border-radius: 5px;
+        background: rgb(95, 95, 95);
+        text-align: center;
+        vertical-align: middle;
+        line-height: 45px;
+        letter-spacing: 12px;
+        font-size: 28px;
+        font-weight: bold;
+        position: relative;
+    }
+    
+
+    .brd {
+        display: grid;
+        grid-template-columns: 430px;
+        grid-template-rows: 430px 300px;
+        grid-template-areas: "gridOne" "gridTwo";
+    }
+      
+    #gridOne { grid-area: gridOne; }
+      
+    #gridTwo {
+        display: grid;
+        grid-template-columns: 220px 220px;
+        grid-template-rows: 300px;
+        grid-template-areas: "gridThree gridFour";
+        grid-area: gridTwo;
+    }
+      
+    #gridThree { 
+        grid-area: gridThree;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+      
+    #gridFour { 
+        grid-area: gridFour;
+        margin-top: 10px;
+    }
+
+    .ui.raised.segment.vertical.buttons {
+        padding: 15px;
+        margin: 0 !important;
+        border-radius: 5px;
+        width: 200px;
+        height: 115px;
+    }
+
+  }
+
