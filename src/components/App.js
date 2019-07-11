@@ -8,6 +8,9 @@ function App() {
 
   return (
     <div>
+      <div className="header">
+        <div className="innerHeader">PIXEL ART</div>
+      </div>
       <ColoredBoard />
     </div>
   );

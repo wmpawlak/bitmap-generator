@@ -5,7 +5,7 @@ import downloadBoard from './downloadBoard';
 
 
 export const defaultState = {
-    squares: Array(16).fill([255, 255, 255])
+    squares: Array(64).fill([255, 255, 255])
 }
 
 const rootReducer = combineReducers({ colorAssign, downloadBoard, routing: routerReducer });
