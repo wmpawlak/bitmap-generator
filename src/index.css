@@ -9,10 +9,9 @@ ul {
     padding-left: 30px;
 }
 
-.board-row:after {
-    clear: both;
-    content: "";
-    display: table;
+.board{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .status {

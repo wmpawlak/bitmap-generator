@@ -1,50 +1,45 @@
-import React from 'react';
+import React from "react";
 //import ReactDOM from 'react-dom';
 
-class square extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { isMouseDown: false };
-    }
-
-    handleDown = () => {
-        this.setState(state => ({
-            isMouseDown: true
-        }));
-        console.log("mouse is down");
-        return true;
+const Square = ({
+    onClick,
+    onMouseDown,
+    onMouseUp,
+    background,
+    isMouseDown
+}) => {
+    const handleDown = () => {
+        onClick();
+        onMouseDown();
     };
 
-    handleUp = () => {
-        this.setState(state => ({
-            isMouseDown: false
-        }));
-        console.log("mouse is up");
-        return true;
+    const handleUp = () => {
+        onMouseUp();
     };
 
-    handleMove = () => {
-        if (this.state.isMouseDown === true) {
-            console.log('true');
-            this.props.onClick();
+    const handleMove = () => {
+        if (isMouseDown) {
+            console.log("true");
+            onClick();
         }
-    }
+    };
 
-    render() {
-        return (
-            <button
-                className="square"
-                style={{
-                    backgroundColor: `rgb(${this.props.color[0]}, ${this.props.color[1]}, ${this.props.color[2]})`
-                }}
-                //onClick={this.props.onClick}
-                onMouseDown={this.handleDown}
-                onMouseUp={this.handleUp}
-                onMouseEnter={this.handleMove}
-                
-            />
-        );
-    }
-}
+    return (
+        <button
+            className="square"
+            style={{
+                backgroundColor: `rgb(
+                    ${background[0]}, 
+                ${background[1]}, 
+                ${background[2]})`
+            }}
+            onMouseDown={handleDown}
+            onMouseUp={handleUp}
+            onMouseEnter={handleMove}
+        />
+    );
+};
 
-export default square;
+export default Square;
+
+//zapisać do reduxa w stanie że został kliknięty przycisk mousedown, podłączyć wydarzenie do reduxa

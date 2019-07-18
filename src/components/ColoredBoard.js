@@ -4,38 +4,33 @@ import Board from "./Board";
 import ResetButton from "./ResetButton";
 import DownloadButton from "./DownloadButton";
 import { connect } from "react-redux";
-import { colorAssigned, resetBoard, downloadBoard } from "../actions";
+import { colorAssigned, resetBoard, downloadBoard, setColor } from "../actions";
 
 class ColoredBoard extends React.Component {
-    state = {
-        color: undefined
-    };
-
     render() {
         return (
             <div className="brd">
                 <div className="ui raised segment" id="gridOne">
                     <Board
-                        squares={this.props.squares}
                         onSquareClick={this.onSquareClick}
                     />
                 </div>
                 <div id="gridTwo">
-                    <div  id="gridThree">
+                    <div id="gridThree">
                         <ColorsPalette
-                            color={this.state.color}
-                            onChange={color => this.setState({ color })}
+                            color={this.props.color}
+                            onChange={color => this.props.setColor({ color })}
                         />
                     </div>
-                    
+
                     <div id="gridFour">
                         <div>
                             <div className="ui raised segment vertical buttons">
-                                <DownloadButton 
-                                    squares={this.props.squares}
+                                <DownloadButton
+                                    squares={this.props.squares} //squares nie 
                                     onDownloadClick={this.onDownloadClick}
                                 />
-                                <ResetButton 
+                                <ResetButton
                                     squares={this.props.squares}
                                     onResetClick={this.onResetClick}
                                 />
@@ -47,20 +42,22 @@ class ColoredBoard extends React.Component {
         );
     }
 
-    onResetClick = (squares) => {
+    onResetClick = squares => {
         this.props.resetBoard(squares);
-    }
+    };
 
-    onDownloadClick = (squares) => {
+    onDownloadClick = squares => {
         this.props.downloadBoard(squares);
-    }
+    };
+
+//spróbować zrobić jako reducer onSquareClick
 
     onSquareClick = index => {
-        if (this.state.color !== undefined) {
+        if (this.props.color !== undefined) {
             const newColor = [
-                this.state.color.rgb.r,
-                this.state.color.rgb.g,
-                this.state.color.rgb.b
+                this.props.color[0],
+                this.props.color[1],
+                this.props.color[2]
             ];
             this.props.colorAssigned(index, newColor);
         }
@@ -68,13 +65,15 @@ class ColoredBoard extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    squares: state.colorAssign.squares
+    squares: state.colorAssign.squares,
+    color: state.colorAssign.color
 });
 
 const mapDispatchToProps = dispatch => ({
     colorAssigned: (index, color) => dispatch(colorAssigned(index, color)),
-    resetBoard: (squares) => dispatch(resetBoard(squares)),
-    downloadBoard: (squares) => dispatch(downloadBoard(squares))
+    resetBoard: squares => dispatch(resetBoard(squares)),
+    downloadBoard: squares => dispatch(downloadBoard(squares)),
+    setColor: color => dispatch(setColor(color))
 });
 
 export default connect(
@@ -83,5 +82,4 @@ export default connect(
 )(ColoredBoard);
 
 
-
-
+//wyrzucić z map_state_to_props squares i wybór 
