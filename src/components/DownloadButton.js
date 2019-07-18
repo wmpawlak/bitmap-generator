@@ -6,8 +6,6 @@ class DownloadButton extends React.Component {
         return (
             <button
                 className="small ui grey button"
-                //onClick={() => this.setState({ value: 'X' })}
-                //onClick={downloadBoard}
                 onClick={() => this.props.onDownloadClick()}
             >
                 DOWNLOAD

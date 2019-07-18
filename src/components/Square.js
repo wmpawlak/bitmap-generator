@@ -30,12 +30,13 @@ const Square = ({
             style={{
                 backgroundColor: `rgb(
                     ${background[0]}, 
-                ${background[1]}, 
-                ${background[2]})`
+                    ${background[1]}, 
+                    ${background[2]}
+                )`
             }}
             onMouseDown={handleDown}
-            onMouseUp={handleUp}
-            onMouseEnter={handleMove}
+            //onMouseUp={handleUp}
+            //onMouseEnter={handleMove}
         />
     );
 };

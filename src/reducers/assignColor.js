@@ -7,11 +7,14 @@ const reducer = (state = defaultState, action) => {
             const squaresCopy = [...state.squares];
             squaresCopy[action.index] = action.color;
             return { ...state, squares: squaresCopy };
+
         case "RESET_BOARD":
-            const squaresClean = state.squares.map(() => [255, 255, 255]);
+            const squaresClean = state.squares.map(() => [0, 0, 0]);
             return { ...state, squares: squaresClean };
-        case "SET_COLOR":
+
+        case "CHOOSE_COLOR":
             return { ...state, color: action.color };
+
         case "DOWNLOAD_BOARD":
             const squaresDownload = JSON.stringify(state.squares);
             const fileName = "file";
@@ -21,6 +24,7 @@ const reducer = (state = defaultState, action) => {
             });
             saveAs(fileToSave, fileName);
             return { ...state };
+
         default:
             return state;
     }

@@ -1,4 +1,4 @@
-export const colorAssigned = (index, color) => ({
+export const assignColor = (index, color) => ({
     type: "ASSIGN_COLOR",
     index,
     color
@@ -14,7 +14,7 @@ export const downloadBoard = squares => ({
     squares
 });
 
-export const setColor = ({ color }) => ({
-    type: "SET_COLOR",
+export const chooseColor = ({ color }) => ({
+    type: "CHOOSE_COLOR",
     color: [color.rgb.r, color.rgb.g, color.rgb.b]
 });

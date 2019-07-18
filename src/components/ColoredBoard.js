@@ -4,7 +4,7 @@ import Board from "./Board";
 import ResetButton from "./ResetButton";
 import DownloadButton from "./DownloadButton";
 import { connect } from "react-redux";
-import { colorAssigned, resetBoard, downloadBoard, setColor } from "../actions";
+import { assignColor, resetBoard, downloadBoard, chooseColor } from "../actions";
 
 class ColoredBoard extends React.Component {
     render() {
@@ -19,7 +19,7 @@ class ColoredBoard extends React.Component {
                     <div id="gridThree">
                         <ColorsPalette
                             color={this.props.color}
-                            onChange={color => this.props.setColor({ color })}
+                            onChange={color => this.props.chooseColor({ color })}
                         />
                     </div>
 
@@ -59,21 +59,21 @@ class ColoredBoard extends React.Component {
                 this.props.color[1],
                 this.props.color[2]
             ];
-            this.props.colorAssigned(index, newColor);
+            this.props.assignColor(index, newColor);
         }
     };
 }
 
 const mapStateToProps = state => ({
-    squares: state.colorAssign.squares,
-    color: state.colorAssign.color
+    squares: state.assignColor.squares,
+    color: state.assignColor.color
 });
 
 const mapDispatchToProps = dispatch => ({
-    colorAssigned: (index, color) => dispatch(colorAssigned(index, color)),
+    assignColor: (index, color) => dispatch(assignColor(index, color)),
     resetBoard: squares => dispatch(resetBoard(squares)),
     downloadBoard: squares => dispatch(downloadBoard(squares)),
-    setColor: color => dispatch(setColor(color))
+    chooseColor: color => dispatch(chooseColor(color))
 });
 
 export default connect(
