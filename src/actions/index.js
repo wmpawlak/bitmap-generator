@@ -18,3 +18,8 @@ export const chooseColor = ({ color }) => ({
     type: "CHOOSE_COLOR",
     color: [color.rgb.r, color.rgb.g, color.rgb.b]
 });
+
+export const mouseDown = isMouseDown => ({
+    type: "MOUSE_DOWN",
+    isMouseDown
+});

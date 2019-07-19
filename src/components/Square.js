@@ -1,29 +1,8 @@
 import React from "react";
 //import ReactDOM from 'react-dom';
 
-const Square = ({
-    onClick,
-    onMouseDown,
-    onMouseUp,
-    background,
-    isMouseDown
-}) => {
-    const handleDown = () => {
-        onClick();
-        onMouseDown();
-    };
-
-    const handleUp = () => {
-        onMouseUp();
-    };
-
-    const handleMove = () => {
-        if (isMouseDown) {
-            console.log("true");
-            onClick();
-        }
-    };
-
+const Square = ({ handleDown, handleUp, handleMove, background }) => {
+   
     return (
         <button
             className="square"
@@ -35,8 +14,8 @@ const Square = ({
                 )`
             }}
             onMouseDown={handleDown}
-            //onMouseUp={handleUp}
-            //onMouseEnter={handleMove}
+            onMouseUp={handleUp}
+            onMouseEnter={handleMove}
         />
     );
 };

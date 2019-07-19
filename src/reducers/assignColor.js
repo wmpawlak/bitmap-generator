@@ -25,6 +25,9 @@ const reducer = (state = defaultState, action) => {
             saveAs(fileToSave, fileName);
             return { ...state };
 
+        case "MOUSE_DOWN":
+            return {...state, isMouseDown: !isMouseDown};
+
         default:
             return state;
     }
