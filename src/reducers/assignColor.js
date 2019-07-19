@@ -5,7 +5,7 @@ const reducer = (state = defaultState, action) => {
     switch (action.type) {
         case "ASSIGN_COLOR":
             const squaresCopy = [...state.squares];
-            squaresCopy[action.index] = action.color;
+            squaresCopy[action.index] = state.color;
             return { ...state, squares: squaresCopy };
 
         case "RESET_BOARD":
@@ -26,7 +26,10 @@ const reducer = (state = defaultState, action) => {
             return { ...state };
 
         case "MOUSE_DOWN":
-            return {...state, isMouseDown: !isMouseDown};
+            return { ...state, isMouseDown: true };
+
+        case "MOUSE_UP":
+            return { ...state, isMouseDown: false };
 
         default:
             return state;

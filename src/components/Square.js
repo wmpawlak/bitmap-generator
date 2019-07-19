@@ -1,8 +1,28 @@
 import React from "react";
 //import ReactDOM from 'react-dom';
 
-const Square = ({ handleDown, handleUp, handleMove, background }) => {
-   
+const Square = ({
+    mouseDown,
+    isMouseDown,
+    assignColor,
+    mouseUp,
+    background
+}) => {
+    const handleMove = () => {
+        if (isMouseDown) {
+            assignColor();
+        }
+    };
+
+    const handleMouseDown = () => {
+        assignColor();
+        mouseDown();
+    };
+
+    const handleUp = () => {
+        mouseUp();
+    };
+
     return (
         <button
             className="square"
@@ -13,7 +33,7 @@ const Square = ({ handleDown, handleUp, handleMove, background }) => {
                     ${background[2]}
                 )`
             }}
-            onMouseDown={handleDown}
+            onMouseDown={handleMouseDown}
             onMouseUp={handleUp}
             onMouseEnter={handleMove}
         />

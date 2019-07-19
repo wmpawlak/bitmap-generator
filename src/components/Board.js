@@ -1,40 +1,31 @@
 import React from "react";
 import { connect } from "react-redux";
+import { mouseDown, mouseUp, assignColor } from "../actions";
 
 import Square from "./Square";
 
 class Board extends React.Component {
     renderSquare(i) {
+        
         const mapStateToProps = state => ({
             background: state.assignColor.squares[i],
-            isMouseDown: state.mouseDown.isMouseDown
+            isMouseDown: state.assignColor.isMouseDown
         });
 
-        //czy istnieje jedna funkcja map_state_to_props? I za każdym razem gdy ją wywołujemy, to podłączamy się do store'u? Co DOŁADNIE się tutaj dzieje?
+        const mapDispatchToProps = dispatch => ({
+            mouseDown: () => dispatch(mouseDown()),
+            mouseUp: () => dispatch(mouseUp()),
+            assignColor: () => dispatch(assignColor(i))
+        });
 
-        const ConnectedSquare = connect(mapStateToProps)(Square);
+        //czy za każdym razem gdy ją wywołujemy, to podłączamy się do store'u? Co DOŁADNIE się tutaj dzieje?
 
-        const handleDown = () => {
-            this.props.mouseDown(isMouseDown);
-        };
+        const ConnectedSquare = connect(mapStateToProps, mapDispatchToProps)(Square);
 
-        const handleUp = () => {
-            this.props.mouseDown(isMouseDown);
-        };
-
-        const handleMove = () => {
-            if (this.props.isMouseDown) {
-                this.props.onClick();
-            }
-        };
 
         return (
             <ConnectedSquare
                 index={i}
-                onClick={() => this.props.onSquareClick(i)}
-                onMouseDown={() => {this.props.handleDown()}}
-                onMouseUp={() => {this.props.handleUp()}}
-                onMouseEnter={() => {this.props.handleMove()}}
             />
         );
     }

@@ -1,7 +1,6 @@
-export const assignColor = (index, color) => ({
+export const assignColor = index => ({
     type: "ASSIGN_COLOR",
-    index,
-    color
+    index
 });
 
 export const resetBoard = squares => ({
@@ -14,12 +13,15 @@ export const downloadBoard = squares => ({
     squares
 });
 
-export const chooseColor = ({ color }) => ({
+export const chooseColor = ({ rgb }) => ({
     type: "CHOOSE_COLOR",
-    color: [color.rgb.r, color.rgb.g, color.rgb.b]
+    color: [rgb.r, rgb.g, rgb.b]
 });
 
-export const mouseDown = isMouseDown => ({
-    type: "MOUSE_DOWN",
-    isMouseDown
+export const mouseDown = () => ({
+    type: "MOUSE_DOWN"
+});
+
+export const mouseUp = () => ({
+    type: "MOUSE_UP"
 });
