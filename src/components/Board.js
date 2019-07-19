@@ -18,8 +18,6 @@ class Board extends React.Component {
             assignColor: () => dispatch(assignColor(i))
         });
 
-        //czy za każdym razem gdy ją wywołujemy, to podłączamy się do store'u? Co DOŁADNIE się tutaj dzieje?
-
         const ConnectedSquare = connect(mapStateToProps, mapDispatchToProps)(Square);
 
 

@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
 
-class DownloadButton extends React.Component {
+import { downloadBoard } from "../actions";
 
-    render() {
-        return (
-            <button
-                className="small ui grey button"
-                onClick={() => this.props.onDownloadClick()}
-            >
-                DOWNLOAD
-            </button>
-        );
-    }
-}
+const DownloadButton = ({ downloadBoard }) => {
+    return (
+        <button className="small ui grey button" onClick={downloadBoard}>
+            DOWNLOAD
+        </button>
+    );
+};
 
-export default DownloadButton;
+export default connect(
+    null,
+    { downloadBoard }
+)(DownloadButton);

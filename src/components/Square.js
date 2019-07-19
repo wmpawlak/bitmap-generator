@@ -41,5 +41,3 @@ const Square = ({
 };
 
 export default Square;
-
-//zapisać do reduxa w stanie że został kliknięty przycisk mousedown, podłączyć wydarzenie do reduxa
