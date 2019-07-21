@@ -1,10 +1,10 @@
 import React from 'react';
-import { SketchPicker } from 'react-color';
+import Sketch from './Sketch';
 
 const colorsPalette = (props) => {
 
     return (
-        <SketchPicker
+        <Sketch
             color={props.color}
             onChangeComplete={props.onChange}
         />
