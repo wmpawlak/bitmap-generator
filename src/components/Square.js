@@ -1,17 +1,43 @@
-import React from 'react';
+import React from "react";
 //import ReactDOM from 'react-dom';
 
-const square = (props) => {
+const Square = ({
+    mouseDown,
+    isMouseDown,
+    assignColor,
+    mouseUp,
+    background
+}) => {
+    const handleMove = () => {
+        if (isMouseDown) {
+            assignColor();
+        }
+    };
 
-        return (
-            <button
-                className="square"
-                style={{
-                    backgroundColor: `rgb(${props.color[0]}, ${props.color[1]}, ${props.color[2]})`
-                }}
-                onClick={props.onClick}
-            />
-        );
-}
+    const handleMouseDown = () => {
+        assignColor();
+        mouseDown();
+    };
 
-export default square;
+    const handleUp = () => {
+        mouseUp();
+    };
+
+    return (
+        <button
+            className="square"
+            style={{
+                backgroundColor: `rgb(
+                    ${background[0]}, 
+                    ${background[1]}, 
+                    ${background[2]}
+                )`
+            }}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleUp}
+            onMouseEnter={handleMove}
+        />
+    );
+};
+
+export default Square;

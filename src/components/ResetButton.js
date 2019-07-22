@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
 
-class ResetButton extends React.Component {
+import { resetBoard } from "../actions";
 
-    render() {
-        return (
-            <button
-                className="small ui grey button"
-                onClick={() => this.props.onResetClick()}
-            >
-                RESET FRAME
-            </button>
-        );
-    }
-}
+const ResetButton = ({ resetBoard }) => {
+    return (
+        <button className="small ui grey button" onClick={resetBoard}>
+            RESET FRAME
+        </button>
+    );
+};
 
-export default ResetButton;
+export default connect(
+    null,
+    { resetBoard }
+)(ResetButton);

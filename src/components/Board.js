@@ -1,49 +1,39 @@
-import React from 'react';
-import Square from './Square';
+import React from "react";
+import { connect } from "react-redux";
+import { mouseDown, mouseUp, assignColor } from "../actions";
+
+import Square from "./Square";
 
 class Board extends React.Component {
     renderSquare(i) {
-        return <Square
-            value={i}
-            color={this.props.squares[i]}
-            onClick={() => this.props.onSquareClick(i)}
-        />;
-    }
+        
+        const mapStateToProps = state => ({
+            background: state.assignColor.squares[i],
+            isMouseDown: state.assignColor.isMouseDown
+        });
 
-    render() {   
+        const mapDispatchToProps = dispatch => ({
+            mouseDown: () => dispatch(mouseDown()),
+            mouseUp: () => dispatch(mouseUp()),
+            assignColor: () => dispatch(assignColor(i))
+        });
 
-        const squares = []
-      
-        for (let i = 0; i <= 63; i++) {
-            squares.push(<div key={i}>{this.renderSquare(i)}</div>)
-        }
+        const ConnectedSquare = connect(mapStateToProps, mapDispatchToProps)(Square);
+
 
         return (
+            <ConnectedSquare
+                index={i}
+            />
+        );
+    }
+
+    render() {
+        return (
             <div className="board">
-                <div className="board-row">
-                    {squares.slice(0,8)}
-                </div>
-                <div className="board-row">
-                    {squares.slice(8,16)}
-                </div>
-                <div className="board-row">
-                    {squares.slice(16,24)}
-                </div>
-                <div className="board-row">
-                    {squares.slice(24,32)}
-                </div>
-                <div className="board-row">
-                    {squares.slice(32,40)}  
-                </div>
-                <div className="board-row">
-                    {squares.slice(40,48)}
-                </div>
-                <div className="board-row">
-                    {squares.slice(48,56)}
-                </div>
-                <div className="board-row">
-                    {squares.slice(56,64)}
-                </div>
+                {Array.from({ length: 64 }).map((s, i) => (
+                    <div key={i}>{this.renderSquare(i)}</div>
+                ))}
             </div>
         );
     }
