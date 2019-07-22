@@ -1,16 +1,11 @@
-import React from 'react';
-import Sketch from './Sketch';
-
+import React from "react";
+import { connect } from "react-redux";
+import { SketchPicker } from "react-color";
 
 import { chooseColor } from "../actions";
-    return (
-        <Sketch
-            color={props.color}
-            onChangeComplete={props.onChange}
-        />
-    );
-}
 
+const colorsPalette = ({ color, onChange }) => {
+    const rgb = { r: color[0], g: color[1], b: color[2] };
 
     return <SketchPicker color={rgb} onChangeComplete={onChange} />;
 };
