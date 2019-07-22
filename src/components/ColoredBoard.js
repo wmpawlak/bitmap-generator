@@ -1,12 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import ColorsPalette from "./ColorsPalette";
 import Board from "./Board";
 import ResetButton from "./ResetButton";
 import DownloadButton from "./DownloadButton";
+import { mouseUp } from "../actions";
 
-const ColoredBoard = () => {
+const ColoredBoard = ({ mouseUp }) => {
     return (
-        <div className="brd">
+        <div className="brd" onMouseLeave={mouseUp}>
             <div className="ui raised segment" id="gridOne">
                 <Board />
             </div>
@@ -28,4 +31,7 @@ const ColoredBoard = () => {
     );
 };
 
-export default ColoredBoard;
+export default connect(
+    null,
+    { mouseUp }
+)(ColoredBoard);

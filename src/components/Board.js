@@ -6,26 +6,29 @@ import Square from "./Square";
 
 class Board extends React.Component {
     renderSquare(i) {
-        
         const mapStateToProps = state => ({
             background: state.assignColor.squares[i],
             isMouseDown: state.assignColor.isMouseDown
         });
 
-        const mapDispatchToProps = dispatch => ({
-            mouseDown: () => dispatch(mouseDown()),
-            mouseUp: () => dispatch(mouseUp()),
-            assignColor: () => dispatch(assignColor(i))
-        });
+        // const mapDispatchToProps = dispatch => ({
+        //     mouseDown: () => dispatch(mouseDown()),
+        //     mouseUp: () => dispatch(mouseUp()),
+        //     assignColor: () => dispatch(assignColor(i))
+        // });
 
-        const ConnectedSquare = connect(mapStateToProps, mapDispatchToProps)(Square);
+        const mapDispatchToProps = {
+            mouseDown,
+            mouseUp,
+            assignColor
+        };
 
+        const ConnectedSquare = connect(
+            mapStateToProps,
+            mapDispatchToProps
+        )(Square);
 
-        return (
-            <ConnectedSquare
-                index={i}
-            />
-        );
+        return <ConnectedSquare index={i} />;
     }
 
     render() {
