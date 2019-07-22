@@ -11,12 +11,6 @@ class Board extends React.Component {
             isMouseDown: state.assignColor.isMouseDown
         });
 
-        // const mapDispatchToProps = dispatch => ({
-        //     mouseDown: () => dispatch(mouseDown()),
-        //     mouseUp: () => dispatch(mouseUp()),
-        //     assignColor: () => dispatch(assignColor(i))
-        // });
-
         const mapDispatchToProps = {
             mouseDown,
             mouseUp,

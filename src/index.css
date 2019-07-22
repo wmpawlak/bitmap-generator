@@ -1,7 +1,7 @@
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
-    background: rgb(34, 34, 34)
+    background: rgb(34, 34, 34);
 }
 
 .board-row:after {
@@ -24,6 +24,7 @@ body {
     margin-top: -1px;
     padding: 0;
     text-align: center;
+    user-select: none;
 }
 
 .square:hover {
