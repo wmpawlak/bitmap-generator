@@ -2,6 +2,7 @@ import React from "react";
 //import ReactDOM from 'react-dom';
 
 const Square = ({
+    index,
     mouseDown,
     isMouseDown,
     assignColor,
@@ -10,12 +11,12 @@ const Square = ({
 }) => {
     const handleMove = () => {
         if (isMouseDown) {
-            assignColor();
+            assignColor(index);
         }
     };
 
     const handleMouseDown = () => {
-        assignColor();
+        assignColor(index);
         mouseDown();
     };
 
@@ -24,7 +25,7 @@ const Square = ({
     };
 
     return (
-        <button
+        <div
             className="square"
             style={{
                 backgroundColor: `rgb(
