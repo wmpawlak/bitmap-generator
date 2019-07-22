@@ -1,15 +1,24 @@
-import React from 'react';
-import { SketchPicker } from 'react-color';
+import React from "react";
+import { connect } from "react-redux";
+import { SketchPicker } from "react-color";
 
-const colorsPalette = (props) => {
+import { chooseColor } from "../actions";
 
-    return (
-        <SketchPicker
-            color={props.color}
-            onChangeComplete={props.onChange}
-        />
-    );
-}
+const colorsPalette = ({ color, onChange }) => {
+    const rgb = { r: color[0], g: color[1], b: color[2] };
 
+    return <SketchPicker color={rgb} onChangeComplete={onChange} />;
+};
 
-export default colorsPalette;
+const mapStateToProps = state => ({
+    color: state.assignColor.color
+});
+
+const mapDispatchToProps = dispatch => ({
+    onChange: color => dispatch(chooseColor(color))
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(colorsPalette);

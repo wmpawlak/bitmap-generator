@@ -1,13 +1,18 @@
-import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import colorAssign from './colorAssign';
-import downloadBoard from './downloadBoard';
+import { combineReducers } from "redux";
+//import { routerReducer } from "react-router-redux";
+import assignColor from "./assignColor";
 
+const emptyColor = [0, 0, 0];
 
 export const defaultState = {
-    squares: Array(64).fill([255, 255, 255])
-}
+    squares: Array(64).fill(emptyColor),
+    color: emptyColor,
+    isMouseDown: false
+};
 
-const rootReducer = combineReducers({ colorAssign, downloadBoard, routing: routerReducer });
+const rootReducer = combineReducers({
+    assignColor,
+    //routing: routerReducer
+});
 
 export default rootReducer;
