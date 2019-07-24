@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 
 export default class CenterMode extends Component {
-    render() {
+    renderFrame(i) {
         const settings = {
             focusOnSelect: true,
             infinite: true,
@@ -15,16 +15,27 @@ export default class CenterMode extends Component {
         };
 
         return (
+            <Frame
+                {...settings}
+                value={i}
+                onClick={() => {
+                    console.log("clicked frame");
+                }}
+            />
+        );
+    }
+
+    render() {
+        return (
             <div className="carousel">
-                <Slider {...settings}>
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                    <div />
-                </Slider>
+                {this.renderFrame(0)}
+                {this.renderFrame(1)}
+                {this.renderFrame(2)}
+                {this.renderFrame(3)}
+                {this.renderFrame(4)}
+                {this.renderFrame(5)}
+                {this.renderFrame(6)}
+                {this.renderFrame(7)}
             </div>
         );
     }
