@@ -4,10 +4,14 @@ import assignColor from "./assignColor";
 
 const emptyColor = [0, 0, 0];
 
+const initialFrame = Array(64).fill(emptyColor);
+
 export const defaultState = {
-    squares: Array(64).fill(emptyColor),
+    squares: initialFrame,
     color: emptyColor,
-    isMouseDown: false
+    isMouseDown: false,
+    activeFrame: 0,
+    setOfSquares: Array(7).fill(initialFrame)
 };
 
 const rootReducer = combineReducers({

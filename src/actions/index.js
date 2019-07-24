@@ -25,3 +25,7 @@ export const mouseDown = () => ({
 export const mouseUp = () => ({
     type: "MOUSE_UP"
 });
+
+// export const setActiveFrame = frameIndex => ({
+//     type: "SET_ACTIVE_FRAME"
+// });
