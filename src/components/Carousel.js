@@ -1,52 +1,35 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import Frame from "./Frame";
 
-export default class MultipleItems extends Component {
-  render() {
-    const settings = {
-      focusOnSelect: true,
-      infinite: true,
-      centerPadding: "0px",
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      speed: 500,
-      variableWidth: true,
-      initalSlide: 1
-    };
+export default class CenterMode extends Component {
+    renderFrame(i) {
+        return <Frame value={i} />;
+    }
 
-
-    return (
-      <div className="carousel">
-        <Slider {...settings}>
-          <div>
-            1
-          </div>
-          <div>
-            2
-          </div>
-          <div>
-            3
-          </div>
-          <div>
-            4
-          </div>
-          <div>
-            5
-          </div>
-          <div>
-            6
-          </div>
-          <div>
-            7
-          </div>
-          <div>
-            8
+    render() {
+        const settings = {
+            focusOnSelect: true,
+            infinite: true,
+            centerPadding: "0px",
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            speed: 500,
+            variableWidth: true,
+            initalSlide: 1
+        };
+        return (
+            <div className="carousel">
+                <Slider {...settings}>
+                    {this.renderFrame(0)}
+                    {this.renderFrame(1)}
+                    {this.renderFrame(2)}
+                    {this.renderFrame(3)}
+                    {this.renderFrame(4)}
+                    {this.renderFrame(5)}
+                    {this.renderFrame(6)}
+                </Slider>
             </div>
-            <div>
-            9
-            </div>
-        </Slider>
-      </div>
-    );
-  }
+        );
+    }
 }

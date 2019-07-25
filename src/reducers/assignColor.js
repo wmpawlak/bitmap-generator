@@ -40,6 +40,9 @@ const reducer = (state = defaultState, action) => {
         case "MOUSE_UP":
             return { ...state, isMouseDown: false };
 
+        // case "SET_ACTIVE_FRAME":
+        //     return { ...state, activeFrame: frameIndex };
+
         default:
             return state;
     }
