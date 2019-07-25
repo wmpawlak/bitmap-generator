@@ -7,9 +7,10 @@ import ResetButton from "./ResetButton";
 import SaveButton from "./SaveButton"
 import DownloadButton from "./DownloadButton";
 import { mouseUp } from "../actions";
-import CenterMode from "./Carousel";
+import MultipleItems from "./Carousel";
 
 const ColoredBoard = ({ mouseUp }) => {
+    
     return (
         <div>
 
@@ -35,8 +36,9 @@ const ColoredBoard = ({ mouseUp }) => {
 
         </div>
             <div>
-                <CenterMode />
+                <MultipleItems />
             </div>
+            <canvas id="canvas"></canvas>
         </div>
     );
 };

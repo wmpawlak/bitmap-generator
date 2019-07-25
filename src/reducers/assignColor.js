@@ -23,6 +23,15 @@ const reducer = (state = defaultState, action) => {
                 name: fileName
             });
             saveAs(fileToSave, fileName);
+            const convert = [...state.squares].map((i) => [i,100]);
+            const convertFlat = convert.flat(Infinity);
+            
+            const cvs = document.getElementById("canvas");
+            cvs.width = cvs.height = 8;
+            const ctx = cvs.getContext("2d");
+            const imgData = new ImageData(Uint8ClampedArray.from(convertFlat), 8, 8);
+            ctx.putImageData(imgData, 0, 0);
+
             return { ...state };
 
         case "MOUSE_DOWN":
