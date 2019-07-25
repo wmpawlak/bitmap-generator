@@ -4,8 +4,8 @@ import reactCSS from "reactcss"
 import merge from "lodash/merge"
 
 import { ColorWrap, Saturation, Hue, Alpha, Checkboard } from "react-color/lib/components/common"
-import SketchFields from "../../node_modules/react-color/lib/components/sketch/SketchFields"
-import SketchPresetColors from "../../node_modules/react-color/lib/components/sketch/SketchPresetColors"
+import SketchFields from "react-color/lib/components/sketch/SketchFields"
+import SketchPresetColors from "react-color/lib/components/sketch/SketchPresetColors"
 
 export const Sketch = ({ width, rgb, hex, hsv, hsl, onChange, onSwatchHover,
   disableAlpha, presetColors, renderers, styles: passedStyles = {}, className = "" }) => {

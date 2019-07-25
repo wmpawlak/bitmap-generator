@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { mouseDown, mouseUp, assignColor } from "../actions";
+import { mouseDown, mouseUp, assignColor } from "../../actions";
 
-import Square from "./Square";
+import Square from "../presentational/Square";
 
 class Board extends React.Component {
     renderSquare(i) {

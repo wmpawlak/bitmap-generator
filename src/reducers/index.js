@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 //import { routerReducer } from "react-router-redux";
-import assignColor from "./assignColor";
+import assignColor from "./reducer";
 
 const emptyColor = [0, 0, 0];
 
