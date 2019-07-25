@@ -26,6 +26,10 @@ export const mouseUp = () => ({
     type: "MOUSE_UP"
 });
 
+export const addAfter = () => ({
+    type: "ADD_AFTER"
+});
+
 // export const setActiveFrame = frameIndex => ({
 //     type: "SET_ACTIVE_FRAME"
 // });

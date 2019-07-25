@@ -31,6 +31,10 @@ const reducer = (state = defaultState, action) => {
         case "MOUSE_UP":
             return { ...state, isMouseDown: false };
 
+        case "ADD_AFTER":
+            console.log('clicked add after');
+            return { ...state };
+
         // case "SET_ACTIVE_FRAME":
         //     return { ...state, activeFrame: frameIndex };
 

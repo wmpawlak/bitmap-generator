@@ -3,14 +3,21 @@ import Slider from "react-slick";
 import Frame from "./Frame";
 
 export default class CenterMode extends Component {
+
     renderFrame(i) {
-        return <Frame value={i} />;
+        return (
+            <div>
+                <Frame
+                    value={i}
+                    onClick={()=>{console.log('click')}}
+                />
+            </div>);
     }
 
     render() {
         const settings = {
             focusOnSelect: true,
-            infinite: true,
+            infinite: false,
             centerPadding: "0px",
             slidesToShow: 5,
             slidesToScroll: 1,
@@ -18,16 +25,14 @@ export default class CenterMode extends Component {
             variableWidth: true,
             initalSlide: 1
         };
+
         return (
             <div className="carousel">
-                <Slider {...settings}>
-                    {this.renderFrame(0)}
-                    {this.renderFrame(1)}
-                    {this.renderFrame(2)}
-                    {this.renderFrame(3)}
-                    {this.renderFrame(4)}
-                    {this.renderFrame(5)}
-                    {this.renderFrame(6)}
+                <Slider
+                    {...settings}
+                >
+                    {this.renderFrame()}
+
                 </Slider>
             </div>
         );
