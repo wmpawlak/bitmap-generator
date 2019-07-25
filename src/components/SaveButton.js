@@ -1,11 +1,17 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const SaveButton = () => {
+import { renderCanvas } from "../actions";
+
+const SaveButton = ({ renderCanvas }) => {
     return (
-        <button className="small ui grey button" >
+        <button className="small ui grey button" onClick={renderCanvas}>
             SAVE
         </button>
     );
 };
 
-export default SaveButton;
+export default connect(
+    null,
+    { renderCanvas }
+)(SaveButton);

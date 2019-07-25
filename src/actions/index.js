@@ -26,6 +26,11 @@ export const mouseUp = () => ({
     type: "MOUSE_UP"
 });
 
+export const renderCanvas = squares => ({
+    type: "RENDER_CANVAS",
+    squares
+});
+
 // export const setActiveFrame = frameIndex => ({
 //     type: "SET_ACTIVE_FRAME"
 // });
