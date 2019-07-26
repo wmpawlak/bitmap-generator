@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import Frame from "./Frame";
 
-export default class CenterMode extends Component {
+export default class MultipleItems extends Component {
     renderFrame(i) {
         return <Frame value={i} />;
     }

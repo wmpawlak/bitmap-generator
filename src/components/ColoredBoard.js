@@ -5,6 +5,7 @@ import ColorsPalette from "./ColorsPalette";
 import Board from "./Board";
 import ResetButton from "./ResetButton";
 import SaveButton from "./SaveButton"
+import Canvas from "./Canvas";
 import DownloadButton from "./DownloadButton";
 import { mouseUp } from "../actions";
 import MultipleItems from "./Carousel";
@@ -38,7 +39,8 @@ const ColoredBoard = ({ mouseUp }) => {
             <div>
                 <MultipleItems />
             </div>
-            <canvas id="canvas"></canvas>
+            <Canvas />
+            
         </div>
     );
 };

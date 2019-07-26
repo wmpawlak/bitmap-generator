@@ -165,7 +165,7 @@ body {
 #canvas {
     height: 100px;
     width: 100px;
-    background: white;
+    border: 2px solid white;
 }
 
 @media screen and (max-width: 700px) {
