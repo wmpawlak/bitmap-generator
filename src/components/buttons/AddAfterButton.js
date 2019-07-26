@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { addAfter } from "../../actions";
 
-const AddAfterButton = props => {
+const AddAfterButton = ({ addAfter }) => {
     return (
         <button
             className="small ui grey button"

@@ -7,7 +7,7 @@ import ResetButton from "../buttons/ResetButton";
 import AddAfterButton from "../buttons/AddAfterButton";
 import DownloadButton from "../buttons/DownloadButton";
 import { mouseUp } from "../../actions";
-import CenterMode from "./Carousel";
+import CenterMode from "../containers/Carousel";
 
 const ColoredBoard = ({ mouseUp }) => {
     return (

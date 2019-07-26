@@ -1,14 +1,9 @@
 import React from "react";
 //import ReactDOM from 'react-dom';
 
-const Frame = props => {
+const Frame = () => {
     return (
-        <div
-            className="frame"
-            onClick={() => {
-                console.log("click");
-            }}
-        />
+        <div className="frame" />
     );
 };
 

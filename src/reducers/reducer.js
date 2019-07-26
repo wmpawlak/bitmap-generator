@@ -32,8 +32,10 @@ const reducer = (state = defaultState, action) => {
             return { ...state, isMouseDown: false };
 
         case "ADD_AFTER":
-            console.log('clicked add after');
-            return { ...state };
+            const setOfSquaresCopy = [...state.setOfSquares];
+            setOfSquaresCopy.push(defaultState.squares);
+            console.log(setOfSquaresCopy);
+            return { ...state, setOfSquares: setOfSquaresCopy };
 
         // case "SET_ACTIVE_FRAME":
         //     return { ...state, activeFrame: frameIndex };
