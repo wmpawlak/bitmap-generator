@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import Frame from "../presentational/Frame";
 
-class CenterMode extends React.Component {
+class MultipleItems extends React.Component {
     renderFrame(i) {
         return <Frame value={i} />;
     }
@@ -28,7 +28,7 @@ class CenterMode extends React.Component {
         connect(
             mapStateToProps,
             null
-        )(CenterMode);
+        )(MultipleItems);
 
         return (
             <div className="carousel">
@@ -42,4 +42,4 @@ class CenterMode extends React.Component {
     }
 }
 
-export default CenterMode;
+export default MultipleItems;
