@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { renderCanvas } from "../actions";
+import { renderCanvas } from "../../actions";
 
 const Canvas = ({ renderCanvas }) => {
     return (
