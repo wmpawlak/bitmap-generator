@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { resetBoard } from "../actions";
+import { resetBoard } from "../../actions";
 
 const ResetButton = ({ resetBoard }) => {
     return (

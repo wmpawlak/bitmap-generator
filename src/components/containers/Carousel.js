@@ -1,8 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
-import Frame from "./Frame";
+import { connect } from "react-redux";
 
-export default class CenterMode extends Component {
+import Frame from "../presentational/Frame";
+
+class CenterMode extends React.Component {
     renderFrame(i) {
         return <Frame value={i} />;
     }
@@ -18,18 +20,26 @@ export default class CenterMode extends Component {
             variableWidth: true,
             initalSlide: 1
         };
+
+        const mapStateToProps = state => ({
+            length: state.setOfSquares.length
+        });
+
+        connect(
+            mapStateToProps,
+            null
+        )(CenterMode);
+
         return (
             <div className="carousel">
                 <Slider {...settings}>
-                    {this.renderFrame(0)}
-                    {this.renderFrame(1)}
-                    {this.renderFrame(2)}
-                    {this.renderFrame(3)}
-                    {this.renderFrame(4)}
-                    {this.renderFrame(5)}
-                    {this.renderFrame(6)}
+                    {Array.from({ length: 4 }).map((s, i) => (
+                        <div key={i}>{this.renderFrame(i)}</div>
+                    ))}
                 </Slider>
             </div>
         );
     }
 }
+
+export default CenterMode;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import ColoredBoard from './ColoredBoard';
+import ColoredBoard from '../presentational/ColoredBoard';
 
 function App() {
 
