@@ -4,19 +4,27 @@ import { saveAs } from "file-saver";
 const reducer = (state = defaultState, action) => {
     switch (action.type) {
         case "ASSIGN_COLOR":
-            const squaresCopy = [...state.squares];
+            const squaresCopy = [...state.setOfSquares[squares]];
             squaresCopy[action.index] = state.color;
-            return { ...state, squares: squaresCopy };
+            const setOfSquares = [...state.setOfSquares];
+            setOfSquares[state.squares] = squaresCopy;
+            return { ...state, setOfSquares };
 
         case "RESET_BOARD":
-            const squaresClean = state.squares.map(() => [0, 0, 0]);
-            return { ...state, squares: squaresClean };
+            const squaresClean = state.setOfSquares[state.squares].map(() => [
+                0,
+                0,
+                0
+            ]);
+            const setOfSquares = [...state.setOfSquares];
+            setOfSquares[state.squares] = squaresClean;
+            return { ...state, setOfSquares };
 
         case "CHOOSE_COLOR":
             return { ...state, color: action.color };
 
         case "DOWNLOAD_BOARD":
-            const squaresDownload = JSON.stringify(state.squares);
+            const squaresDownload = JSON.stringify(state.setOfSquares);
             const fileName = "file";
             const fileToSave = new Blob([squaresDownload], {
                 type: "application/json",
@@ -26,12 +34,16 @@ const reducer = (state = defaultState, action) => {
             return { ...state };
 
         case "RENDER_CANVAS":
-            const convert = [...state.squares].map((i) => [i,100]);
+            const convert = [...state.squares].map(i => [i, 100]);
             const convertFlat = convert.flat(Infinity);
             const cvs = document.getElementById("canvas");
             cvs.width = cvs.height = 8;
             const ctx = cvs.getContext("2d");
-            const imgData = new ImageData(Uint8ClampedArray.from(convertFlat), 8, 8);
+            const imgData = new ImageData(
+                Uint8ClampedArray.from(convertFlat),
+                8,
+                8
+            );
             ctx.putImageData(imgData, 0, 0);
             return { ...state };
 
@@ -42,10 +54,17 @@ const reducer = (state = defaultState, action) => {
             return { ...state, isMouseDown: false };
 
         case "ADD_AFTER":
-            const setOfSquaresCopy = [...state.setOfSquares];
-            setOfSquaresCopy.push(defaultState.squares);
+            const setOfSquaresCopy = [
+                ...state.setOfSquares,
+                defaultState.squares
+            ];
+
             console.log(setOfSquaresCopy);
-            return { ...state, setOfSquares: setOfSquaresCopy };
+            return {
+                ...state,
+                setOfSquares: setOfSquaresCopy,
+                squares: setOfSquaresCopy.length - 1
+            };
 
         // case "SET_ACTIVE_FRAME":
         //     return { ...state, activeFrame: frameIndex };

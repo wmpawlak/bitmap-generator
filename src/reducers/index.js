@@ -9,7 +9,7 @@ const initialFrame = Array(64).fill(emptyColor);
 const initialNumberOfSquares = 2;
 
 export const defaultState = {
-    squares: initialFrame,
+    squares: 0,
     color: emptyColor,
     isMouseDown: false,
     activeSquare: 0,

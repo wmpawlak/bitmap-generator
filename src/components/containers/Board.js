@@ -7,7 +7,7 @@ import Square from "../presentational/Square";
 class Board extends React.Component {
     renderSquare(i) {
         const mapStateToProps = state => ({
-            background: state.assignColor.squares[i],
+            background: state.assignColor.setOfSquares[state.assignColor.squares][i],
             isMouseDown: state.assignColor.isMouseDown
         });
 
