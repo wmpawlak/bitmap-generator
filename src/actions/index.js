@@ -31,6 +31,10 @@ export const renderCanvas = squares => ({
     squares
 });
 
+export const addAfter = () => ({
+    type: "ADD_AFTER"
+});
+
 // export const setActiveFrame = frameIndex => ({
 //     type: "SET_ACTIVE_FRAME"
 // });

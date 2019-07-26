@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { downloadBoard } from "../actions";
+import { downloadBoard } from "../../actions";
 
 const DownloadButton = ({ downloadBoard }) => {
     return (

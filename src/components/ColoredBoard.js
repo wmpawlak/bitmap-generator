@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import ColorsPalette from "./ColorsPalette";
-import Board from "./Board";
-import ResetButton from "./ResetButton";
-import SaveButton from "./SaveButton"
+import ColorsPalette from "./containers/ColorsPalette";
+import Board from "./containers/Board";
+import ResetButton from "./buttons/ResetButton";
+import SaveButton from "./buttons/SaveButton";
 import Canvas from "./Canvas";
-import DownloadButton from "./DownloadButton";
+import DownloadButton from "./buttons/DownloadButton";
 import { mouseUp } from "../actions";
-import MultipleItems from "./Carousel";
+import MultipleItems from "./containers/Carousel";
 
 const ColoredBoard = ({ mouseUp }) => {
     
@@ -40,7 +40,6 @@ const ColoredBoard = ({ mouseUp }) => {
                 <MultipleItems />
             </div>
             <Canvas />
-            
         </div>
     );
 };

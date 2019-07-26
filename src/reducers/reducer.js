@@ -33,7 +33,6 @@ const reducer = (state = defaultState, action) => {
             const ctx = cvs.getContext("2d");
             const imgData = new ImageData(Uint8ClampedArray.from(convertFlat), 8, 8);
             ctx.putImageData(imgData, 0, 0);
-            console.log()
             return { ...state };
 
         case "MOUSE_DOWN":
@@ -41,6 +40,12 @@ const reducer = (state = defaultState, action) => {
 
         case "MOUSE_UP":
             return { ...state, isMouseDown: false };
+
+        case "ADD_AFTER":
+            const setOfSquaresCopy = [...state.setOfSquares];
+            setOfSquaresCopy.push(defaultState.squares);
+            console.log(setOfSquaresCopy);
+            return { ...state, setOfSquares: setOfSquaresCopy };
 
         // case "SET_ACTIVE_FRAME":
         //     return { ...state, activeFrame: frameIndex };
