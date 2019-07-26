@@ -33,7 +33,7 @@ class CenterMode extends React.Component {
         return (
             <div className="carousel">
                 <Slider {...settings}>
-                    {Array.from({ length: this.state.length }).map((s, i) => (
+                    {Array.from({ length: 4 }).map((s, i) => (
                         <div key={i}>{this.renderFrame(i)}</div>
                     ))}
                 </Slider>
