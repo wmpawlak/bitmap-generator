@@ -11,7 +11,7 @@ const colorsPalette = ({ color, onChange }) => {
 };
 
 const mapStateToProps = state => ({
-    color: state.assignColor.color
+    color: state.reducer.color
 });
 
 const mapDispatchToProps = {

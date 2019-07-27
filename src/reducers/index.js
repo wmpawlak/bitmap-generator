@@ -1,23 +1,22 @@
 import { combineReducers } from "redux";
 //import { routerReducer } from "react-router-redux";
-import assignColor from "./reducer";
+import reducer from "./reducer";
 
 const emptyColor = [0, 0, 0];
 
 const initialFrame = Array(64).fill(emptyColor);
 
-const initialNumberOfSquares = 2;
+const initialNumberOfFrames = 1;
 
 export const defaultState = {
-    squares: 0,
+    activeFrameIndex: 0,
     color: emptyColor,
     isMouseDown: false,
-    activeSquare: 0,
-    setOfSquares: Array(initialNumberOfSquares).fill(initialFrame)
+    listOfFrames: Array(initialNumberOfFrames).fill(initialFrame)
 };
 
 const rootReducer = combineReducers({
-    assignColor,
+    reducer,
     //routing: routerReducer
 });
 

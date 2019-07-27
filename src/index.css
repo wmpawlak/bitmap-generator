@@ -10,7 +10,7 @@ body {
     display: table;
 }
 
-.square {
+.frame {
     border-radius: 3px; 
     background: #fff;
     border: 1px solid #999;
@@ -27,7 +27,7 @@ body {
     user-select: none;
 }
 
-.square:hover {
+.frame:hover {
     background-color: rgb(223, 223, 223);
     opacity:0.5;
 }
