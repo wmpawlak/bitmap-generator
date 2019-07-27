@@ -4,15 +4,15 @@ import { connect } from "react-redux";
 import ColorsPalette from "../containers/ColorsPalette";
 import Board from "../containers/Board";
 import ResetButton from "../buttons/ResetButton";
-import AddAfterButton from "../buttons/AddAfterButton";
+import Canvas from "./Canvas";
 import DownloadButton from "../buttons/DownloadButton";
 import { mouseUp } from "../../actions";
-import CenterMode from "../containers/Carousel";
+import MultipleItems from "../containers/Carousel";
+import AddAfterButton from "../buttons/AddAfterButton";
 
 const ColoredBoard = ({ mouseUp }) => {
     return (
         <div>
-
             <div className="brd" onMouseLeave={mouseUp}>
                 <div className="ui raised segment" id="gridOne">
                     <Board />
@@ -32,11 +32,11 @@ const ColoredBoard = ({ mouseUp }) => {
                         </div>
                     </div>
                 </div>
-
             </div>
             <div>
-                <CenterMode />
+                <MultipleItems />
             </div>
+            <Canvas />
         </div>
     );
 };

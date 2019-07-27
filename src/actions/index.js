@@ -3,14 +3,12 @@ export const assignColor = index => ({
     index
 });
 
-export const resetBoard = squares => ({
+export const resetBoard = () => ({
     type: "RESET_BOARD",
-    squares
 });
 
-export const downloadBoard = squares => ({
+export const downloadBoard = () => ({
     type: "DOWNLOAD_BOARD",
-    squares
 });
 
 export const chooseColor = ({ rgb }) => ({

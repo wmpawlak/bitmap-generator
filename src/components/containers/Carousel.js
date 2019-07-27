@@ -5,10 +5,6 @@ import { connect } from "react-redux";
 import Frame from "../presentational/Frame";
 
 class MultipleItems extends React.Component {
-    renderFrame(i) {
-        return <Frame value={i} />;
-    }
-
     render() {
         const settings = {
             focusOnSelect: true,
@@ -20,21 +16,14 @@ class MultipleItems extends React.Component {
             variableWidth: true,
             initalSlide: 1
         };
-
-        const mapStateToProps = state => ({
-            length: state.setOfSquares.length
-        });
-
-        connect(
-            mapStateToProps,
-            null
-        )(MultipleItems);
-
+        console.log(this.props.setOfSquares);
         return (
             <div className="carousel">
                 <Slider {...settings}>
-                    {Array.from({ length: 4 }).map((s, i) => (
-                        <div key={i}>{this.renderFrame(i)}</div>
+                    {this.props.setOfSquares.map((s, i) => (
+                        <div key={i}>
+                            <Frame value={i} />
+                        </div>
                     ))}
                 </Slider>
             </div>
@@ -42,4 +31,13 @@ class MultipleItems extends React.Component {
     }
 }
 
-export default MultipleItems;
+const mapStateToProps = state => ({
+    setOfSquares: state.assignColor.setOfSquares
+});
+
+const ConnectedMultipleItem = connect(
+    mapStateToProps,
+    null
+)(MultipleItems);
+
+export default ConnectedMultipleItem;
