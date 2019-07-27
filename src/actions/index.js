@@ -24,13 +24,14 @@ export const mouseUp = () => ({
     type: "MOUSE_UP"
 });
 
-export const renderCanvas = squares => ({
+export const renderCanvas = activeFrameIndex => ({
     type: "RENDER_CANVAS",
-    squares
+    activeFrameIndex
 });
 
-export const addAfter = () => ({
-    type: "ADD_AFTER"
+export const addAfter = activeFrameIndex => ({
+    type: "ADD_AFTER",
+    activeFrameIndex
 });
 
 // export const setActiveFrame = frameIndex => ({

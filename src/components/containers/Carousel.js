@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { connect } from "react-redux";
 
-import Frame from "../presentational/Frame";
+import PreviewFrame from "../presentational/PreviewFrame";
 
 class MultipleItems extends React.Component {
     render() {
@@ -16,13 +16,13 @@ class MultipleItems extends React.Component {
             variableWidth: true,
             initalSlide: 1
         };
-        console.log(this.props.setOfSquares);
+        
         return (
             <div className="carousel">
                 <Slider {...settings}>
-                    {this.props.setOfSquares.map((s, i) => (
+                    {this.props.listOfFrames.map((s, i) => (
                         <div key={i}>
-                            <Frame value={i} />
+                            <PreviewFrame value={i} />
                         </div>
                     ))}
                 </Slider>
@@ -32,7 +32,7 @@ class MultipleItems extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    setOfSquares: state.assignColor.setOfSquares
+    listOfFrames: state.reducer.listOfFrames
 });
 
 const ConnectedMultipleItem = connect(

@@ -2,13 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { mouseDown, mouseUp, assignColor } from "../../actions";
 
-import Square from "../presentational/Square";
+import Frame from "../presentational/Frame";
 
 class Board extends React.Component {
-    renderSquare(i) {
+    renderFrame(i) {
         const mapStateToProps = state => ({
-            background: state.assignColor.setOfSquares[state.assignColor.squares][i],
-            isMouseDown: state.assignColor.isMouseDown
+            background: state.reducer.listOfFrames[state.reducer.activeFrameIndex][i],
+            isMouseDown: state.reducer.isMouseDown
         });
 
         const mapDispatchToProps = {
@@ -17,19 +17,19 @@ class Board extends React.Component {
             assignColor
         };
 
-        const ConnectedSquare = connect(
+        const ConnectedFrame = connect(
             mapStateToProps,
             mapDispatchToProps
-        )(Square);
+        )(Frame);
 
-        return <ConnectedSquare index={i} />;
+        return <ConnectedFrame index={i} />;
     }
 
     render() {
         return (
             <div className="board">
                 {Array.from({ length: 64 }).map((s, i) => (
-                    <div key={i}>{this.renderSquare(i)}</div>
+                    <div key={i}>{this.renderFrame(i)}</div>
                 ))}
             </div>
         );
