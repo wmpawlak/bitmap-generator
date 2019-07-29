@@ -6,9 +6,14 @@ import { chooseFrame } from "../../actions";
 import PreviewFrame from "../presentational/PreviewFrame";
 
 class MultipleItems extends React.Component {
+    state = {
+        canvas: null
+    };
+
     renderPreviewFrame(i) {
         const mapStateToProps = state => ({
             activeFrame: state.reducer.activeFrameIndex,
+            activeFrameData: state.reducer.listOfFrames[i]
         });
 
         const mapDispatchToProps = {
@@ -20,13 +25,21 @@ class MultipleItems extends React.Component {
             mapDispatchToProps
         )(PreviewFrame);
 
-        return <ConnectedPreviewFrame index={i} />;
-    };
+        return <ConnectedPreviewFrame key={i} index={i} canvas={this.state.canvas} />;
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState(() => ({
+                canvas: document.querySelector("canvas")
+            }));
+        }, 0);
+    }
 
     render() {
         const settings = {
             focusOnSelect: true,
-            infinite: true,
+            infinite: false,
             centerPadding: "0px",
             slidesToShow: 5,
             slidesToScroll: 1,
@@ -39,9 +52,9 @@ class MultipleItems extends React.Component {
             <div className="carousel">
                 <Slider {...settings}>
                     {this.props.listOfFrames.map((s, i) => (
-                        <div key={i}>
-                            {this.renderPreviewFrame(i)}
-                        </div>
+                        
+                            this.renderPreviewFrame(i)
+                   
                     ))}
                 </Slider>
             </div>
@@ -50,10 +63,8 @@ class MultipleItems extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    listOfFrames: state.reducer.listOfFrames,
+    listOfFrames: state.reducer.listOfFrames
 });
-
-
 
 const ConnectedMultipleItem = connect(
     mapStateToProps,
