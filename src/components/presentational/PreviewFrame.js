@@ -17,23 +17,15 @@ const PreviewFrame = ({
     let background;
 
     if (canvas) {
-
         const context = canvas.getContext("2d");
 
-        const pixels = Uint8ClampedArray.from(activeFrameData.map(p => [...p, 100]).flat())
-
-        const imgData = new ImageData(
-            pixels,
-            8,
-            8
+        const pixels = Uint8ClampedArray.from(
+            activeFrameData.map(p => [...p, 100]).flat()
         );
 
-        context.putImageData(
-            imgData,
+        const imgData = new ImageData(pixels, 8, 8);
 
-            0,
-            0
-        );
+        context.putImageData(imgData, 0, 0);
 
         background = canvas.toDataURL();
     }
