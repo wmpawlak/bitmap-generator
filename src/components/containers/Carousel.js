@@ -1,10 +1,28 @@
 import React from "react";
 import Slider from "react-slick";
 import { connect } from "react-redux";
+import { chooseFrame } from "../../actions";
 
 import PreviewFrame from "../presentational/PreviewFrame";
 
 class MultipleItems extends React.Component {
+    renderPreviewFrame(i) {
+        const mapStateToProps = state => ({
+            activeFrame: state.reducer.activeFrameIndex,
+        });
+
+        const mapDispatchToProps = {
+            chooseFrame
+        };
+
+        const ConnectedPreviewFrame = connect(
+            mapStateToProps,
+            mapDispatchToProps
+        )(PreviewFrame);
+
+        return <ConnectedPreviewFrame index={i} />;
+    };
+
     render() {
         const settings = {
             focusOnSelect: true,
@@ -22,7 +40,7 @@ class MultipleItems extends React.Component {
                 <Slider {...settings}>
                     {this.props.listOfFrames.map((s, i) => (
                         <div key={i}>
-                            <PreviewFrame value={i} />
+                            {this.renderPreviewFrame(i)}
                         </div>
                     ))}
                 </Slider>
