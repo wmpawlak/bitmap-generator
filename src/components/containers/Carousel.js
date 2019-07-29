@@ -16,7 +16,7 @@ class MultipleItems extends React.Component {
             variableWidth: true,
             initalSlide: 1
         };
-        
+
         return (
             <div className="carousel">
                 <Slider {...settings}>
@@ -32,8 +32,10 @@ class MultipleItems extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    listOfFrames: state.reducer.listOfFrames
+    listOfFrames: state.reducer.listOfFrames,
 });
+
+
 
 const ConnectedMultipleItem = connect(
     mapStateToProps,

@@ -27,6 +27,11 @@ body {
     user-select: none;
 }
 
+.preview-frame{
+    width: 100px;
+    height: 100px;
+}
+
 .frame:hover {
     background-color: rgb(223, 223, 223);
     opacity:0.5;
