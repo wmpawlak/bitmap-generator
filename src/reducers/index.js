@@ -6,9 +6,10 @@ const emptyColor = [0, 0, 0];
 
 const initialFrame = Array(64).fill(emptyColor);
 
-const initialNumberOfFrames = 1;
+const initialNumberOfFrames = 3;
 
 export const defaultState = {
+    initialFrame: initialFrame,
     activeFrameIndex: 0,
     color: emptyColor,
     isMouseDown: false,

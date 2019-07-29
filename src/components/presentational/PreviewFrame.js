@@ -1,10 +1,15 @@
 import React from "react";
-//import ReactDOM from 'react-dom';
+import { connect } from "react-redux";
 
-const PreviewFrame = () => {
+import { chooseFrame } from "../../actions";
+
+const PreviewFrame = ({ chooseFrame }) => {
     return (
-        <div className="mini-frame" />
+        <div className="preview-frame" onClick={chooseFrame}></div>
     );
 };
 
-export default PreviewFrame;
+export default connect(
+    null,
+    { chooseFrame }
+)(PreviewFrame);

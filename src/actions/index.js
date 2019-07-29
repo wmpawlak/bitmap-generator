@@ -34,6 +34,7 @@ export const addAfter = activeFrameIndex => ({
     activeFrameIndex
 });
 
-// export const setActiveFrame = frameIndex => ({
-//     type: "SET_ACTIVE_FRAME"
-// });
+export const chooseFrame = activeFrameIndex => ({
+    type: "CHOOSE_FRAME",
+    activeFrameIndex
+});

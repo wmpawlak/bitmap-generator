@@ -50,21 +50,19 @@ const reducer = (state = defaultState, action) => {
     else if (action.type === "MOUSE_UP") {
         return { ...state, isMouseDown: false };
     }
-        
+
     else if (action.type === "CHOOSE_FRAME") {
-        return { ...state, activeFrameIndex: action.index };
-    }    
+        console.log('dziala');
+        return { ...state, activeFrameIndex: action.frameIndex };
+    }
 
     else if (action.type === "ADD_AFTER") {
-        const listOfFramesCopy = [...state.listOfFrames, defaultState.activeFrameIndex];
-        console.log('listOfFramesCopy', listOfFramesCopy);
-        console.log('state.listOfFrames', state.listOfFrames);
-        console.log('defaultState.activeFrameIndex', defaultState.activeFrameIndex);
-        
+        const listOfFramesCopy = [...state.listOfFrames, state.initialFrame];
+        const newActiveFrameIndex = listOfFramesCopy.length - 1;
         return {
             ...state,
             listOfFrames: listOfFramesCopy,
-            activeFrameIndex: listOfFramesCopy.length - 1
+            activeFrameIndex: newActiveFrameIndex
         };
     }
 
