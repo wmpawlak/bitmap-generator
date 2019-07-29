@@ -7,7 +7,8 @@ const Frame = ({
     isMouseDown,
     assignColor,
     mouseUp,
-    background
+    background,
+    b
 }) => {
     const handleMove = () => {
         if (isMouseDown) {
@@ -28,8 +29,7 @@ const Frame = ({
         <div
             className="frame"
             style={{
-                backgroundColor:
-                    `rgb(
+                backgroundColor: `rgb(
                     ${background[0]}, 
                     ${background[1]}, 
                     ${background[2]}

@@ -6,10 +6,22 @@ const reducer = (state = defaultState, action) => {
     if (action.type === "ASSIGN_COLOR") {
         const framesCopy = [...state.listOfFrames[state.activeFrameIndex]];
         framesCopy[action.index] = state.color;
+        // const convert = [...state.listOfFrames[state.activeFrameIndex]].map(i => [...i, 100]);
+        // const convertFlat = convert.flat();
+        // const cvs = document.getElementById("canvas");
+        // cvs.width = cvs.height = 8;
+        // const ctx = cvs.getContext("2d");
+        // const imgData = new ImageData(
+        //     Uint8ClampedArray.from(convertFlat),
+        //     8,
+        //     8
+        // );
+        // ctx.putImageData(imgData, 0, 0);
         const listOfFrames = [...state.listOfFrames];
         listOfFrames[state.activeFrameIndex] = framesCopy;
         return { ...state, listOfFrames };
     }
+
     else if (action.type === "RESET_BOARD") {
         const framesClean = state.listOfFrames[state.activeFrameIndex].map(() => [0, 0, 0]);
         const listOfFrames = [...state.listOfFrames];
@@ -29,17 +41,6 @@ const reducer = (state = defaultState, action) => {
             name: fileName
         });
         saveAs(fileToSave, fileName);
-        return { ...state };
-    }
-
-    else if (action.type === "RENDER_CANVAS") {
-        const convert = [...state.activeFrameIndex].map(i => [i, 100]);
-        const convertFlat = convert.flat(Infinity);
-        const cvs = document.getElementById("canvas");
-        cvs.width = cvs.height = 8;
-        const ctx = cvs.getContext("2d");
-        const imgData = new ImageData(Uint8ClampedArray.from(convertFlat), 8, 8);
-        ctx.putImageData(imgData, 0, 0);
         return { ...state };
     }
 

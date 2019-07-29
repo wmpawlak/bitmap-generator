@@ -159,7 +159,7 @@ div:focus {
 }
 
 .slick-current  {
-    border: 2px solid white;
+    border: 1px solid white;
     background: rgb(190, 190, 190);
  }
 
@@ -171,7 +171,18 @@ div:focus {
     right: -35px;
 }
 
+.preview-frame {
+    height: 8px;
+    width: 8px;
+    margin: 2px;
+    margin-top: 46px;
+    margin-left: 46px;
+    transform: scale(12);
+    border: 1px solid black;
+}
+
 #canvas {
+    display: none;
     height: 100px;
     width: 100px;
     border: 2px solid white;

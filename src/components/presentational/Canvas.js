@@ -1,17 +1,11 @@
 import React from "react";
-import { connect } from "react-redux";
 
-import { renderCanvas } from "../../actions";
-
-const Canvas = ({ renderCanvas }) => {
+const Canvas = () => {
     return (
-        <canvas id="canvas" onClick={renderCanvas}>
+        <canvas id="canvas">
             
         </canvas>
     );
 };
 
-export default connect(
-    null,
-    { renderCanvas }
-)(Canvas);
+export default Canvas;
