@@ -64,7 +64,6 @@ const reducer = (state = defaultState, action) => {
 
     else if (action.type === "CHOOSE_FRAME") {
         const newActiveFrameIndex = action.activeFrameIndex;
-        console.log(action.activeFrameIndex);
         return { ...state, activeFrameIndex: newActiveFrameIndex };
     }
 

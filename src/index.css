@@ -11,7 +11,7 @@ body {
 }
 
 .frame {
-    border-radius: 3px; 
+    border-radius: 3px;
     background: #fff;
     border: 1px solid #999;
     float: left;
@@ -27,12 +27,11 @@ body {
     user-select: none;
 }
 
-.frame:hover {
-    background-color: rgb(223, 223, 223);
-    opacity:0.5;
-}
+/* .frame:hover {
+    opacity: 0.5;
+} */
 
-.brd { 
+.brd {
     display: grid;
     grid-template-columns: 430px 220px;
     grid-template-rows: 430px;
@@ -45,20 +44,20 @@ body {
     padding-top: 17px;
 }
 
-#gridTwo { 
+#gridTwo {
     display: grid;
     grid-template-columns: 220px;
     grid-template-rows: 300px 1fr;
-    grid-template-areas: "gridThree" "gridFour";
+    grid-template-areas: "gridThree""gridFour";
     grid-area: gridTwo;
 }
 
-#gridThree { 
+#gridThree {
     grid-area: gridThree;
     margin-left: 10px;
 }
 
-#gridFour { 
+#gridFour {
     grid-area: gridFour;
     margin-top: 15px;
     margin-left: 10px;
@@ -66,7 +65,7 @@ body {
 
 .ui.segment:first-child {
     margin-top: 0;
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .small.ui.grey.button {
@@ -158,12 +157,12 @@ div:focus {
     margin: 10px;
 }
 
-.slick-current  {
+.slick-current {
     border: 1px solid white;
     background: rgb(190, 190, 190);
- }
+}
 
- .slick-prev {
+.slick-prev {
     left: -35px;
 }
 
@@ -211,17 +210,19 @@ div:focus {
         font-weight: bold;
         position: relative;
     }
-    
+
 
     .brd {
         display: grid;
         grid-template-columns: 430px;
         grid-template-rows: 430px 300px;
-        grid-template-areas: "gridOne" "gridTwo";
+        grid-template-areas: "gridOne""gridTwo";
     }
-      
-    #gridOne { grid-area: gridOne; }
-      
+
+    #gridOne {
+        grid-area: gridOne;
+    }
+
     #gridTwo {
         display: grid;
         grid-template-columns: 220px 220px;
@@ -229,14 +230,14 @@ div:focus {
         grid-template-areas: "gridThree gridFour";
         grid-area: gridTwo;
     }
-      
-    #gridThree { 
+
+    #gridThree {
         grid-area: gridThree;
         margin-left: 0;
         margin-top: 10px;
     }
-      
-    #gridFour { 
+
+    #gridFour {
         grid-area: gridFour;
         margin-top: 10px;
     }
@@ -267,5 +268,4 @@ div:focus {
         margin-left: 30px;
     }
 
-  }
-
+}
