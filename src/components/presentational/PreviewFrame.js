@@ -14,6 +14,16 @@ const PreviewFrame = ({
         chooseFrame(index);
     };
 
+    // const previewFrameDelete = () => {
+    //     console.log("delete")
+    // }
+    // const previewFrameDelete = (PreviewFrame, index) => {
+    //    console.log("delete")
+    //        let previewFrameList = [...this.state.listOfFrames]
+    //        previewFrameList.splice(index, 1);
+    //        this.setState({previewFrameList: previewFrameList})
+    //  }
+
     let background;
 
     if (canvas) {
@@ -44,9 +54,18 @@ const PreviewFrame = ({
             onClick={handleClick}
             style={{
                 background: "url(" + background + ")",
-                borderColor: activeFrameIndex === index ? "red" : "grey"
+                //borderColor: activeFrameIndex === index ? "black" : "grey",
+                boxShadow: activeFrameIndex === index ? "0px 0px 1px 1px white" : "0px 0px 1px rgb(140, 140, 140)"
             }}
-        />
+        >
+            <div className="preview-frame-delete" 
+                //onClick={(e)=>{
+                //previewFrameDelete(PreviewFrame, index);
+            //}}
+                //onClick={previewFrameDelete}
+                >&#x2612;
+            </div>
+        </div>
     );
 };
 

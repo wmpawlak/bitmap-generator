@@ -7,6 +7,11 @@ export const resetBoard = () => ({
     type: "RESET_BOARD",
 });
 
+export const deleteFrame = index => ({
+    type: "DELETE_FRAME",
+    index
+});
+
 export const downloadBoard = () => ({
     type: "DOWNLOAD_BOARD",
 });
