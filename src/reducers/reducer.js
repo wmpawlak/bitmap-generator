@@ -29,6 +29,17 @@ const reducer = (state = defaultState, action) => {
         return { ...state, listOfFrames };
     }
 
+    else if (action.type === "DELETE_FRAME") {
+        // const deleteFrame = state.listOfFrames.splice(state.activeFrameIndex, 1);
+        // const listOfFrames = [...state.listOfFrames];
+        // listOfFrames[state.activeFrameIndex] = listOfFrames - deleteFrame;
+        const listOfFrames = [...state.listOfFrames];
+        let deleteFrame = state.listOfFrames.slice();
+        deleteFrame.splice(action.activeFrameIndex - 1);
+        console.log(deleteFrame)
+        return { ...state, deleteFrame };
+    }
+
     else if (action.type === "CHOOSE_COLOR") {
         return { ...state, color: action.color };
     }

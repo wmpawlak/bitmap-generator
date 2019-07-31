@@ -38,11 +38,11 @@ class MultipleItems extends React.Component {
 
     render() {
         const settings = {
-            focusOnSelect: true,
+            focusOnSelect: false,
             infinite: false,
             centerPadding: "0px",
-            slidesToShow: 5,
             slidesToScroll: 1,
+            slidesToShow: 4,
             speed: 500,
             variableWidth: true,
             initalSlide: 1
