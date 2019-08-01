@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import DeleteButton from "../buttons/DeleteButton"
 import { chooseFrame } from "../../actions";
 
 const PreviewFrame = ({
@@ -13,16 +14,6 @@ const PreviewFrame = ({
     const handleClick = () => {
         chooseFrame(index);
     };
-
-    // const previewFrameDelete = () => {
-    //     console.log("delete")
-    // }
-    // const previewFrameDelete = (PreviewFrame, index) => {
-    //    console.log("delete")
-    //        let previewFrameList = [...this.state.listOfFrames]
-    //        previewFrameList.splice(index, 1);
-    //        this.setState({previewFrameList: previewFrameList})
-    //  }
 
     let background;
 
@@ -46,17 +37,11 @@ const PreviewFrame = ({
             onClick={handleClick}
             style={{
                 background: "url(" + background + ")",
-                //borderColor: activeFrameIndex === index ? "black" : "grey",
                 boxShadow: activeFrameIndex === index ? "0px 0px 1px 1px white" : "0px 0px 1px rgb(140, 140, 140)"
             }}
         >
-            <div className="preview-frame-delete" 
-                //onClick={(e)=>{
-                //previewFrameDelete(PreviewFrame, index);
-            //}}
-                //onClick={previewFrameDelete}
-                >&#x2612;
-            </div>
+            <DeleteButton />
+
         </div>
     );
 };

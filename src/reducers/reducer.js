@@ -16,11 +16,20 @@ const reducer = (state = defaultState, action) => {
         listOfFrames[state.activeFrameIndex] = framesClean;
         return { ...state, listOfFrames };
     } else if (action.type === "DELETE_FRAME") {
-        const listOfFrames = [
-            ...state.listOfFrames.slice(0, state.activeFrameIndex),
-            ...state.listOfFrames.slice(state.activeFrameIndex + 1)
-        ];
-        return { ...state, listOfFrames: listOfFrames };
+
+        if (state.activeFrameIndex === (state.listOfFrames.length - 1)) {
+            const listOfFrames = [
+                ...state.listOfFrames.slice(0, state.activeFrameIndex),
+                ...state.listOfFrames.slice(state.activeFrameIndex)
+            ];
+            return { ...state, listOfFrames: listOfFrames }; 
+        } else {
+            const listOfFrames = [
+                ...state.listOfFrames.slice(0, state.activeFrameIndex),
+                ...state.listOfFrames.slice(state.activeFrameIndex + 1)
+            ];
+            return { ...state, listOfFrames: listOfFrames }; 
+        }
 
     } else if (action.type === "CHOOSE_COLOR") {
         return { ...state, color: action.color };

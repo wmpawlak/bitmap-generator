@@ -5,9 +5,7 @@ import { deleteFrame } from "../../actions";
 
 const DeleteButton = ({ deleteFrame }) => {
     return (
-        <button className="small ui grey button" onClick={deleteFrame}>
-            DELETE
-        </button>
+        <div className="preview-frame-delete" onClick={deleteFrame}>&#x2612;</div>
     );
 };
 
