@@ -27,6 +27,10 @@ body {
     user-select: none;
 }
 
+/* .transparency {
+    background: radial-gradient(rgb(233, 233, 233), transparent);
+} */
+
 /* .frame:hover {
     opacity: 0.5;
 } */

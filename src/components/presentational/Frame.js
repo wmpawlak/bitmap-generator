@@ -27,19 +27,19 @@ const Frame = ({
     const handleMouseOver = event => {
         if (!isMouseDown) {
             const el = event.target;
-            let showColor = `rgb(${color[0]},${color[1]},${color[2]})`;
-            el.style.backgroundColor = `radialGradient(${showColor}, transparent)`;
-            console.log(el.style.backgroundColor);
+            let showColor = `radial-gradient(rgb(${color[0]},${color[1]},${color[2]}), rgb( ${background[0]}, ${background[1]}, ${background[2]}))`
+            //el.style.backgroundColor = `radialGradient(${showColor}, transparent)`;
+            el.classList.add("radial-gradient");
+            el.style.background = showColor;
+            //console.log(el.style.backgroundColor);
         }
     };
 
     const handleMouseLeave = event => {
         const el = event.target;
         let originalColor = `rgb(${background[0]}, ${background[1]}, ${background[2]})`
-        el.style.backgroundColor = originalColor;
+        el.style.background = originalColor;
     };
-
-
 
     return (
         <div
