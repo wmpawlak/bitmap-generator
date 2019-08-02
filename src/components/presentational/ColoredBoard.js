@@ -42,9 +42,7 @@ const ColoredBoard = ({ mouseUp }) => {
             </div>
             <DeleteButton />
             <Canvas />
-            <Modal>
-                TEXT
-            </Modal>
+            <Modal>TEXT</Modal>
         </div>
     );
 };

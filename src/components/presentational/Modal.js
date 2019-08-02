@@ -2,28 +2,36 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Board from "../containers/Board";
+import { modalSwitch } from "../../actions";
 
-class Modal extends React.Component {
-    renderAnimation = () => {
+const Modal = ({ isModalOn, modalSwitch }) => {
+    const renderAnimation = () => {
         return <Board />;
     };
 
-    render() {
-        return (
-            <div className="modal">
-                <div className="container">
-                    {/* {setInterval(this.renderAnimation(), 200)} */}
-                </div>
-            </div>
-        );
-    }
-}
+    const turnOffModal = () => {
+        modalSwitch();
+    };
 
-// const mapStateToProps = () => ({
-//     isModalOn
-// });
+    return isModalOn ? (
+        <div className="modal">
+            <div className="container">{renderAnimation}</div>
+            <div className="close-icon" onClick={turnOffModal}>
+                X
+            </div>
+        </div>
+    ) : null;
+};
+
+const mapStateToProps = state => ({
+    isModalOn: state.reducer.isModalOn
+});
+
+const mapDispatchToProps = {
+    modalSwitch: modalSwitch
+};
 
 export default connect(
-    null,
-    // mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(Modal);
