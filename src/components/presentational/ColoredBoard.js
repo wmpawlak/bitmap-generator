@@ -10,6 +10,7 @@ import { mouseUp } from "../../actions";
 import MultipleItems from "../containers/Carousel";
 import AddAfterButton from "../buttons/AddAfterButton";
 import DeleteButton from "../buttons/DeleteButton";
+import Modal from "./Modal";
 
 const ColoredBoard = ({ mouseUp }) => {
     return (
@@ -39,6 +40,9 @@ const ColoredBoard = ({ mouseUp }) => {
             </div>
             <DeleteButton />
             <Canvas />
+            {/* <Modal>
+                TEXT
+            </Modal> */}
         </div>
     );
 };
