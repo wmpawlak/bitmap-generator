@@ -1,6 +1,5 @@
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
     background: rgb(34, 34, 34);
 }
 
@@ -26,14 +25,6 @@ body {
     text-align: center;
     user-select: none;
 }
-
-/* .transparency {
-    background: radial-gradient(rgb(233, 233, 233), transparent);
-} */
-
-/* .frame:hover {
-    opacity: 0.5;
-} */
 
 .modal {
     width: 100%;
@@ -118,7 +109,7 @@ body {
     margin: 0;
     border-radius: 5px;
     width: 220px;
-    height: 125px;
+    height: 160px;
     margin-top: -10px;
 }
 

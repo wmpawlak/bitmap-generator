@@ -4,7 +4,7 @@ export const assignColor = index => ({
 });
 
 export const resetBoard = () => ({
-    type: "RESET_BOARD",
+    type: "RESET_BOARD"
 });
 
 export const deleteFrame = index => ({
@@ -13,7 +13,7 @@ export const deleteFrame = index => ({
 });
 
 export const downloadBoard = () => ({
-    type: "DOWNLOAD_BOARD",
+    type: "DOWNLOAD_BOARD"
 });
 
 export const chooseColor = ({ rgb }) => ({
@@ -42,4 +42,8 @@ export const addAfter = activeFrameIndex => ({
 export const chooseFrame = activeFrameIndex => ({
     type: "CHOOSE_FRAME",
     activeFrameIndex
+});
+
+export const modalSwitch = () => ({
+    type: "MODAL_SWITCH"
 });

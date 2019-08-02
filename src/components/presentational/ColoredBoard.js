@@ -10,6 +10,7 @@ import { mouseUp } from "../../actions";
 import MultipleItems from "../containers/Carousel";
 import AddAfterButton from "../buttons/AddAfterButton";
 import DeleteButton from "../buttons/DeleteButton";
+import ModalSwitch from "../buttons/ModalSwitch";
 import Modal from "./Modal";
 
 const ColoredBoard = ({ mouseUp }) => {
@@ -30,6 +31,7 @@ const ColoredBoard = ({ mouseUp }) => {
                                 <DownloadButton />
                                 <ResetButton />
                                 <AddAfterButton />
+                                <ModalSwitch />
                             </div>
                         </div>
                     </div>

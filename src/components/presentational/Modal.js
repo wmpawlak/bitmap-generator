@@ -1,17 +1,21 @@
 import React from "react";
 
-const Modal = props => {
+import Board from "../containers/Board";
 
+class Modal extends React.Component {
+    renderAnimation = () => {
+        return <Board />;
+    };
 
-    return (
-        props.hide ?
-            null :
-            <div className="modal" >
+    render() {
+        return (
+            <div className="modal">
                 <div className="container">
-                    {props.children}
+                    {/* {setInterval(this.renderAnimation(), 200)} */}
                 </div>
             </div>
-    );
+        );
+    }
 }
 
 export default Modal;
