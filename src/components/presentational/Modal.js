@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Board from "../containers/Board";
 
@@ -18,4 +19,11 @@ class Modal extends React.Component {
     }
 }
 
-export default Modal;
+// const mapStateToProps = () => ({
+//     isModalOn
+// });
+
+export default connect(
+    null,
+    // mapStateToProps
+)(Modal);
