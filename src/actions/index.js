@@ -29,14 +29,8 @@ export const mouseUp = () => ({
     type: "MOUSE_UP"
 });
 
-export const renderCanvas = activeFrameIndex => ({
-    type: "RENDER_CANVAS",
-    activeFrameIndex
-});
-
-export const addAfter = activeFrameIndex => ({
-    type: "ADD_AFTER",
-    activeFrameIndex
+export const addAfter = () => ({
+    type: "ADD_AFTER"
 });
 
 export const chooseFrame = activeFrameIndex => ({
