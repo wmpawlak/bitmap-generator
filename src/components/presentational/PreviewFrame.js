@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import DeleteButton from "../buttons/DeleteButton"
 import { chooseFrame } from "../../actions";
 
 const PreviewFrame = ({
@@ -8,21 +9,12 @@ const PreviewFrame = ({
     chooseFrame,
     canvas,
     activeFrameIndex,
-    activeFrameData
+    activeFrameData,
+    numberOfFrames
 }) => {
     const handleClick = () => {
         chooseFrame(index);
     };
-
-    // const previewFrameDelete = () => {
-    //     console.log("delete")
-    // }
-    // const previewFrameDelete = (PreviewFrame, index) => {
-    //    console.log("delete")
-    //        let previewFrameList = [...this.state.listOfFrames]
-    //        previewFrameList.splice(index, 1);
-    //        this.setState({previewFrameList: previewFrameList})
-    //  }
 
     let background;
 
@@ -35,8 +27,16 @@ const PreviewFrame = ({
 
         const imgData = new ImageData(pixels, 8, 8);
 
-        context.putImageData(imgData, 0, 0);
+        var scale = window.devicePixelRatio; 
+        canvas.width = 8 * 1;
+        canvas.height = 8 * 1;
 
+        context.scale(scale, scale);
+
+        context.imageSmoothingEnabled = false;
+
+        context.putImageData(imgData, 0, 0);
+        
         background = canvas.toDataURL();
     }
 
@@ -46,27 +46,22 @@ const PreviewFrame = ({
             onClick={handleClick}
             style={{
                 background: "url(" + background + ")",
-                //borderColor: activeFrameIndex === index ? "black" : "grey",
                 boxShadow: activeFrameIndex === index ? "0px 0px 1px 1px white" : "0px 0px 1px rgb(140, 140, 140)"
             }}
         >
-            <div className="preview-frame-delete" 
-                //onClick={(e)=>{
-                //previewFrameDelete(PreviewFrame, index);
-            //}}
-                //onClick={previewFrameDelete}
-                >&#x2612;
-            </div>
+            {numberOfFrames > 1 && <DeleteButton index={index} />}
+
         </div>
     );
 };
 
 const mapStateToProps = state => ({
-    activeFrameIndex: state.reducer.activeFrameIndex
+    activeFrameIndex: state.reducer.activeFrameIndex,
+    numberOfFrames: state.reducer.listOfFrames.length
 });
 
 const mapDispatchToProps = {
-    chooseFrame: chooseFrame
+    chooseFrame
 };
 
 export default connect(

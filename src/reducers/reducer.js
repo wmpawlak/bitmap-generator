@@ -16,11 +16,14 @@ const reducer = (state = defaultState, action) => {
         listOfFrames[state.activeFrameIndex] = framesClean;
         return { ...state, listOfFrames };
     } else if (action.type === "DELETE_FRAME") {
-        const listOfFrames = [
-            ...state.listOfFrames.slice(0, state.activeFrameIndex),
-            ...state.listOfFrames.slice(state.activeFrameIndex + 1)
-        ];
-        return { ...state, listOfFrames: listOfFrames };
+
+        let activeFrameIndex
+        if (state.listOfFrames.length -1 === action.index && action.index === state.activeFrameIndex) {
+            activeFrameIndex = 0
+        } else {
+            activeFrameIndex = state.activeFrameIndex
+        }
+        return { ...state, listOfFrames: state.listOfFrames.filter((_, i) => i!==action.index), activeFrameIndex};
 
     } else if (action.type === "CHOOSE_COLOR") {
         return { ...state, color: action.color };
@@ -39,15 +42,12 @@ const reducer = (state = defaultState, action) => {
         return { ...state, isMouseDown: false };
     } else if (action.type === "ADD_AFTER") {
         const listOfFramesCopy = [...state.listOfFrames, state.initialFrame];
-        const newActiveFrameIndex = listOfFramesCopy.length - 1;
         return {
             ...state,
             listOfFrames: listOfFramesCopy,
-            activeFrameIndex: newActiveFrameIndex
         };
     } else if (action.type === "CHOOSE_FRAME") {
-        const newActiveFrameIndex = action.activeFrameIndex;
-        return { ...state, activeFrameIndex: newActiveFrameIndex };
+        return { ...state, activeFrameIndex: action.activeFrameIndex };
     } else {
         return state;
     }

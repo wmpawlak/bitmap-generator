@@ -188,9 +188,8 @@ div:focus {
 
 .preview-frame-delete {
     float: right;
-    font-size: 2px;
-    margin-top: -1px;
-    color: white;
+    font-size: 3px;
+    color: #aaa8a8;
 }
 
 .preview-frame-delete:hover {

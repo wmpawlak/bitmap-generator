@@ -25,7 +25,7 @@ class MultipleItems extends React.Component {
             mapDispatchToProps
         )(PreviewFrame);
 
-        return <ConnectedPreviewFrame key={i} index={i} canvas={this.state.canvas} />;
+        return <ConnectedPreviewFrame key={new Date() + i} index={i} canvas={this.state.canvas} />;
     }
 
     componentDidMount() {
@@ -53,7 +53,7 @@ class MultipleItems extends React.Component {
                 <Slider {...settings}>
                     {this.props.listOfFrames.map((s, i) => (
                         
-                            this.renderPreviewFrame(i)
+                            <div key={i}>{this.renderPreviewFrame(i)}</div>
                    
                     ))}
                 </Slider>
