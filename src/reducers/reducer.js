@@ -8,6 +8,7 @@ const reducer = (state = defaultState, action) => {
         const listOfFrames = [...state.listOfFrames];
         listOfFrames[state.activeFrameIndex] = framesCopy;
         return { ...state, listOfFrames };
+
     } else if (action.type === "RESET_BOARD") {
         const framesClean = state.listOfFrames[state.activeFrameIndex].map(
             () => [0, 0, 0]
@@ -15,6 +16,7 @@ const reducer = (state = defaultState, action) => {
         const listOfFrames = [...state.listOfFrames];
         listOfFrames[state.activeFrameIndex] = framesClean;
         return { ...state, listOfFrames };
+
     } else if (action.type === "DELETE_FRAME") {
         const listOfFrames = [
             ...state.listOfFrames.slice(0, state.activeFrameIndex),
@@ -24,6 +26,7 @@ const reducer = (state = defaultState, action) => {
 
     } else if (action.type === "CHOOSE_COLOR") {
         return { ...state, color: action.color };
+
     } else if (action.type === "DOWNLOAD_BOARD") {
         const framesDownload = JSON.stringify(state.listOfFrames);
         const fileName = "file";
@@ -33,10 +36,13 @@ const reducer = (state = defaultState, action) => {
         });
         saveAs(fileToSave, fileName);
         return { ...state };
+
     } else if (action.type === "MOUSE_DOWN") {
         return { ...state, isMouseDown: true };
+
     } else if (action.type === "MOUSE_UP") {
         return { ...state, isMouseDown: false };
+
     } else if (action.type === "ADD_AFTER") {
         const listOfFramesCopy = [...state.listOfFrames, state.initialFrame];
         const newActiveFrameIndex = listOfFramesCopy.length - 1;
@@ -45,9 +51,11 @@ const reducer = (state = defaultState, action) => {
             listOfFrames: listOfFramesCopy,
             activeFrameIndex: newActiveFrameIndex
         };
+
     } else if (action.type === "CHOOSE_FRAME") {
         const newActiveFrameIndex = action.activeFrameIndex;
         return { ...state, activeFrameIndex: newActiveFrameIndex };
+        
     } else {
         return state;
     }
