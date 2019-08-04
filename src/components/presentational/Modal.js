@@ -4,8 +4,10 @@ import { connect } from "react-redux";
 import Board from "../containers/Board";
 import { modalSwitch } from "../../actions";
 
-const Modal = ({ isModalOn, modalSwitch }) => {
-    const renderAnimation = () => {
+const Modal = ({ isModalOn, modalSwitch, listOfFrames }) => {
+    console.log(listOfFrames[1]);
+    const renderAnimation = listOfFrames => {
+        
         return <Board />;
     };
 
@@ -15,16 +17,18 @@ const Modal = ({ isModalOn, modalSwitch }) => {
 
     return isModalOn ? (
         <div className="modal">
-            <div className="container">{renderAnimation}</div>
-            <div className="close-icon" onClick={turnOffModal}>
-                X
+            <div className="container">{renderAnimation}
+                <div onClick={turnOffModal}>
+                    <i className="close icon"/>
+                </div>
             </div>
         </div>
     ) : null;
 };
 
 const mapStateToProps = state => ({
-    isModalOn: state.reducer.isModalOn
+    isModalOn: state.reducer.isModalOn,
+    listOfFrames: state.reducer.listOfFrames
 });
 
 const mapDispatchToProps = {
