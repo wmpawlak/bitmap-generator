@@ -1,14 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import Board from "../containers/Board";
 import { modalSwitch } from "../../actions";
 
-const Modal = ({ isModalOn, modalSwitch, listOfFrames }) => {
-    console.log(listOfFrames[1]);
-    const renderAnimation = listOfFrames => {
-        
-        return <Board />;
+const Modal = ({ isModalOn, modalSwitch, background }) => {
+    //*************************************wrzucić style do odpowiedniego CSS @Mateusz!!!************************//
+    const renderAnimation = () => {
+        return (
+            <div className="board" style={{ width: "400px" }}>
+                {
+                    Array.from({ length: 64 }).map((s, i) => (<div className="frame" key={i} style={{ backgroundColor: `rgb(${background[0][i]})` }}></div>))
+                }
+            </div>
+        );
     };
 
     const turnOffModal = () => {
@@ -17,9 +21,10 @@ const Modal = ({ isModalOn, modalSwitch, listOfFrames }) => {
 
     return isModalOn ? (
         <div className="modal">
-            <div className="container">{renderAnimation}
+            <div className="container">
                 <div onClick={turnOffModal}>
-                    <i className="close icon"/>
+                    <i className="close icon" />
+                    {renderAnimation()}
                 </div>
             </div>
         </div>
@@ -28,7 +33,7 @@ const Modal = ({ isModalOn, modalSwitch, listOfFrames }) => {
 
 const mapStateToProps = state => ({
     isModalOn: state.reducer.isModalOn,
-    listOfFrames: state.reducer.listOfFrames
+    background: state.reducer.listOfFrames
 });
 
 const mapDispatchToProps = {
