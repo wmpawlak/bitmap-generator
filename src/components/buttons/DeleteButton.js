@@ -9,7 +9,7 @@ const DeleteButton = ({ deleteFrame, index }) => {
         e.stopPropagation();
     }
     return (
-        <div className="preview-frame-delete" onClick={handleClick}>&#9701;</div>
+        <i id="delButton" className="close icon" onClick={handleClick}></i>
     );
 };
 
