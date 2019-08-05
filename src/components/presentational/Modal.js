@@ -8,9 +8,13 @@ const Modal = ({ isModalOn, modalSwitch, background }) => {
     const renderAnimation = () => {
         return (
             <div className="board" style={{ width: "400px" }}>
-                {
-                    Array.from({ length: 64 }).map((s, i) => (<div className="frame" key={i} style={{ backgroundColor: `rgb(${background[0][i]})` }}></div>))
-                }
+                {Array.from({ length: 64 }).map((s, i) => (
+                    <div
+                        className="frame"
+                        key={i}
+                        style={{ backgroundColor: `rgb(${background[0][i]})` }}
+                    />
+                ))}
             </div>
         );
     };
