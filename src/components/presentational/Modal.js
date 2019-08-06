@@ -27,13 +27,25 @@ const Modal = ({
         );
     };
 
+    // const playAnimationHandler = () => {
+    //     let interval = setInterval(playAnimation, 300);
+    //     if (frameIndexAnimation === listOfFrames - 1) {
+    //         clearInterval(interval);
+    //         console.log(frameIndexAnimation)
+    //     }
+    // };
+
     const playAnimationHandler = () => {
-        let interval = setInterval(playAnimation, 300);
-        if (frameIndexAnimation === listOfFrames - 1) {
-            clearInterval(interval);
-            console.log(frameIndexAnimation)
-        }
+        setTimeout(playAnimation2, 500);
     };
+
+    function playAnimation2() {
+        // Tutaj jakaś logika.
+
+        if (frameIndexAnimation < listOfFrames) {
+            setTimeout(playAnimation, 500);
+        }
+    }
 
     return isModalOn ? (
         <div className="modal">
