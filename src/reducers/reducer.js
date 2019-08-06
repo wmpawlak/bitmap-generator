@@ -10,7 +10,7 @@ const reducer = (state = defaultState, action) => {
         return { ...state, listOfFrames };
 
     } else if (action.type === "RESET_BOARD") {
-        const framesClean = state.listOfFrames[state.activeFrameIndex].map( () => [0, 0, 0]);
+        const framesClean = state.listOfFrames[state.activeFrameIndex].map(() => [0, 0, 0]);
         const listOfFrames = [...state.listOfFrames];
         listOfFrames[state.activeFrameIndex] = framesClean;
         return { ...state, listOfFrames };
@@ -54,9 +54,13 @@ const reducer = (state = defaultState, action) => {
         const newActiveFrameIndex = action.activeFrameIndex;
         return { ...state, activeFrameIndex: newActiveFrameIndex };
 
-    } else if (action.type === "MODAL_SWITCH"){
-        return {...state, isModalOn: !state.isModalOn};
-        
+    } else if (action.type === "MODAL_SWITCH") {
+        return { ...state, isModalOn: !state.isModalOn };
+
+    } else if (action.type === "PLAY_ANIMATION") {
+        const newframeIndexAnimation = state.frameIndexAnimation + 1;
+        return { ...state, frameIndexAnimation: newframeIndexAnimation };
+
     } else {
         return state;
     }

@@ -47,3 +47,7 @@ export const chooseFrame = activeFrameIndex => ({
 export const modalSwitch = () => ({
     type: "MODAL_SWITCH"
 });
+
+export const playAnimation = () => ({
+  type: "PLAY_ANIMATION"
+});

@@ -14,7 +14,8 @@ export const defaultState = {
     color: emptyColor,
     isMouseDown: false,
     listOfFrames: Array.from({ length: initialNumberOfFrames }).fill(initialFrame),
-    isModalOn: false
+    isModalOn: false,
+    frameIndexAnimation: 0
 };
 
 const rootReducer = combineReducers({

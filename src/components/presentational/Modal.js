@@ -1,9 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { modalSwitch } from "../../actions";
+import { modalSwitch, playAnimation } from "../../actions";
 
-const Modal = ({ isModalOn, modalSwitch, background }) => {
+const Modal = ({
+    isModalOn,
+    modalSwitch,
+    background,
+    frameIndexAnimation,
+    playAnimation,
+    listOfFrames
+}) => {
+
     //*************************************wrzucić style do odpowiedniego CSS @Mateusz!!!************************//
     const renderAnimation = () => {
         return (
@@ -12,24 +20,27 @@ const Modal = ({ isModalOn, modalSwitch, background }) => {
                     <div
                         className="frame"
                         key={i}
-                        style={{ backgroundColor: `rgb(${background[0][i]})` }}
+                        style={{ backgroundColor: `rgb(${background[frameIndexAnimation][i]})` }}
                     />
                 ))}
             </div>
         );
     };
 
-    const turnOffModal = () => {
-        modalSwitch();
+    const playAnimationHandler = () => {
+        const interval = setInterval(playAnimation, 500);
+        frameIndexAnimation === listOfFrames ? clearInterval(interval) : clearInterval()
+        
     };
 
     return isModalOn ? (
         <div className="modal">
             <div className="container">
-                <div onClick={turnOffModal}>
-                    <i className="close icon" />
-                    {renderAnimation()}
-                </div>
+                <i className="close icon" onClick={modalSwitch} />
+                {renderAnimation()}
+                <i className="stop icon" />
+                <i className="play icon" onClick={playAnimationHandler} />
+                <i className="pause icon" />
             </div>
         </div>
     ) : null;
@@ -37,11 +48,14 @@ const Modal = ({ isModalOn, modalSwitch, background }) => {
 
 const mapStateToProps = state => ({
     isModalOn: state.reducer.isModalOn,
-    background: state.reducer.listOfFrames
+    background: state.reducer.listOfFrames,
+    frameIndexAnimation: state.reducer.frameIndexAnimation,
+    listOfFrames: state.reducer.listOfFrames
 });
 
 const mapDispatchToProps = {
-    modalSwitch: modalSwitch
+    modalSwitch: modalSwitch,
+    playAnimation: playAnimation
 };
 
 export default connect(
