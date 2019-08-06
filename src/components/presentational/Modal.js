@@ -28,9 +28,11 @@ const Modal = ({
     };
 
     const playAnimationHandler = () => {
-        const interval = setInterval(playAnimation, 500);
-        frameIndexAnimation === listOfFrames ? clearInterval(interval) : clearInterval()
-        
+        let interval = setInterval(playAnimation, 300);
+        if (frameIndexAnimation === listOfFrames - 1) {
+            clearInterval(interval);
+            console.log(frameIndexAnimation)
+        }
     };
 
     return isModalOn ? (
@@ -50,7 +52,7 @@ const mapStateToProps = state => ({
     isModalOn: state.reducer.isModalOn,
     background: state.reducer.listOfFrames,
     frameIndexAnimation: state.reducer.frameIndexAnimation,
-    listOfFrames: state.reducer.listOfFrames
+    listOfFrames: state.reducer.listOfFrames.length
 });
 
 const mapDispatchToProps = {

@@ -55,12 +55,13 @@ const reducer = (state = defaultState, action) => {
         return { ...state, activeFrameIndex: newActiveFrameIndex };
 
     } else if (action.type === "MODAL_SWITCH") {
-        return { ...state, isModalOn: !state.isModalOn };
+        return { ...state, isModalOn: !state.isModalOn, frameIndexAnimation: 0 };
 
     } else if (action.type === "PLAY_ANIMATION") {
-        const newframeIndexAnimation = state.frameIndexAnimation + 1;
-        return { ...state, frameIndexAnimation: newframeIndexAnimation };
-
+        const newframeIndexAnimation = state.frameIndexAnimation;
+        if (state.frameIndexAnimation < state.listOfFrames.length - 1) {
+            return { ...state, frameIndexAnimation: newframeIndexAnimation + 1 };
+        } return { ...state }
     } else {
         return state;
     }
