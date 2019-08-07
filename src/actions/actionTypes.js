@@ -1,0 +1,9 @@
+export const ASSIGN_COLOR = "ASSIGN_COLOR";
+export const RESET_BOARD = "RESET_BOARD";
+export const DELETE_FRAME = "DELETE_FRAME";
+export const DOWNLOAD_BOARD = "DOWNLOAD_BOARD";
+export const CHOOSE_COLOR = "CHOOSE_COLOR";
+export const MOUSE_DOWN = "MOUSE_DOWN";
+export const MOUSE_UP = "MOUSE_UP";
+export const ADD_AFTER = "ADD_AFTER";
+export const CHOOSE_FRAME = "CHOOSE_FRAME";
