@@ -16,7 +16,7 @@ export const defaultState = {
     color: emptyColor,
     isMouseDown: false,
     listOfFrames: Array.from({ length: initialNumberOfFrames }).fill(initialFrame),
-    numberOfPixels: initialNumberOfPixels
+    numberOfPixels: initialNumberOfPixels,
     isModalOn: false,
     frameIndexAnimation: 0
 };
