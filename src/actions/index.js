@@ -7,7 +7,11 @@ import {
     MOUSE_DOWN,
     MOUSE_UP,
     ADD_AFTER,
-    CHOOSE_FRAME
+    CHOOSE_FRAME,
+    MODAL_SWITCH,
+    PLAY_ANIMATION,
+    PAUSE_ANIMATION,
+    STOP_ANIMATION
 } from "./actionTypes";
 
 export const assignColor = index => ({
@@ -51,17 +55,17 @@ export const chooseFrame = activeFrameIndex => ({
 });
 
 export const modalSwitch = () => ({
-    type: "MODAL_SWITCH"
+    type: MODAL_SWITCH
 });
 
 export const playAnimation = () => ({
-  type: "PLAY_ANIMATION"
+    type: PLAY_ANIMATION
 });
 
 export const pauseAnimation = () => ({
-  type: "PAUSE_ANIMATION"
+    type: PAUSE_ANIMATION
 });
 
 export const stopAnimation = () => ({
-  type: "STOP_ANIMATION"
+    type: STOP_ANIMATION
 });

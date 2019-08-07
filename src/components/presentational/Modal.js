@@ -48,17 +48,22 @@ const Modal = ({
         }
     }
 
-     const pauseAnimationHandler = () => {
-         clearInterval(interval);
-         pauseAnimation();
-     };
+    const pauseAnimationHandler = () => {
+        clearInterval(interval);
+        pauseAnimation();
+    };
+
+    const stopAnimationHandler = () => {
+        clearInterval(interval);
+        stopAnimation();
+    };
 
     return isModalOn ? (
         <div className="modal">
             <div className="container">
                 <i className="close icon" onClick={modalSwitch} />
                 {renderAnimation()}
-                <i className="stop icon" onClick={stopAnimation} />
+                <i className="stop icon" onClick={stopAnimationHandler} />
                 <i className="play icon" onClick={playAnimationHandler} />
                 <i className="pause icon" onClick={pauseAnimationHandler} />
             </div>
