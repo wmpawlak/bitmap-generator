@@ -9,6 +9,7 @@ import DownloadButton from "../buttons/DownloadButton";
 import { mouseUp } from "../../actions";
 import MultipleItems from "../containers/Carousel";
 import AddAfterButton from "../buttons/AddAfterButton";
+import ChangeSize from "../buttons/ChangeSize";
 
 const ColoredBoard = ({ mouseUp }) => {
     return (
@@ -37,6 +38,7 @@ const ColoredBoard = ({ mouseUp }) => {
                 <MultipleItems />
             </div>
             <Canvas />
+            <ChangeSize />
         </div>
     );
 };

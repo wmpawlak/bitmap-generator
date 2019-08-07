@@ -37,3 +37,9 @@ export const chooseFrame = activeFrameIndex => ({
     type: "CHOOSE_FRAME",
     activeFrameIndex
 });
+
+export const changeSize = index => ({
+    type: "CHANGE_SIZE",
+    index
+});
+

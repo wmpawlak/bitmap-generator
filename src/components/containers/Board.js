@@ -5,6 +5,10 @@ import { mouseDown, mouseUp, assignColor } from "../../actions";
 import Frame from "../presentational/Frame";
 
 class Board extends React.Component {
+    state = {
+        frameAmount: 16
+    };
+
     renderFrame(i) {
         const mapStateToProps = state => ({
             background: state.reducer.listOfFrames[state.reducer.activeFrameIndex][i],
@@ -31,7 +35,7 @@ class Board extends React.Component {
     render() {
         return (
             <div className="board">
-                {Array.from({ length: 64 }).map((s, i) => (
+                {Array.from({ length: this.state.frameAmount }).map((s, i) => (
                     <div key={i}>{this.renderFrame(i)}</div>
                 ))}
             </div>

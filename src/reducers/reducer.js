@@ -16,7 +16,6 @@ const reducer = (state = defaultState, action) => {
         listOfFrames[state.activeFrameIndex] = framesClean;
         return { ...state, listOfFrames };
     } else if (action.type === "DELETE_FRAME") {
-
         let activeFrameIndex
         if (state.listOfFrames.length -1 === action.index && action.index === state.activeFrameIndex) {
             activeFrameIndex = 0
@@ -24,7 +23,6 @@ const reducer = (state = defaultState, action) => {
             activeFrameIndex = state.activeFrameIndex
         }
         return { ...state, listOfFrames: state.listOfFrames.filter((_, i) => i!==action.index), activeFrameIndex};
-
     } else if (action.type === "CHOOSE_COLOR") {
         return { ...state, color: action.color };
     } else if (action.type === "DOWNLOAD_BOARD") {
@@ -35,7 +33,7 @@ const reducer = (state = defaultState, action) => {
             name: fileName
         });
         saveAs(fileToSave, fileName);
-        return { ...state };
+        
     } else if (action.type === "MOUSE_DOWN") {
         return { ...state, isMouseDown: true };
     } else if (action.type === "MOUSE_UP") {
@@ -48,6 +46,11 @@ const reducer = (state = defaultState, action) => {
         };
     } else if (action.type === "CHOOSE_FRAME") {
         return { ...state, activeFrameIndex: action.activeFrameIndex };
+    } else if (action.type === "CHANGE_SIZE") {
+
+        const listOfFramesNew = [...state.listOfFrames].fill(Array(16).fill([255,0,0]));
+        console.log(listOfFramesNew)
+        return { ...state, listOfFrames: listOfFramesNew };
     } else {
         return state;
     }
