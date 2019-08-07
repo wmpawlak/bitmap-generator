@@ -13,6 +13,7 @@ import DeleteButton from "../buttons/DeleteButton";
 import ModalSwitch from "../buttons/ModalSwitch";
 import Modal from "./Modal";
 
+
 const ColoredBoard = ({ mouseUp }) => {
     return (
         <div>
@@ -40,7 +41,6 @@ const ColoredBoard = ({ mouseUp }) => {
             <div>
                 <MultipleItems />
             </div>
-            <DeleteButton />
             <Canvas />
             <Modal>TEXT</Modal>
         </div>

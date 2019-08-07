@@ -10,7 +10,9 @@ class Board extends React.Component {
             background: state.reducer.listOfFrames[state.reducer.activeFrameIndex][i],
             isMouseDown: state.reducer.isMouseDown,
             color: state.reducer.color
-        });
+        })
+
+        ;
 
         const mapDispatchToProps = {
             mouseDown,

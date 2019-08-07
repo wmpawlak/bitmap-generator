@@ -3,11 +3,13 @@ import { connect } from "react-redux";
 
 import { deleteFrame } from "../../actions";
 
-const DeleteButton = ({ deleteFrame }) => {
+const DeleteButton = ({ deleteFrame, index }) => {
+    const handleClick=(e)=> {
+        deleteFrame(index);
+        e.stopPropagation();
+    }
     return (
-        <button className="small ui grey button" onClick={deleteFrame}>
-            DELETE
-        </button>
+        <i id="delButton" className="close icon" onClick={handleClick}></i>
     );
 };
 
