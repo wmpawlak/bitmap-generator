@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { modalSwitch, playAnimation } from "../../actions";
+import { modalSwitch, playAnimation, pauseAnimation, stopAnimation } from "../../actions";
 
 const Modal = ({
     isModalOn,
@@ -9,6 +9,8 @@ const Modal = ({
     background,
     frameIndexAnimation,
     playAnimation,
+    pauseAnimation,
+    stopAnimation,
     listOfFrames
 }) => {
     //*************************************wrzucić style do odpowiedniego CSS @Mateusz!!!************************//
@@ -42,14 +44,22 @@ const Modal = ({
         // }
     };
 
+    const stopAnimationHandler = () => {
+        stopAnimation();
+    };
+
+    const pauseAnimationHandler = () => {
+        pauseAnimation();
+    };
+
     return isModalOn ? (
         <div className="modal">
             <div className="container">
                 <i className="close icon" onClick={modalSwitch} />
                 {renderAnimation()}
-                <i className="stop icon" />
+                <i className="stop icon" onClick={stopAnimationHandler} />
                 <i className="play icon" onClick={playAnimationHandler} />
-                <i className="pause icon" />
+                <i className="pause icon" onClick={pauseAnimationHandler} />
             </div>
         </div>
     ) : null;
@@ -64,7 +74,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
     modalSwitch: modalSwitch,
-    playAnimation: playAnimation
+    playAnimation: playAnimation,
+    pauseAnimation: pauseAnimation,
+    stopAnimation: stopAnimation
 };
 
 export default connect(

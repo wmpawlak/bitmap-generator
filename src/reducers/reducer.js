@@ -63,6 +63,13 @@ const reducer = (state = defaultState, action) => {
             return { ...state, frameIndexAnimation: newframeIndexAnimation + 1 };
         } return{...state};
 
+    } else if (action.type === "STOP_ANIMATION") {
+        return { ...state, frameIndexAnimation: 0 };
+
+    } else if (action.type === "PAUSE_ANIMATION") {
+        const newframeIndexAnimation = state.frameIndexAnimation;
+        return { ...state, frameIndexAnimation: newframeIndexAnimation};
+
     } else {
         return state;
     }
