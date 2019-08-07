@@ -61,7 +61,8 @@ const reducer = (state = defaultState, action) => {
         const newframeIndexAnimation = state.frameIndexAnimation;
         if (state.frameIndexAnimation < state.listOfFrames.length - 1) {
             return { ...state, frameIndexAnimation: newframeIndexAnimation + 1 };
-        } return { ...state }
+        } return{...state};
+
     } else {
         return state;
     }

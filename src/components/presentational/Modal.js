@@ -11,7 +11,6 @@ const Modal = ({
     playAnimation,
     listOfFrames
 }) => {
-
     //*************************************wrzucić style do odpowiedniego CSS @Mateusz!!!************************//
     const renderAnimation = () => {
         return (
@@ -20,32 +19,28 @@ const Modal = ({
                     <div
                         className="frame"
                         key={i}
-                        style={{ backgroundColor: `rgb(${background[frameIndexAnimation][i]})` }}
+                        style={{
+                            backgroundColor: `rgb(${
+                                background[frameIndexAnimation][i]
+                            })`
+                        }}
                     />
                 ))}
             </div>
         );
     };
 
-    // const playAnimationHandler = () => {
-    //     let interval = setInterval(playAnimation, 300);
-    //     if (frameIndexAnimation === listOfFrames - 1) {
-    //         clearInterval(interval);
-    //         console.log(frameIndexAnimation)
-    //     }
-    // };
-
+    //jak zrobić, żeby przestało wywoływać w kółko playAnimation - jak zatrzymać setInterval?**********************************//
+    
     const playAnimationHandler = () => {
-        setTimeout(playAnimation2, 500);
+        let interval = setInterval(playAnimation, 300);
+        console.log(frameIndexAnimation);
+        console.log(listOfFrames);
+        // if (frameIndexAnimation === listOfFrames) {
+        //     clearInterval(interval);
+        //     console.log(frameIndexAnimation);
+        // }
     };
-
-    function playAnimation2() {
-        // Tutaj jakaś logika.
-
-        if (frameIndexAnimation < listOfFrames) {
-            setTimeout(playAnimation, 500);
-        }
-    }
 
     return isModalOn ? (
         <div className="modal">
