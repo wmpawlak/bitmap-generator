@@ -59,9 +59,8 @@ const reducer = (state = defaultState, action) => {
 
     } else if (action.type === "PLAY_ANIMATION") {
         const newframeIndexAnimation = state.frameIndexAnimation;
-        if (state.frameIndexAnimation < state.listOfFrames.length - 1) {
-            return { ...state, frameIndexAnimation: newframeIndexAnimation + 1 };
-        } return{...state};
+        return { ...state, frameIndexAnimation: newframeIndexAnimation + 1 };
+
 
     } else if (action.type === "STOP_ANIMATION") {
         return { ...state, frameIndexAnimation: 0 };

@@ -1,7 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { modalSwitch, playAnimation, pauseAnimation, stopAnimation } from "../../actions";
+import {
+    modalSwitch,
+    playAnimation,
+    pauseAnimation,
+    stopAnimation
+} from "../../actions";
+
+let interval;
 
 const Modal = ({
     isModalOn,
@@ -11,20 +18,19 @@ const Modal = ({
     playAnimation,
     pauseAnimation,
     stopAnimation,
-    listOfFrames
+    numberOfFrames
 }) => {
     //*************************************wrzucić style do odpowiedniego CSS @Mateusz!!!************************//
     const renderAnimation = () => {
+        const frame = background[frameIndexAnimation];
         return (
             <div className="board" style={{ width: "400px" }}>
-                {Array.from({ length: 64 }).map((s, i) => (
+                {frame.map((pixel, i) => (
                     <div
                         className="frame"
                         key={i}
                         style={{
-                            backgroundColor: `rgb(${
-                                background[frameIndexAnimation][i]
-                            })`
+                            backgroundColor: `rgb(${pixel})`
                         }}
                     />
                 ))}
@@ -32,32 +38,27 @@ const Modal = ({
         );
     };
 
-    //jak zrobić, żeby przestało wywoływać w kółko playAnimation - jak zatrzymać setInterval?**********************************//
-    
     const playAnimationHandler = () => {
-        let interval = setInterval(playAnimation, 300);
-        console.log(frameIndexAnimation);
-        console.log(listOfFrames);
-        // if (frameIndexAnimation === listOfFrames) {
-        //     clearInterval(interval);
-        //     console.log(frameIndexAnimation);
-        // }
+        interval = setInterval(playAnimation, 1000);
     };
 
-    const stopAnimationHandler = () => {
-        stopAnimation();
-    };
+    if (interval) {
+        if (frameIndexAnimation === numberOfFrames - 1) {
+            clearInterval(interval);
+        }
+    }
 
-    const pauseAnimationHandler = () => {
-        pauseAnimation();
-    };
+     const pauseAnimationHandler = () => {
+         clearInterval(interval);
+         pauseAnimation();
+     };
 
     return isModalOn ? (
         <div className="modal">
             <div className="container">
                 <i className="close icon" onClick={modalSwitch} />
                 {renderAnimation()}
-                <i className="stop icon" onClick={stopAnimationHandler} />
+                <i className="stop icon" onClick={stopAnimation} />
                 <i className="play icon" onClick={playAnimationHandler} />
                 <i className="pause icon" onClick={pauseAnimationHandler} />
             </div>
@@ -69,7 +70,7 @@ const mapStateToProps = state => ({
     isModalOn: state.reducer.isModalOn,
     background: state.reducer.listOfFrames,
     frameIndexAnimation: state.reducer.frameIndexAnimation,
-    listOfFrames: state.reducer.listOfFrames.length
+    numberOfFrames: state.reducer.listOfFrames.length
 });
 
 const mapDispatchToProps = {
