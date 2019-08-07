@@ -46,11 +46,12 @@ const reducer = (state = defaultState, action) => {
         };
     } else if (action.type === "CHOOSE_FRAME") {
         return { ...state, activeFrameIndex: action.activeFrameIndex };
-    } else if (action.type === "CHANGE_SIZE") {
 
+    } else if (action.type === "CHANGE_SIZE") {
         const listOfFramesNew = [...state.listOfFrames].fill(Array(16).fill([255,0,0]));
-        console.log(listOfFramesNew)
-        return { ...state, listOfFrames: listOfFramesNew };
+        const newNumberOfPixels = 16;
+        return { ...state, listOfFrames: listOfFramesNew, numberOfPixels: newNumberOfPixels };
+
     } else {
         return state;
     }
