@@ -16,17 +16,17 @@ const reducer = (state = defaultState, action) => {
         const listOfFrames = [...state.listOfFrames];
         listOfFrames[state.activeFrameIndex] = framesClean;
         return { ...state, listOfFrames };
-      
+
     } else if (action.type === "DELETE_FRAME") {
         let activeFrameIndex
-        if (state.listOfFrames.length -1 === action.index && action.index === state.activeFrameIndex) {
+        if (state.listOfFrames.length - 1 === action.index && action.index === state.activeFrameIndex) {
             activeFrameIndex = 0
         } else {
             activeFrameIndex = state.activeFrameIndex;
         }
 
-        return { ...state, listOfFrames: state.listOfFrames.filter((_, i) => i!==action.index), activeFrameIndex};
-      
+        return { ...state, listOfFrames: state.listOfFrames.filter((_, i) => i !== action.index), activeFrameIndex };
+
     } else if (action.type === "CHOOSE_COLOR") {
         return { ...state, color: action.color };
 
@@ -39,7 +39,7 @@ const reducer = (state = defaultState, action) => {
         });
         saveAs(fileToSave, fileName);
         return { ...state };
-      
+
     } else if (action.type === "MOUSE_DOWN") {
         return { ...state, isMouseDown: true };
 
@@ -58,12 +58,9 @@ const reducer = (state = defaultState, action) => {
         return { ...state, activeFrameIndex: action.activeFrameIndex };
 
     } else if (action.type === "CHANGE_SIZE") {
-        const listOfFramesNew = [...state.listOfFrames].fill(Array(16).fill([0,0,0]));
+        const listOfFramesNew = [...state.listOfFrames].fill(Array(16).fill([0, 0, 0]));
         const newNumberOfPixels = 16;
         return { ...state, listOfFrames: listOfFramesNew, numberOfPixels: newNumberOfPixels };
-
-        const newActiveFrameIndex = action.activeFrameIndex;
-        return { ...state, activeFrameIndex: newActiveFrameIndex };
 
     } else if (action.type === "MODAL_SWITCH") {
         return {
@@ -82,7 +79,7 @@ const reducer = (state = defaultState, action) => {
     } else if (action.type === "PAUSE_ANIMATION") {
         const newframeIndexAnimation = state.frameIndexAnimation;
         return { ...state, frameIndexAnimation: newframeIndexAnimation };
-        
+
     } else {
         return state;
     }
