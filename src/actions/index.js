@@ -11,7 +11,8 @@ import {
     MODAL_SWITCH,
     PLAY_ANIMATION,
     PAUSE_ANIMATION,
-    STOP_ANIMATION
+    STOP_ANIMATION,
+    CHANGE_SIZE
 } from "./actionTypes";
 
 export const assignColor = index => ({
@@ -54,6 +55,11 @@ export const chooseFrame = activeFrameIndex => ({
     activeFrameIndex
 });
 
+export const changeSize = index => ({
+    type: CHANGE_SIZE,
+    index
+});
+
 export const modalSwitch = () => ({
     type: MODAL_SWITCH
 });
@@ -69,3 +75,4 @@ export const pauseAnimation = () => ({
 export const stopAnimation = () => ({
     type: STOP_ANIMATION
 });
+

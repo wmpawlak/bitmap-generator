@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { mouseDown, mouseUp, assignColor } from "../../actions";
 
 const Frame = ({
     index,
@@ -54,5 +56,21 @@ const Frame = ({
     );
 };
 
-export default Frame;
+const mapStateToProps = (state, ownProps) => ({
+    background: state.reducer.listOfFrames[state.reducer.activeFrameIndex][ownProps.index],
+    isMouseDown: state.reducer.isMouseDown,
+    color: state.reducer.color,
+    numberOfPixels: state.reducer.numberOfPixels
+});
+
+const mapDispatchToProps = {
+    mouseDown,
+    mouseUp,
+    assignColor
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Frame);
 

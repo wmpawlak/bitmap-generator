@@ -9,6 +9,7 @@ import DownloadButton from "../buttons/DownloadButton";
 import { mouseUp } from "../../actions";
 import MultipleItems from "../containers/Carousel";
 import AddAfterButton from "../buttons/AddAfterButton";
+import ChangeSize from "../buttons/ChangeSize";
 import ModalSwitch from "../buttons/ModalSwitch";
 import Modal from "./Modal";
 
@@ -40,6 +41,7 @@ const ColoredBoard = ({ mouseUp }) => {
                 <MultipleItems />
             </div>
             <Canvas />
+            <ChangeSize />
             <Modal>TEXT</Modal>
         </div>
     );
