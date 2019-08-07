@@ -4,7 +4,9 @@ import reducer from "./reducer";
 
 const emptyColor = [0, 0, 0];
 
-const initialFrame = Array(64).fill(emptyColor);
+const initialNumberOfPixels = 64;
+
+const initialFrame = Array(initialNumberOfPixels).fill(emptyColor);
 
 const initialNumberOfFrames = 1;
 
@@ -13,9 +15,8 @@ export const defaultState = {
     activeFrameIndex: 0,
     color: emptyColor,
     isMouseDown: false,
-    listOfFrames: Array.from({ length: initialNumberOfFrames }).fill(
-        initialFrame
-    )
+    listOfFrames: Array.from({ length: initialNumberOfFrames }).fill(initialFrame),
+    numberOfPixels: initialNumberOfPixels
 };
 
 const rootReducer = combineReducers({
