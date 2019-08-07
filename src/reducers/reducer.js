@@ -48,7 +48,7 @@ const reducer = (state = defaultState, action) => {
         return { ...state, activeFrameIndex: action.activeFrameIndex };
 
     } else if (action.type === "CHANGE_SIZE") {
-        const listOfFramesNew = [...state.listOfFrames].fill(Array(16).fill([255,0,0]));
+        const listOfFramesNew = [...state.listOfFrames].fill(Array(16).fill([0,0,0]));
         const newNumberOfPixels = 16;
         return { ...state, listOfFrames: listOfFramesNew, numberOfPixels: newNumberOfPixels };
 

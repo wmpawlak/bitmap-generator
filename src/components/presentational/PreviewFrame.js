@@ -10,7 +10,8 @@ const PreviewFrame = ({
     canvas,
     activeFrameIndex,
     activeFrameData,
-    numberOfFrames
+    numberOfFrames,
+    numberOfPixels
 }) => {
     const handleClick = () => {
         chooseFrame(index);
@@ -25,11 +26,13 @@ const PreviewFrame = ({
             activeFrameData.map(p => [...p, 100]).flat()
         );
 
-        const imgData = new ImageData(pixels, 8, 8);
+        const size =  Math.sqrt(numberOfPixels)
+
+        const imgData = new ImageData(pixels, size, size);
 
         var scale = window.devicePixelRatio; 
-        canvas.width = 8 * 1;
-        canvas.height = 8 * 1;
+        canvas.width = size * 1;
+        canvas.height = size * 1;
 
         context.scale(scale, scale);
 
@@ -57,7 +60,8 @@ const PreviewFrame = ({
 
 const mapStateToProps = state => ({
     activeFrameIndex: state.reducer.activeFrameIndex,
-    numberOfFrames: state.reducer.listOfFrames.length
+    numberOfFrames: state.reducer.listOfFrames.length,
+    numberOfPixels: state.reducer.numberOfPixels
 });
 
 const mapDispatchToProps = {
