@@ -50,7 +50,6 @@ const PreviewFrame = ({
             }}
         >
             {numberOfFrames > 1 && <DeleteButton index={index} />}
-
         </div>
     );
 };

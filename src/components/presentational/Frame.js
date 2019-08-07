@@ -28,10 +28,8 @@ const Frame = ({
         if (!isMouseDown) {
             const el = event.target;
             let showColor = `radial-gradient(rgb(${color[0]},${color[1]},${color[2]}), rgb( ${background[0]}, ${background[1]}, ${background[2]}))`
-            //el.style.backgroundColor = `radialGradient(${showColor}, transparent)`;
             el.classList.add("radial-gradient");
             el.style.background = showColor;
-            //console.log(el.style.backgroundColor);
         }
     };
 
@@ -57,12 +55,4 @@ const Frame = ({
 };
 
 export default Frame;
-
-
-// radial-gradient(#e66465, transparent);
-
-// radial-gradient(rgb(233,233,233), transparent);
-
-
-// `radial-gradient(rgb(${color[0]},${color[1]},${color[2]}), transparent)`
 
