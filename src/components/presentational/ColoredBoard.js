@@ -8,6 +8,7 @@ import Canvas from "./Canvas";
 import DownloadButton from "../buttons/DownloadButton";
 import { mouseUp } from "../../actions";
 import MultipleItems from "../containers/Carousel";
+import AddBeforeButton from "../buttons/AddBeforeButton";
 import AddAfterButton from "../buttons/AddAfterButton";
 import ChangeSize from "../buttons/ChangeSize";
 import ModalSwitch from "../buttons/ModalSwitch";
@@ -30,6 +31,7 @@ const ColoredBoard = ({ mouseUp }) => {
                             <div className="ui raised segment vertical buttons">
                                 <DownloadButton />
                                 <ResetButton />
+                                <AddBeforeButton />
                                 <AddAfterButton />
                                 <ModalSwitch />
                             </div>

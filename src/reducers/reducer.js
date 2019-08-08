@@ -46,12 +46,22 @@ const reducer = (state = defaultState, action) => {
     } else if (action.type === "MOUSE_UP") {
         return { ...state, isMouseDown: false };
 
-    } else if (action.type === "ADD_AFTER") {
-        const listOfFramesCopy = [...state.listOfFrames, state.initialFrame];
+    } else if (action.type === "ADD_BEFORE") {
+        let listOfFramesCopy = [...state.listOfFrames];
+        listOfFramesCopy.splice(state.activeFrameIndex, 0, state.initialFrame);
         return {
             ...state,
             listOfFrames: listOfFramesCopy,
-            activeFrameIndex: listOfFramesCopy.length - 1
+            activeFrameIndex: state.activeFrameIndex
+        };
+
+    } else if (action.type === "ADD_AFTER") {
+        let listOfFramesCopy = [...state.listOfFrames];
+        listOfFramesCopy.splice(state.activeFrameIndex + 1, 0, state.initialFrame);
+        return {
+            ...state,
+            listOfFrames: listOfFramesCopy,
+            activeFrameIndex: state.activeFrameIndex + 1
         };
 
     } else if (action.type === "CHOOSE_FRAME") {

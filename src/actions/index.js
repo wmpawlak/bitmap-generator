@@ -7,12 +7,13 @@ import {
     MOUSE_DOWN,
     MOUSE_UP,
     ADD_AFTER,
+    ADD_BEFORE,
     CHOOSE_FRAME,
     MODAL_SWITCH,
     PLAY_ANIMATION,
     PAUSE_ANIMATION,
     STOP_ANIMATION,
-    CHANGE_SIZE
+    CHANGE_SIZE    
 } from "./actionTypes";
 
 export const assignColor = index => ({
@@ -44,6 +45,10 @@ export const mouseDown = () => ({
 
 export const mouseUp = () => ({
     type: MOUSE_UP
+});
+
+export const addBefore = () => ({
+    type: ADD_BEFORE
 });
 
 export const addAfter = () => ({
