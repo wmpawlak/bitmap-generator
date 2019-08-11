@@ -19,6 +19,8 @@ const PreviewFrame = ({
 
     let background;
 
+    let size;
+
     if (canvas) {
         const context = canvas.getContext("2d");
 
@@ -26,15 +28,15 @@ const PreviewFrame = ({
             activeFrameData.map(p => [...p, 100]).flat()
         );
 
-        const size =  Math.sqrt(numberOfPixels)
+        size =  Math.sqrt(numberOfPixels)
 
         const imgData = new ImageData(pixels, size, size);
 
-        var scale = window.devicePixelRatio; 
-        canvas.width = size * 1;
-        canvas.height = size * 1;
+        // var scale = window.devicePixelRatio; 
+        // canvas.width = size * 1;
+        // canvas.height = size * 1;
 
-        context.scale(scale, scale);
+        // context.scale(scale, scale);
 
         context.imageSmoothingEnabled = false;
 
@@ -48,6 +50,9 @@ const PreviewFrame = ({
             className="preview-frame"
             onClick={handleClick}
             style={{
+                width: size,
+                height: size,
+                transform: "scale(12)",
                 background: "url(" + background + ")",
                 boxShadow: activeFrameIndex === index ? "0px 0px 1px 1px white" : "0px 0px 1px rgb(140, 140, 140)"
             }}
