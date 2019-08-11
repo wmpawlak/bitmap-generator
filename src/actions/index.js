@@ -8,6 +8,7 @@ import {
     MOUSE_UP,
     ADD_AFTER,
     ADD_BEFORE,
+    ADD_COPY,
     CHOOSE_FRAME,
     MODAL_SWITCH,
     PLAY_ANIMATION,
@@ -53,6 +54,10 @@ export const addBefore = () => ({
 
 export const addAfter = () => ({
     type: ADD_AFTER
+});
+
+export const addCopy = () => ({
+    type: ADD_COPY
 });
 
 export const chooseFrame = activeFrameIndex => ({
