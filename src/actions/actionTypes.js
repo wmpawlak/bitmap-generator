@@ -7,6 +7,7 @@ export const MOUSE_DOWN = "MOUSE_DOWN";
 export const MOUSE_UP = "MOUSE_UP";
 export const ADD_BEFORE = "ADD_BEFORE";
 export const ADD_AFTER = "ADD_AFTER";
+export const ADD_COPY = "ADD_COPY";
 export const CHOOSE_FRAME = "CHOOSE_FRAME";
 export const MODAL_SWITCH = "MODAL_SWITCH";
 export const PLAY_ANIMATION = "PLAY_ANIMATION";
