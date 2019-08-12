@@ -1,160 +1,264 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    background: rgb(34, 34, 34);
-    padding: 10px;
+  font: 14px 'Century Gothic', Futura, sans-serif;
+  background: rgb(34, 34, 34);
+  padding: 10px;
 }
 
 .board-row:after {
-    clear: both;
-    content: "";
-    display: table;
+  clear: both;
+  content: '';
+  display: table;
 }
 
 .frame {
-    border-radius: 3px;
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 50px;
-    width: 50px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    user-select: none;
+  border-radius: 3px;
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 50px;
+  width: 50px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  user-select: none;
 }
 
 .modal {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: rgba(255, 255, 255, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal .container {
-    width: 500px;
-    height: 500px;
-    border: 2px solid grey;
-    background: white;
+  width: 500px;
+  height: 500px;
+  border: 2px solid grey;
+  background: white;
 }
 
 .brd {
-    display: grid;
-    grid-template-columns: 430px 220px;
-    grid-template-rows: 430px;
-    grid-template-areas: "gridOne gridTwo";
+  display: grid;
+  grid-template-columns: 430px 220px;
+  grid-template-rows: 430px;
+  grid-template-areas: 'gridOne gridTwo';
 }
 
 #gridOne {
-    grid-area: gridOne;
-    padding-left: 17px;
-    padding-top: 17px;
+  grid-area: gridOne;
+  padding-left: 17px;
+  padding-top: 17px;
 }
 
 #gridTwo {
-    display: grid;
-    grid-template-columns: 220px;
-    grid-template-rows: 300px 1fr;
-    grid-template-areas: "gridThree""gridFour";
-    grid-area: gridTwo;
+  display: grid;
+  grid-template-columns: 220px;
+  grid-template-rows: 300px 1fr;
+  grid-template-areas: 'gridThree' 'gridFour';
+  grid-area: gridTwo;
 }
 
 #gridThree {
-    grid-area: gridThree;
-    margin-left: 10px;
+  grid-area: gridThree;
+  margin-left: 10px;
 }
 
 #gridFour {
-    grid-area: gridFour;
-    margin-top: 15px;
-    margin-left: 10px;
+  grid-area: gridFour;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 220px;
-    grid-template-rows: 125px;
-    grid-template-areas: "buttonMainContainer";
-    grid-gap: 10px;
-  }
-  
-  .buttonMainContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "buttonColumnOne buttonColumnTwo";
-    grid-area: buttonMainContainer;
-  }
-  
-  .buttonColumnOne { grid-area: buttonColumnOne; }
-  
-  .buttonColumnTwo { grid-area: buttonColumnTwo; }
+  display: grid;
+  grid-template-columns: 220px;
+  grid-template-rows: 125px;
+  grid-template-areas: 'buttonMainContainer';
+  grid-gap: 10px;
+}
+
+.buttonMainContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'buttonColumnOne buttonColumnTwo';
+  grid-area: buttonMainContainer;
+}
+
+.buttonColumnOne {
+  grid-area: buttonColumnOne;
+}
+
+.buttonColumnTwo {
+  grid-area: buttonColumnTwo;
+}
 
 .ui.segment:first-child {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .small.ui.grey.button {
-    color: black;
-    background: rgb(95, 95, 95);
-    border: 1px solid rgb(140, 140, 140);
-    border-bottom: 2px solid rgb(140, 140, 140);
-    width: 95px;
-    height: 35px;
-    font-size: 12px;
-    line-height: 12px;
-    text-transform: uppercase;
-    padding: 1px;
+  color: black;
+  background: rgb(95, 95, 95);
+  border: 1px solid rgb(140, 140, 140);
+  border-bottom: 2px solid rgb(140, 140, 140);
+  width: 95px;
+  height: 35px;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  padding: 1px;
 }
 
 .small.ui.grey.button:hover {
-    color: rgb(199, 199, 3);
+  color: rgb(199, 199, 3);
 }
 
 .small.ui.grey.button:hover:nth-child(2) {
-    color: rgb(151, 5, 5);
+  color: rgb(151, 5, 5);
 }
 
 .ui.raised.segment {
-    background: rgb(140, 140, 140);
+  background: rgb(140, 140, 140);
 }
 
 .ui.raised.segment.vertical.buttons {
-    padding: 5px;
-    margin: 0;
-    border-radius: 5px;
-    width: 105px;
-    height: 125px;
-    margin-top: -10px;
+  padding: 5px;
+  margin: 0;
+  border-radius: 5px;
+  width: 105px;
+  height: 125px;
+  margin-top: -10px;
 }
 
 .ui.raised.segment.vertical.buttons:nth-child(2) {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .header {
-    height: 70px;
-    width: 660px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    padding-top: 13px;
-    padding-left: 30px;
-    background: rgb(140, 140, 140);
-    position: relative;
+  height: 70px;
+  width: 660px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-top: 13px;
+  padding-left: 30px;
+  background: rgb(140, 140, 140);
+  position: relative;
 }
 
 .innerHeader {
+  height: 45px;
+  width: 600px;
+  border-radius: 5px;
+  background: rgb(95, 95, 95);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
+  letter-spacing: 12px;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+}
+
+.carousel {
+  width: 600px;
+  height: 120px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: rgb(140, 140, 140);
+  margin-left: 30px;
+}
+
+.preview-frame {
+  width: 100px;
+  height: 100px;
+}
+
+div:focus {
+  outline: 0;
+}
+
+.slick-list {
+  height: 120px;
+}
+
+.slick-slide {
+  width: 100px;
+  height: 100px;
+  background: rgb(95, 95, 95);
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.slick-slider {
+  margin: 10px;
+}
+
+.slick-list {
+  padding-left: 19px;
+  padding-right: 15px;
+}
+
+.slick-prev {
+  left: -35px;
+}
+
+.slick-next {
+  right: -35px;
+}
+
+.preview-frame {
+  /* height: 8px;
+    width: 8px; */
+  margin: 2px;
+  margin-top: 46px;
+  margin-left: 46px;
+  /* transform: scale(12); */
+  /* border: 1px solid; */
+  box-shadow: 0px 0px 1px black;
+}
+
+#delButton {
+  float: right;
+  color: #aaa8a8;
+  margin: 0;
+  font-size: 0.12em;
+}
+
+#delButton:hover {
+  color: #db2828;
+  cursor: pointer;
+}
+
+#canvas {
+  display: none;
+  height: 100px;
+  width: 100px;
+  border: 2px solid white;
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    height: 70px;
+    width: 430px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: rgb(140, 140, 140);
+  }
+
+  .innerHeader {
     height: 45px;
-    width: 600px;
+    width: 370px;
     border-radius: 5px;
     background: rgb(95, 95, 95);
     text-align: center;
@@ -164,165 +268,61 @@ body {
     font-size: 28px;
     font-weight: bold;
     position: relative;
-}
+  }
 
-.carousel {
-    width: 600px;
-    height: 120px;
+  .brd {
+    display: grid;
+    grid-template-columns: 430px;
+    grid-template-rows: 430px 300px;
+    grid-template-areas: 'gridOne' 'gridTwo';
+  }
+
+  #gridOne {
+    grid-area: gridOne;
+  }
+
+  #gridTwo {
+    display: grid;
+    grid-template-columns: 220px 220px;
+    grid-template-rows: 300px;
+    grid-template-areas: 'gridThree gridFour';
+    grid-area: gridTwo;
+  }
+
+  #gridThree {
+    grid-area: gridThree;
+    margin-left: 0;
     margin-top: 10px;
+  }
+
+  #gridFour {
+    grid-area: gridFour;
+    margin-top: 10px;
+  }
+
+  .ui.raised.segment.vertical.buttons {
+    padding: 8px;
+    margin: 0;
+    border-radius: 5px;
+    width: 200px;
+    height: 115px;
+  }
+
+  .small.ui.grey.button {
+    color: black;
+    background: rgb(95, 95, 95);
+    border: 1px solid rgb(140, 140, 140);
+    border-bottom: 2px solid rgb(140, 140, 140);
+    width: 180px;
+    height: 30px;
+  }
+
+  .carousel {
+    width: 360px;
+    height: 120px;
+    margin-top: 15px;
     border-radius: 5px;
     background: rgb(140, 140, 140);
     margin-left: 30px;
-}
-
-.preview-frame {
-    width: 100px;
-    height: 100px;
-}
-
-div:focus {
-    outline: 0;
-}
-
-.slick-list {
-    height: 120px;
-}
-
-.slick-slide {
-    width: 100px;
-    height: 100px;
-    background: rgb(95, 95, 95);
-    margin: 10px;
-    border-radius: 5px;
-}
-
-.slick-slider {
-    margin: 10px;
-}
-
-
-.slick-list {
-    padding-left: 19px;
-    padding-right: 15px;
-}
-
-.slick-prev {
-    left: -35px;
-}
-
-.slick-next {
-    right: -35px;
-}
-
-.preview-frame {
-    /* height: 8px;
-    width: 8px; */
-    margin: 2px;
-    margin-top: 46px;
-    margin-left: 46px;
-    /* transform: scale(12); */
-    /* border: 1px solid; */
-    box-shadow: 0px 0px 1px black;
-}
-
-#delButton {
-    float: right;
-    color: #aaa8a8;
-    margin: 0;
-    font-size: .12em;
-}
-
-#delButton:hover {
-    color: #db2828;
-    cursor: pointer;
-}
-
-#canvas {
-    display: none;
-    height: 100px;
-    width: 100px;
-    border: 2px solid white;
-}
-
-@media screen and (max-width: 700px) {
-
-    .header {
-        height: 70px;
-        width: 430px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        background: rgb(140, 140, 140);
-    }
-
-    .innerHeader {
-        height: 45px;
-        width: 370px;
-        border-radius: 5px;
-        background: rgb(95, 95, 95);
-        text-align: center;
-        vertical-align: middle;
-        line-height: 45px;
-        letter-spacing: 12px;
-        font-size: 28px;
-        font-weight: bold;
-        position: relative;
-    }
-
-
-    .brd {
-        display: grid;
-        grid-template-columns: 430px;
-        grid-template-rows: 430px 300px;
-        grid-template-areas: "gridOne""gridTwo";
-    }
-
-    #gridOne {
-        grid-area: gridOne;
-    }
-
-    #gridTwo {
-        display: grid;
-        grid-template-columns: 220px 220px;
-        grid-template-rows: 300px;
-        grid-template-areas: "gridThree gridFour";
-        grid-area: gridTwo;
-    }
-
-    #gridThree {
-        grid-area: gridThree;
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    #gridFour {
-        grid-area: gridFour;
-        margin-top: 10px;
-    }
-
-    .ui.raised.segment.vertical.buttons {
-        padding: 8px;
-        margin: 0;
-        border-radius: 5px;
-        width: 200px;
-        height: 115px;
-    }
-
-    .small.ui.grey.button {
-        color: black;
-        background: rgb(95, 95, 95);
-        border: 1px solid rgb(140, 140, 140);
-        border-bottom: 2px solid rgb(140, 140, 140);
-        width: 180px;
-        height: 30px;
-    }
-
-    .carousel {
-        width: 360px;
-        height: 120px;
-        margin-top: 15px;
-        border-radius: 5px;
-        background: rgb(140, 140, 140);
-        margin-left: 30px;
-    }
-
+  }
 }
