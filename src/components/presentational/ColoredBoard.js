@@ -10,6 +10,7 @@ import { mouseUp } from "../../actions";
 import MultipleItems from "../containers/Carousel";
 import AddBeforeButton from "../buttons/AddBeforeButton";
 import AddAfterButton from "../buttons/AddAfterButton";
+import AddCopyButton from "../buttons/AddCopyButton";
 import ChangeSize from "../buttons/ChangeSize";
 import ModalSwitch from "../buttons/ModalSwitch";
 import Modal from "./Modal";
@@ -37,7 +38,8 @@ const ColoredBoard = ({ mouseUp }) => {
                             <div className="ui raised segment vertical buttons buttonColumnTwo">
                                 <AddBeforeButton />
                                 <AddAfterButton />
-                                <div className="small ui grey button"></div>
+                                <AddCopyButton />
+                                <ModalSwitch />
                             </div>
                             </div>
                         </div>
