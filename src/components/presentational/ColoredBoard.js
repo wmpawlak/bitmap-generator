@@ -28,14 +28,19 @@ const ColoredBoard = ({ mouseUp }) => {
                     </div>
 
                     <div id="gridFour">
-                        <div>
-                            <div className="ui raised segment vertical buttons">
+                        <div className="grid-container">
+                        <div class="buttonMainContainer">
+                            <div className="ui raised segment vertical buttons buttonColumnOne">
                                 <DownloadButton />
                                 <ResetButton />
+                                <ModalSwitch />
+                            </div>
+                            <div className="ui raised segment vertical buttons buttonColumnTwo">
                                 <AddBeforeButton />
                                 <AddAfterButton />
                                 <AddCopyButton />
                                 <ModalSwitch />
+                            </div>
                             </div>
                         </div>
                     </div>
