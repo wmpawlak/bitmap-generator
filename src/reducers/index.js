@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import reducer from "./reducer";
+import reducer from './reducer';
 
 const emptyColor = [0, 0, 0];
 
@@ -11,18 +11,20 @@ const initialFrame = Array(initialNumberOfPixels).fill(emptyColor);
 const initialNumberOfFrames = 1;
 
 export const defaultState = {
-    initialFrame: initialFrame,
-    activeFrameIndex: 0,
-    color: emptyColor,
-    isMouseDown: false,
-    listOfFrames: Array.from({ length: initialNumberOfFrames }).fill(initialFrame),
-    numberOfPixels: initialNumberOfPixels,
-    isModalOn: false,
-    frameIndexAnimation: 0
+  initialFrame: initialFrame,
+  activeFrameIndex: 0,
+  color: emptyColor,
+  isMouseDown: false,
+  listOfFrames: Array.from({ length: initialNumberOfFrames }).fill(
+    initialFrame
+  ),
+  numberOfPixels: initialNumberOfPixels,
+  isModalOn: false,
+  frameIndexAnimation: 0
 };
 
 const rootReducer = combineReducers({
-    reducer
+  reducer
 });
 
 export default rootReducer;

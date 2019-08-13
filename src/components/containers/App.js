@@ -1,9 +1,8 @@
-import React from "react";
+import React from 'react';
 
 import ColoredBoard from '../presentational/ColoredBoard';
 
 function App() {
-
   return (
     <div>
       <div className="header">

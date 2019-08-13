@@ -1,17 +1,17 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { modalSwitch } from "../../actions";
+import { modalSwitch } from '../../actions';
 
 const ModalSwitch = ({ modalSwitch }) => {
-    return (
-        <button className="small ui grey button" onClick={modalSwitch}>
-            Show Animation
-        </button>
-    );
+  return (
+    <button className="small ui grey button" onClick={modalSwitch}>
+      Show Animation
+    </button>
+  );
 };
 
 export default connect(
-    null,
-    { modalSwitch }
+  null,
+  { modalSwitch }
 )(ModalSwitch);
