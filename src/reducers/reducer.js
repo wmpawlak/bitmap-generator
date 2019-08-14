@@ -16,7 +16,9 @@ import {
   PLAY_ANIMATION,
   PAUSE_ANIMATION,
   STOP_ANIMATION,
-  CHANGE_SIZE
+  CHANGE_SIZE_16,
+  CHANGE_SIZE_64,
+  CHANGE_SIZE_144
 } from '../actions/actionTypes';
 
 const reducer = (state = defaultState, action) => {
@@ -80,7 +82,9 @@ const reducer = (state = defaultState, action) => {
     return {
       ...state,
       listOfFrames: listOfFramesCopy,
-      activeFrameIndex: state.activeFrameIndex + 1
+      activeFrameIndex: state.activeFrameIndex + 1,
+      pixelWidth: state.pixelWidth,
+      pixelHeight: state.pixelHeight
     };
   } else if (action.type === ADD_COPY) {
     let listOfFramesCopy = [...state.listOfFrames];
@@ -96,16 +100,6 @@ const reducer = (state = defaultState, action) => {
     };
   } else if (action.type === CHOOSE_FRAME) {
     return { ...state, activeFrameIndex: action.activeFrameIndex };
-  } else if (action.type === CHANGE_SIZE) {
-    const listOfFramesNew = [...state.listOfFrames].fill(
-      Array(16).fill([0, 0, 0])
-    );
-    const newNumberOfPixels = 16;
-    return {
-      ...state,
-      listOfFrames: listOfFramesNew,
-      numberOfPixels: newNumberOfPixels
-    };
   } else if (action.type === MODAL_SWITCH) {
     return {
       ...state,
@@ -120,6 +114,43 @@ const reducer = (state = defaultState, action) => {
   } else if (action.type === PAUSE_ANIMATION) {
     const newframeIndexAnimation = state.frameIndexAnimation;
     return { ...state, frameIndexAnimation: newframeIndexAnimation };
+  } else if (action.type === CHANGE_SIZE_16) {
+    const activeFrameIndex = new Array(16).fill([0, 0, 0]);
+    let listOfFrames = [...state.listOfFrames];
+    listOfFrames[state.activeFrameIndex] = activeFrameIndex;
+
+    return {
+      ...state,
+      listOfFrames,
+      numberOfPixels: 16,
+      pixelWidth: '100px',
+      pixelHeight: '100px'
+    };
+  } else if (action.type === CHANGE_SIZE_64) {
+    const activeFrameIndex = new Array(64).fill([0, 0, 0]);
+    let listOfFrames = [...state.listOfFrames];
+    listOfFrames[state.activeFrameIndex] = activeFrameIndex;
+
+    return {
+      ...state,
+      listOfFrames,
+      numberOfPixels: 64,
+      pixelWidth: '50px',
+      pixelHeight: '50px'
+    };
+  } else if (action.type === CHANGE_SIZE_144) {
+    //const listOfFramesNew = [...state.listOfFrames].fill(Array(144).fill([0, 0, 0]));
+    const activeFrameIndex = new Array(144).fill([0, 0, 0]);
+    let listOfFrames = [...state.listOfFrames];
+    listOfFrames[state.activeFrameIndex] = activeFrameIndex;
+
+    return {
+      ...state,
+      listOfFrames,
+      numberOfPixels: 144,
+      pixelWidth: '33px',
+      pixelHeight: '33px'
+    };
   } else {
     return state;
   }
