@@ -24,8 +24,8 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint:fix": "eslint './src/**/*.{js,jsx}'",
-        "eslint-debug": "eslint --debug C:\\Users\\wpawl\\Desktop\\WebDev\\bitmap-generator",
-        "eslint": "eslint C:\\Users\\wpawl\\Desktop\\WebDev\\bitmap-generator"
+        "eslint-debug": "eslint --debug ./",
+        "eslint": "eslint ./"
     },
     "eslintConfig": {
         "extends": "react-app"
