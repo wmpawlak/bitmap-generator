@@ -20,8 +20,7 @@ const Modal = ({
   pauseAnimation,
   stopAnimation,
   numberOfFrames,
-  pixelWidth,
-  pixelHeight
+  pixelSide
 }) => {
   //*************************************wrzucić style do odpowiedniego CSS @Mateusz!!!************************//
   const renderAnimation = () => {
@@ -33,8 +32,8 @@ const Modal = ({
             className="frame"
             key={i}
             style={{
-              width: pixelWidth,
-              height: pixelHeight,
+              width: pixelSide,
+              height: pixelSide,
               backgroundColor: `rgb(${pixel})`
             }}
           />
@@ -81,8 +80,7 @@ const mapStateToProps = state => ({
   background: state.reducer.listOfFrames,
   frameIndexAnimation: state.reducer.frameIndexAnimation,
   numberOfFrames: state.reducer.listOfFrames.length,
-  pixelWidth: state.reducer.pixelWidth,
-  pixelHeight: state.reducer.pixelHeight
+  pixelSide: state.reducer.pixelSide
 });
 
 const mapDispatchToProps = {

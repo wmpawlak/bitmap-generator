@@ -22,6 +22,7 @@ const ColoredBoard = ({ mouseUp }) => {
       <div className="brd" onMouseLeave={mouseUp}>
         <div className="ui raised segment" id="gridOne">
           <Board />
+          <ChangeSize />
         </div>
         <div id="gridTwo">
           <div id="gridThree">
@@ -50,7 +51,6 @@ const ColoredBoard = ({ mouseUp }) => {
         <MultipleItems />
       </div>
       <Canvas />
-      <ChangeSize />
       <Modal>TEXT</Modal>
     </div>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux';

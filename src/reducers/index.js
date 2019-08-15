@@ -10,9 +10,7 @@ const initialFrame = Array(initialNumberOfPixels).fill(emptyColor);
 
 const initialNumberOfFrames = 1;
 
-const pixelWidth = '50px';
-
-const pixelHeight = '50px';
+const pixelSide = '50px';
 
 export const defaultState = {
   initialFrame: initialFrame,
@@ -25,8 +23,7 @@ export const defaultState = {
   numberOfPixels: initialNumberOfPixels,
   isModalOn: false,
   frameIndexAnimation: 0,
-  pixelWidth: pixelWidth,
-  pixelHeight: pixelHeight
+  pixelSide: pixelSide
 };
 
 const rootReducer = combineReducers({

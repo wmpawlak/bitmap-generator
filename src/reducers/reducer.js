@@ -83,8 +83,7 @@ const reducer = (state = defaultState, action) => {
       ...state,
       listOfFrames: listOfFramesCopy,
       activeFrameIndex: state.activeFrameIndex + 1,
-      pixelWidth: state.pixelWidth,
-      pixelHeight: state.pixelHeight
+      pixelSide: state.pixelSide
     };
   } else if (action.type === ADD_COPY) {
     let listOfFramesCopy = [...state.listOfFrames];
@@ -118,38 +117,34 @@ const reducer = (state = defaultState, action) => {
     const activeFrameIndex = new Array(16).fill([0, 0, 0]);
     let listOfFrames = [...state.listOfFrames];
     listOfFrames[state.activeFrameIndex] = activeFrameIndex;
-
     return {
       ...state,
       listOfFrames,
       numberOfPixels: 16,
-      pixelWidth: '100px',
-      pixelHeight: '100px'
+      pixelSide: '100px',
+      initialFrame: activeFrameIndex
     };
   } else if (action.type === CHANGE_SIZE_64) {
     const activeFrameIndex = new Array(64).fill([0, 0, 0]);
     let listOfFrames = [...state.listOfFrames];
     listOfFrames[state.activeFrameIndex] = activeFrameIndex;
-
     return {
       ...state,
       listOfFrames,
       numberOfPixels: 64,
-      pixelWidth: '50px',
-      pixelHeight: '50px'
+      pixelSide: '50px',
+      initialFrame: activeFrameIndex
     };
   } else if (action.type === CHANGE_SIZE_144) {
-    //const listOfFramesNew = [...state.listOfFrames].fill(Array(144).fill([0, 0, 0]));
     const activeFrameIndex = new Array(144).fill([0, 0, 0]);
     let listOfFrames = [...state.listOfFrames];
     listOfFrames[state.activeFrameIndex] = activeFrameIndex;
-
     return {
       ...state,
       listOfFrames,
       numberOfPixels: 144,
-      pixelWidth: '33px',
-      pixelHeight: '33px'
+      pixelSide: '33px',
+      initialFrame: activeFrameIndex
     };
   } else {
     return state;

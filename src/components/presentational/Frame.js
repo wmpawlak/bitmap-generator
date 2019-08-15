@@ -11,8 +11,7 @@ const Frame = ({
   mouseUp,
   background,
   color,
-  pixelWidth,
-  pixelHeight
+  pixelSide
 }) => {
   const handleMove = () => {
     if (isMouseDown) {
@@ -52,8 +51,8 @@ const Frame = ({
     <div
       className="frame"
       style={{
-        width: pixelWidth,
-        height: pixelHeight,
+        width: pixelSide,
+        height: pixelSide,
         backgroundColor: `rgb( ${background[0]}, ${background[1]}, ${
           background[2]
         })`
@@ -73,8 +72,7 @@ const mapStateToProps = (state, ownProps) => ({
   isMouseDown: state.reducer.isMouseDown,
   color: state.reducer.color,
   numberOfPixels: state.reducer.numberOfPixels,
-  pixelWidth: state.reducer.pixelWidth,
-  pixelHeight: state.reducer.pixelHeight
+  pixelSide: state.reducer.pixelSide
 });
 
 const mapDispatchToProps = {
