@@ -1,12 +1,15 @@
 {
+  "globals": {
+    "Uint8ClampedArray": true
+  },
+
+  "parser": "babel-eslint",
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "prettier"],
   "env": {
     "browser": true,
     "jasmine": true,
@@ -19,14 +22,12 @@
         "singleQuote": true
       }
     ],
-    "@typescript-eslint/explicit-member-accessibility": 0,
-    "@typescript-eslint/explicit-function-return-type": 0
+    "react/prop-types": ["warn"]
   },
   "settings": {
     "react": {
       "pragma": "React",
       "version": "detect"
     }
-  },
-  "parser": "@typescript-eslint/parser"
+  }
 }
