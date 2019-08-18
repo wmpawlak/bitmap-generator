@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import {
   modalSwitch,
@@ -69,6 +70,17 @@ const Modal = ({
       </div>
     </div>
   ) : null;
+};
+
+Modal.propTypes = {
+  isModalOn: PropTypes.bool,
+  modalSwitch: PropTypes.func,
+  background: PropTypes.array,
+  frameIndexAnimation: PropTypes.number,
+  playAnimation: PropTypes.func,
+  pauseAnimation: PropTypes.func,
+  stopAnimation: PropTypes.func,
+  numberOfFrames: PropTypes.number
 };
 
 const mapStateToProps = state => ({
