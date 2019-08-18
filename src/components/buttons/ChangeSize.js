@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { changeSize } from '../../actions';
 
@@ -16,6 +17,11 @@ const ChangeSize = ({ changeSize, index }) => {
       <button className="ui button">16:16</button>
     </div>
   );
+};
+
+ChangeSize.propTypes = {
+  changeSize: PropTypes.func,
+  index: PropTypes.number
 };
 
 export default connect(

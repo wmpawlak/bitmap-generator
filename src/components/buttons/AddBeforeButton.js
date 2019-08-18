@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { addBefore } from '../../actions';
 
@@ -10,6 +11,8 @@ const AddBeforeButton = ({ addBefore }) => {
     </button>
   );
 };
+
+AddBeforeButton.propTypes = { addBefore: PropTypes.func };
 
 export default connect(
   null,
