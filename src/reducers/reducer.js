@@ -35,24 +35,22 @@ const reducer = (state = defaultState, action) => {
     listOfFrames[state.activeFrameIndex] = framesClean;
     return { ...state, listOfFrames };
 
-    //poprawić, żeby zostawiało na tej samej klatce, lub gdy kasuje 0 przerzucało na 0
-
   } else if (action.type === DELETE_FRAME) {
-    let listOfFramesCopy = [...state.listOfFrames];
+    const listOfFramesCopy = [...state.listOfFrames];
     let newActiveFrameIndex;
-    if(action.index !== 0){
-      newActiveFrameIndex = action.index - 1;
-      listOfFramesCopy.splice(newActiveFrameIndex, 1);
-    }else{
-      newActiveFrameIndex = action.index + 1;
-      listOfFramesCopy.splice(newActiveFrameIndex, 1);
+    if (action.index > state.activeFrameIndex) {
+      newActiveFrameIndex = state.activeFrameIndex;
+    } else if (state.activeFrameIndex === 0) {
+      newActiveFrameIndex = 0;
+    } else {
+      newActiveFrameIndex = state.activeFrameIndex - 1;
     }
+    listOfFramesCopy.splice(action.index, 1);
     return {
       ...state,
       activeFrameIndex: newActiveFrameIndex,
       listOfFrames: listOfFramesCopy
     };
-
 
   } else if (action.type === CHOOSE_COLOR) {
     return { ...state, color: action.color };
