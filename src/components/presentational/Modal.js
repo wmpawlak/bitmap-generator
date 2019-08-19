@@ -7,7 +7,8 @@ import {
   modalSwitch,
   playAnimation,
   pauseAnimation,
-  stopAnimation
+  stopAnimation,
+  editFrame
 } from '../../actions';
 
 let interval;
@@ -21,7 +22,8 @@ const Modal = ({
   pauseAnimation,
   stopAnimation,
   numberOfFrames,
-  pixelSide
+  pixelSide,
+  editFrame
 }) => {
   //*************************************wrzucić style do odpowiedniego CSS @Mateusz!!!************************//
   const renderAnimation = () => {
@@ -44,7 +46,7 @@ const Modal = ({
   };
 
   const playAnimationHandler = () => {
-    interval = setInterval(playAnimation, 1000);
+    interval = setInterval(playAnimation, 500);
   };
 
   if (interval) {
@@ -71,6 +73,7 @@ const Modal = ({
         <i className="stop icon" onClick={stopAnimationHandler} />
         <i className="play icon" onClick={playAnimationHandler} />
         <i className="pause icon" onClick={pauseAnimationHandler} />
+        <i className="edit icon" onClick={editFrame} />
       </div>
     </div>
   ) : null;
@@ -84,6 +87,7 @@ Modal.propTypes = {
   playAnimation: PropTypes.func,
   pauseAnimation: PropTypes.func,
   stopAnimation: PropTypes.func,
+  editFrame: PropTypes.func,
   numberOfFrames: PropTypes.number
 };
 
@@ -99,7 +103,8 @@ const mapDispatchToProps = {
   modalSwitch: modalSwitch,
   playAnimation: playAnimation,
   pauseAnimation: pauseAnimation,
-  stopAnimation: stopAnimation
+  stopAnimation: stopAnimation,
+  editFrame: editFrame
 };
 
 export default connect(

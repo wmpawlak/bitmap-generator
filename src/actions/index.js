@@ -16,7 +16,8 @@ import {
   STOP_ANIMATION,
   CHANGE_SIZE_16,
   CHANGE_SIZE_64,
-  CHANGE_SIZE_144
+  CHANGE_SIZE_144,
+  EDIT_FRAME
 } from './actionTypes';
 
 export const assignColor = index => ({
@@ -96,4 +97,8 @@ export const pauseAnimation = () => ({
 
 export const stopAnimation = () => ({
   type: STOP_ANIMATION
+});
+
+export const editFrame = () => ({
+  type: EDIT_FRAME
 });
