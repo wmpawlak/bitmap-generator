@@ -46,7 +46,9 @@ const Modal = ({
   };
 
   const playAnimationHandler = () => {
-    interval = setInterval(playAnimation, 500);
+    if (frameIndexAnimation !== numberOfFrames - 1) {
+      interval = setInterval(playAnimation, 500);
+    }
   };
 
   if (interval) {
