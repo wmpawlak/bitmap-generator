@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { addAfter } from '../../actions';
 
@@ -11,6 +12,8 @@ const AddAfterButton = ({ addAfter }) => {
     </button>
   );
 };
+
+AddAfterButton.propTypes = { addAfter: PropTypes.func };
 
 export default connect(
   null,

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import DeleteButton from '../buttons/DeleteButton';
 import { chooseFrame } from '../../actions';
@@ -64,6 +65,16 @@ const PreviewFrame = ({
       {numberOfFrames > 1 && <DeleteButton index={index} />}
     </div>
   );
+};
+
+PreviewFrame.propTypes = {
+  index: PropTypes.number,
+  chooseFrame: PropTypes.func,
+  canvas: PropTypes.object,
+  activeFrameIndex: PropTypes.number,
+  activeFrameData: PropTypes.array,
+  numberOfFrames: PropTypes.number,
+  numberOfPixels: PropTypes.number
 };
 
 const mapStateToProps = state => ({

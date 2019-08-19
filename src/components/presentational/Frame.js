@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { mouseDown, mouseUp, assignColor } from '../../actions';
+import PropTypes from 'prop-types';
 
 const Frame = ({
   index,
@@ -64,6 +65,16 @@ const Frame = ({
       onMouseLeave={event => handleMouseLeave(event)}
     />
   );
+};
+
+Frame.propTypes = {
+  index: PropTypes.number,
+  mouseDown: PropTypes.func,
+  isMouseDown: PropTypes.bool,
+  assignColor: PropTypes.func,
+  mouseUp: PropTypes.func,
+  background: PropTypes.array,
+  color: PropTypes.array
 };
 
 const mapStateToProps = (state, ownProps) => ({

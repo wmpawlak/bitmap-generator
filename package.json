@@ -8,6 +8,7 @@
         "eslint": "^6.1.0",
         "file-saver": "^2.0.2",
         "lint-staged": "^9.2.1",
+        "prop-types": "^15.7.2",
         "react": "^16.8.3",
         "react-color": "^2.17.3",
         "react-dom": "^16.8.3",
@@ -24,8 +25,9 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint:fix": "eslint './src/**/*.{js,jsx}'",
-        "eslint-debug": "eslint --debug ./",
-        "eslint": "eslint ./"
+        "eslint-debug": "eslint --debug ./src",
+        "eslint": "eslint ./src"
+
     },
     "eslintConfig": {
         "extends": "react-app"

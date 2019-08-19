@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { changeSize16, changeSize64, changeSize144 } from '../../actions';
 
@@ -45,6 +46,11 @@ const ChangeSize = ({ changeSize16, changeSize64, changeSize144 }) => {
       <div id="cover"></div>
     </div>
   );
+};
+
+ChangeSize.propTypes = {
+  changeSize: PropTypes.func,
+  index: PropTypes.number
 };
 
 export default connect(

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { deleteFrame } from '../../actions';
 
@@ -10,6 +11,11 @@ const DeleteButton = ({ deleteFrame, index }) => {
     e.stopPropagation();
   };
   return <i id="delButton" className="close icon" onClick={handleClick}></i>;
+};
+
+DeleteButton.propTypes = {
+  deleteFrame: PropTypes.func,
+  index: PropTypes.number
 };
 
 export default connect(

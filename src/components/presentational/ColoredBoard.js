@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import ColorsPalette from '../containers/ColorsPalette';
 import Board from '../containers/Board';
@@ -55,6 +56,8 @@ const ColoredBoard = ({ mouseUp }) => {
     </div>
   );
 };
+
+ColoredBoard.propTypes = { mouseUp: PropTypes.func };
 
 export default connect(
   null,
