@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import { mouseDown, mouseUp, assignColor } from '../../actions';
@@ -10,7 +11,8 @@ const Frame = ({
   assignColor,
   mouseUp,
   background,
-  color
+  color,
+  pixelSide
 }) => {
   const handleMove = () => {
     if (isMouseDown) {
@@ -50,6 +52,8 @@ const Frame = ({
     <div
       className="frame"
       style={{
+        width: pixelSide,
+        height: pixelSide,
         backgroundColor: `rgb( ${background[0]}, ${background[1]}, ${
           background[2]
         })`
@@ -78,7 +82,8 @@ const mapStateToProps = (state, ownProps) => ({
     state.reducer.listOfFrames[state.reducer.activeFrameIndex][ownProps.index],
   isMouseDown: state.reducer.isMouseDown,
   color: state.reducer.color,
-  numberOfPixels: state.reducer.numberOfPixels
+  numberOfPixels: state.reducer.numberOfPixels,
+  pixelSide: state.reducer.pixelSide
 });
 
 const mapDispatchToProps = {

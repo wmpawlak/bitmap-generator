@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -31,13 +32,13 @@ const PreviewFrame = ({
 
     size = Math.sqrt(numberOfPixels);
 
-    const imgData = new ImageData(pixels, size, size);
+    const imgData = new ImageData(pixels, 8);
 
-    // var scale = window.devicePixelRatio;
-    // canvas.width = size * 1;
-    // canvas.height = size * 1;
+    const scale = window.devicePixelRatio;
+    canvas.width = size * 1;
+    canvas.height = size * 1;
 
-    // context.scale(scale, scale);
+    context.scale(scale, scale);
 
     context.imageSmoothingEnabled = false;
 

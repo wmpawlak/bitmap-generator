@@ -14,7 +14,9 @@ import {
   PLAY_ANIMATION,
   PAUSE_ANIMATION,
   STOP_ANIMATION,
-  CHANGE_SIZE
+  CHANGE_SIZE_16,
+  CHANGE_SIZE_64,
+  CHANGE_SIZE_144
 } from './actionTypes';
 
 export const assignColor = index => ({
@@ -65,8 +67,18 @@ export const chooseFrame = activeFrameIndex => ({
   activeFrameIndex
 });
 
-export const changeSize = index => ({
-  type: CHANGE_SIZE,
+export const changeSize16 = index => ({
+  type: CHANGE_SIZE_16,
+  index
+});
+
+export const changeSize64 = index => ({
+  type: CHANGE_SIZE_64,
+  index
+});
+
+export const changeSize144 = index => ({
+  type: CHANGE_SIZE_144,
   index
 });
 

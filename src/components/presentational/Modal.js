@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -19,7 +20,8 @@ const Modal = ({
   playAnimation,
   pauseAnimation,
   stopAnimation,
-  numberOfFrames
+  numberOfFrames,
+  pixelSide
 }) => {
   //*************************************wrzucić style do odpowiedniego CSS @Mateusz!!!************************//
   const renderAnimation = () => {
@@ -31,6 +33,8 @@ const Modal = ({
             className="frame"
             key={i}
             style={{
+              width: pixelSide,
+              height: pixelSide,
               backgroundColor: `rgb(${pixel})`
             }}
           />
@@ -87,7 +91,8 @@ const mapStateToProps = state => ({
   isModalOn: state.reducer.isModalOn,
   background: state.reducer.listOfFrames,
   frameIndexAnimation: state.reducer.frameIndexAnimation,
-  numberOfFrames: state.reducer.listOfFrames.length
+  numberOfFrames: state.reducer.listOfFrames.length,
+  pixelSide: state.reducer.pixelSide
 });
 
 const mapDispatchToProps = {

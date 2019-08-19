@@ -27,6 +27,7 @@
         "lint:fix": "eslint './src/**/*.{js,jsx}'",
         "eslint-debug": "eslint --debug ./src",
         "eslint": "eslint ./src"
+
     },
     "eslintConfig": {
         "extends": "react-app"
