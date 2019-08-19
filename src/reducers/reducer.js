@@ -18,7 +18,8 @@ import {
   STOP_ANIMATION,
   CHANGE_SIZE_16,
   CHANGE_SIZE_64,
-  CHANGE_SIZE_144
+  CHANGE_SIZE_144,
+  EDIT_FRAME
 } from '../actions/actionTypes';
 
 const reducer = (state = defaultState, action) => {
@@ -123,6 +124,12 @@ const reducer = (state = defaultState, action) => {
       numberOfPixels: 16,
       pixelSide: '100px',
       initialFrame: activeFrameIndex
+    };
+  } else if (action.type === EDIT_FRAME) {
+    return {
+      ...state,
+      activeFrameIndex: state.frameIndexAnimation,
+      isModalOn: false
     };
   } else if (action.type === CHANGE_SIZE_64) {
     const activeFrameIndex = new Array(64).fill([0, 0, 0]);

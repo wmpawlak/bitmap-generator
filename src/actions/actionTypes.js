@@ -16,3 +16,4 @@ export const STOP_ANIMATION = 'STOP_ANIMATION';
 export const CHANGE_SIZE_16 = 'CHANGE_SIZE_16';
 export const CHANGE_SIZE_64 = 'CHANGE_SIZE_64';
 export const CHANGE_SIZE_144 = 'CHANGE_SIZE_144';
+export const EDIT_FRAME = 'EDIT_FRAME';
