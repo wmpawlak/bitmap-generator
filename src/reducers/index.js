@@ -10,7 +10,7 @@ const initialFrame = Array(initialNumberOfPixels).fill(emptyColor);
 
 const initialNumberOfFrames = 1;
 
-const pixelSide = '50px';
+const pixelSide = '12.5%';
 
 export const defaultState = {
   initialFrame: initialFrame,

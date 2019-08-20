@@ -122,7 +122,7 @@ const reducer = (state = defaultState, action) => {
       ...state,
       listOfFrames,
       numberOfPixels: 16,
-      pixelSide: '100px',
+      pixelSide: '25%',
       initialFrame: activeFrameIndex
     };
   } else if (action.type === EDIT_FRAME) {
@@ -139,7 +139,7 @@ const reducer = (state = defaultState, action) => {
       ...state,
       listOfFrames,
       numberOfPixels: 64,
-      pixelSide: '50px',
+      pixelSide: '12.5%',
       initialFrame: activeFrameIndex
     };
   } else if (action.type === CHANGE_SIZE_144) {
@@ -150,7 +150,7 @@ const reducer = (state = defaultState, action) => {
       ...state,
       listOfFrames,
       numberOfPixels: 144,
-      pixelSide: '33px',
+      pixelSide: '8.334%',
       initialFrame: activeFrameIndex
     };
   } else {

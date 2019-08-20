@@ -18,8 +18,8 @@ body {
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  /* height: 50px;
-  width: 50px; */
+  height: 100%;
+  width: 100%;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
@@ -41,7 +41,9 @@ body {
 
 .modalBoard {
   width: 400px;
-  margin: 24px;
+  height: 400px;
+  margin-left: 25px;
+  margin-top: 25px;
 }
 
 .modal .container {
@@ -50,6 +52,11 @@ body {
   background: rgb(140, 140, 140);
   border-radius: 5px;
   border: 2px solid grey;
+}
+
+.board {
+  width: 400px;
+  height: 400px;
 }
 
 .brd {
@@ -61,8 +68,6 @@ body {
 
 #gridOne {
   grid-area: gridOne;
-  padding-left: 17px;
-  padding-top: 17px;
 }
 
 #gridTwo {
@@ -269,7 +274,8 @@ div:focus {
   background: #999999bd;
   width: 300px;
   height: 270px;
-  margin: 45px;
+  margin-left: 10%;
+  margin-top: -83%;
   position: absolute;
   border-radius: 5px;
   border: 3px rgb(53, 53, 53) solid;
@@ -315,7 +321,6 @@ div:focus {
 
 .ui.labeled.icon.button {
   width: 95px;
-  margin-top: 15px;
   margin-left: 2px;
   text-transform: uppercase;
   font-size: 12px;
@@ -325,7 +330,7 @@ div:focus {
 }
 
 .ui.labeled.icon.button:nth-child(3) {
-  margin-left: 24px ;
+  margin-left: 26px ;
 }
 
 @media screen and (max-width: 700px) {
