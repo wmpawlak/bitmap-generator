@@ -7,7 +7,7 @@ import { resetBoard } from '../../actions';
 const ResetButton = ({ resetBoard }) => {
   return (
     <button className="small ui grey button" onClick={resetBoard}>
-      RESET FRAME
+      reset frame
     </button>
   );
 };

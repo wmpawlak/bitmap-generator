@@ -29,7 +29,7 @@ const Modal = ({
   const renderAnimation = () => {
     const frame = background[frameIndexAnimation];
     return (
-      <div className="board" style={{ width: '400px' }}>
+      <div className="board" style={{ width: '400px', margin: '24px' }}>
         {frame.map((pixel, i) => (
           <div
             className="frame"
@@ -72,10 +72,31 @@ const Modal = ({
       <div className="container">
         <i className="close icon" onClick={modalSwitch} />
         {renderAnimation()}
-        <i className="stop icon" onClick={stopAnimationHandler} />
-        <i className="play icon" onClick={playAnimationHandler} />
-        <i className="pause icon" onClick={pauseAnimationHandler} />
-        <i className="edit icon" onClick={editFrame} />
+        <button
+          className="ui labeled icon button"
+          onClick={playAnimationHandler}
+        >
+          <i className="play icon" />
+          play
+        </button>
+        <button
+          className="ui labeled icon button"
+          onClick={stopAnimationHandler}
+        >
+          <i className="stop icon" />
+          stop
+        </button>
+        <button
+          className="ui labeled icon button"
+          onClick={pauseAnimationHandler}
+        >
+          <i className="pause icon" />
+          pause
+        </button>
+        <button className="ui labeled icon button" onClick={editFrame}>
+          <i className="edit icon" />
+          edit
+        </button>
       </div>
     </div>
   ) : null;
