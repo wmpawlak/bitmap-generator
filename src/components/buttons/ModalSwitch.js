@@ -7,7 +7,7 @@ import { modalSwitch } from '../../actions';
 const ModalSwitch = ({ modalSwitch }) => {
   return (
     <button className="small ui grey button" onClick={modalSwitch}>
-      Show Animation
+      show animation
     </button>
   );
 };

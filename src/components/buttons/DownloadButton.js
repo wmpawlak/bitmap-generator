@@ -7,7 +7,7 @@ import { downloadBoard } from '../../actions';
 const DownloadButton = ({ downloadBoard }) => {
   return (
     <button className="small ui grey button" onClick={downloadBoard}>
-      DOWNLOAD
+      download
     </button>
   );
 };
