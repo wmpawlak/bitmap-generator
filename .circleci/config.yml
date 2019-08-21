@@ -37,5 +37,5 @@ jobs:
       # - run: npm test
 
       - run:
-          name: Run Lint
-          command: npm run lint
+          name: Run ESLint
+          command: npm run eslint
