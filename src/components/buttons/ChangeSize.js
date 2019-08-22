@@ -3,45 +3,34 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { changeSize16, changeSize64, changeSize144 } from '../../actions';
+import { changeSize } from '../../actions';
 
-const ChangeSize = ({ changeSize16, changeSize64, changeSize144 }) => {
+const ChangeSize = ({ handleChange }) => {
   const removeElement = () => {
     const el = document.getElementById('changeSize');
     el.remove();
   };
 
+  const sizes = [['4:4', 16], ['8:8', 64], ['12:12', 144]];
+
   return (
     <div id="changeSize">
       <div id="changeSizeText">CHOOSE NUMBER OF PIXELS</div>
       <div className="ui buttons" id="changeSizeButtons">
-        <button
-          className="ui button"
-          onClick={() => {
-            changeSize16();
-            removeElement();
-          }}
-        >
-          4:4
-        </button>
-        <button
-          className="ui button"
-          onClick={() => {
-            changeSize64();
-            removeElement();
-          }}
-        >
-          8:8
-        </button>
-        <button
-          className="ui button"
-          onClick={() => {
-            changeSize144();
-            removeElement();
-          }}
-        >
-          12:12
-        </button>
+        {sizes.map(([name, size]) => (
+          <button
+            key={name}
+            className="ui button"
+            onClick={() => {
+              {
+                handleChange(size);
+              }
+              removeElement();
+            }}
+          >
+            {name}
+          </button>
+        ))}
       </div>
       <div id="cover"></div>
     </div>
@@ -49,11 +38,14 @@ const ChangeSize = ({ changeSize16, changeSize64, changeSize144 }) => {
 };
 
 ChangeSize.propTypes = {
-  changeSize: PropTypes.func,
-  index: PropTypes.number
+  changeSize: PropTypes.func
+};
+
+const mapDispatchToProps = {
+  handleChange: changeSize
 };
 
 export default connect(
   null,
-  { changeSize16, changeSize64, changeSize144 }
+  mapDispatchToProps
 )(ChangeSize);

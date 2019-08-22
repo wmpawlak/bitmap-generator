@@ -225,7 +225,14 @@ div:focus {
   margin-left: 46px;
   /* transform: scale(12); */
   /* border: 1px solid; */
-  box-shadow: 0px 0px 1px black;
+  box-shadow: 0px 0px 1px black
+}
+
+.previewFrameBorder {
+  width: 100px;
+  height: 100px;
+  padding-top: 1px;
+  border-radius: 5px;
 }
 
 #delButton {

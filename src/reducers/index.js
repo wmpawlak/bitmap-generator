@@ -6,19 +6,20 @@ const emptyColor = [0, 0, 0];
 
 const initialNumberOfPixels = 64;
 
-const initialFrame = Array(initialNumberOfPixels).fill(emptyColor);
+export const createFrame = (numberOfPixels, color = emptyColor) =>
+  Array(numberOfPixels).fill(color);
 
 const initialNumberOfFrames = 1;
 
 const pixelSide = '50px';
 
 export const defaultState = {
-  initialFrame: initialFrame,
+  //initialFrame: createFrame(),
   activeFrameIndex: 0,
   color: emptyColor,
   isMouseDown: false,
   listOfFrames: Array.from({ length: initialNumberOfFrames }).fill(
-    initialFrame
+    createFrame(initialNumberOfPixels)
   ),
   numberOfPixels: initialNumberOfPixels,
   isModalOn: false,

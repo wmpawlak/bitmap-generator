@@ -14,7 +14,7 @@ import {
   PLAY_ANIMATION,
   PAUSE_ANIMATION,
   STOP_ANIMATION,
-  CHANGE_SIZE_16,
+  CHANGE_SIZE,
   CHANGE_SIZE_64,
   CHANGE_SIZE_144,
   EDIT_FRAME
@@ -68,9 +68,9 @@ export const chooseFrame = activeFrameIndex => ({
   activeFrameIndex
 });
 
-export const changeSize16 = index => ({
-  type: CHANGE_SIZE_16,
-  index
+export const changeSize = numberOfPixels => ({
+  type: CHANGE_SIZE,
+  numberOfPixels
 });
 
 export const changeSize64 = index => ({
