@@ -18,8 +18,8 @@ body {
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  /* height: 50px;
-  width: 50px; */
+  height: 100%;
+  width: 100%;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
@@ -39,11 +39,24 @@ body {
   align-items: center;
 }
 
+.modalBoard {
+  width: 400px;
+  height: 400px;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
 .modal .container {
-  width: 500px;
-  height: 500px;
+  width: 448px;
+  height: 480px;
+  background: rgb(140, 140, 140);
+  border-radius: 5px;
   border: 2px solid grey;
-  background: white;
+}
+
+.board {
+  width: 400px;
+  height: 400px;
 }
 
 .brd {
@@ -55,8 +68,6 @@ body {
 
 #gridOne {
   grid-area: gridOne;
-  padding-left: 17px;
-  padding-top: 17px;
 }
 
 #gridTwo {
@@ -266,18 +277,19 @@ div:focus {
   z-index: 1;
 }
 
-#changeSize {
+#setSize {
   background: #999999bd;
   width: 300px;
   height: 270px;
-  margin: 45px;
+  margin-left: 10%;
+  margin-top: -83%;
   position: absolute;
   border-radius: 5px;
   border: 3px rgb(53, 53, 53) solid;
   z-index: 10;
 }
 
-#changeSizeText {
+#setSizeText {
   height: 135px;
   width: 270px;
   border-radius: 5px;
@@ -292,7 +304,7 @@ div:focus {
   z-index: 10;
 }
 
-#changeSizeButtons {
+#setSizeButtons {
   margin-top: 6%;
   margin-left: 10%;
   height: 50px;
@@ -300,8 +312,32 @@ div:focus {
   z-index: 10;
 }
 
-#changeSizeButtons * {
+#setSizeButtons * {
   z-index: 10;
+}
+
+.close.icon {
+  float: right;
+  font-size: 1.6em;
+}
+
+.close.icon:hover {
+  color: #db2828;
+  cursor: pointer;
+}
+
+.ui.labeled.icon.button {
+  width: 95px;
+  margin-left: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 30px;
+  padding: 0;
+  color: black;
+}
+
+.ui.labeled.icon.button:nth-child(3) {
+  margin-left: 26px ;
 }
 
 @media screen and (max-width: 700px) {

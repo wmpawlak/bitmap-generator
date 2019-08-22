@@ -14,9 +14,7 @@ import {
   PLAY_ANIMATION,
   PAUSE_ANIMATION,
   STOP_ANIMATION,
-  CHANGE_SIZE,
-  CHANGE_SIZE_64,
-  CHANGE_SIZE_144,
+  SET_SIZE,
   EDIT_FRAME
 } from './actionTypes';
 
@@ -68,19 +66,9 @@ export const chooseFrame = activeFrameIndex => ({
   activeFrameIndex
 });
 
-export const changeSize = numberOfPixels => ({
-  type: CHANGE_SIZE,
+export const setSize = numberOfPixels => ({
+  type: SET_SIZE,
   numberOfPixels
-});
-
-export const changeSize64 = index => ({
-  type: CHANGE_SIZE_64,
-  index
-});
-
-export const changeSize144 = index => ({
-  type: CHANGE_SIZE_144,
-  index
 });
 
 export const modalSwitch = () => ({

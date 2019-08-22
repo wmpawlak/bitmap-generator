@@ -8,7 +8,7 @@ import { addAfter } from '../../actions';
 const AddAfterButton = ({ addAfter }) => {
   return (
     <button className="small ui grey button" onClick={addAfter}>
-      ADD AFTER
+      add after
     </button>
   );
 };

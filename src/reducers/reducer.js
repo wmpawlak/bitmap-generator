@@ -16,14 +16,13 @@ import {
   PLAY_ANIMATION,
   PAUSE_ANIMATION,
   STOP_ANIMATION,
-  CHANGE_SIZE,
+  SET_SIZE,
   EDIT_FRAME
 } from '../actions/actionTypes';
 
 const PIXEL_SIDES = { 16: '25%', 64: '12.5%', 144: '8.3%' };
 
 const reducer = (state = defaultState, action) => {
-  console.log(action);
   if (action.type === ASSIGN_COLOR) {
     const framesCopy = [...state.listOfFrames[state.activeFrameIndex]];
     framesCopy[action.index] = state.color;
@@ -123,7 +122,7 @@ const reducer = (state = defaultState, action) => {
   } else if (action.type === PAUSE_ANIMATION) {
     const newframeIndexAnimation = state.frameIndexAnimation;
     return { ...state, frameIndexAnimation: newframeIndexAnimation };
-  } else if (action.type === CHANGE_SIZE) {
+  } else if (action.type === SET_SIZE) {
     const numberOfPixels = action.numberOfPixels;
     const pixelSide = PIXEL_SIDES[numberOfPixels];
     return {

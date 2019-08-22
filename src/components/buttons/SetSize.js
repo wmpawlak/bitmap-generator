@@ -3,28 +3,26 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { changeSize } from '../../actions';
+import { setSize } from '../../actions';
 
-const ChangeSize = ({ handleChange }) => {
+const SetSize = ({ handleChange }) => {
   const removeElement = () => {
-    const el = document.getElementById('changeSize');
+    const el = document.getElementById('setSize');
     el.remove();
   };
 
-  const sizes = [['4:4', 16], ['8:8', 64], ['12:12', 144]];
+  const frameSizes = [['4:4', 16], ['8:8', 64], ['12:12', 144]];
 
   return (
-    <div id="changeSize">
-      <div id="changeSizeText">CHOOSE NUMBER OF PIXELS</div>
-      <div className="ui buttons" id="changeSizeButtons">
-        {sizes.map(([name, size]) => (
+    <div id="setSize">
+      <div id="setSizeText">CHOOSE NUMBER OF PIXELS</div>
+      <div className="ui buttons" id="setSizeButtons">
+        {frameSizes.map(([name, size]) => (
           <button
             key={name}
             className="ui button"
             onClick={() => {
-              {
-                handleChange(size);
-              }
+              handleChange(size);
               removeElement();
             }}
           >
@@ -37,15 +35,15 @@ const ChangeSize = ({ handleChange }) => {
   );
 };
 
-ChangeSize.propTypes = {
-  changeSize: PropTypes.func
+setSize.propTypes = {
+  setSize: PropTypes.func
 };
 
 const mapDispatchToProps = {
-  handleChange: changeSize
+  handleChange: setSize
 };
 
 export default connect(
   null,
   mapDispatchToProps
-)(ChangeSize);
+)(SetSize);

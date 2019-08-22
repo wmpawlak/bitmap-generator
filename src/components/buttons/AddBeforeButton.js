@@ -7,7 +7,7 @@ import { addBefore } from '../../actions';
 const AddBeforeButton = ({ addBefore }) => {
   return (
     <button className="small ui grey button" onClick={addBefore}>
-      ADD BEFORE
+      add before
     </button>
   );
 };

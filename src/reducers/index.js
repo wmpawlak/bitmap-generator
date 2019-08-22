@@ -11,10 +11,9 @@ export const createFrame = (numberOfPixels, color = emptyColor) =>
 
 const initialNumberOfFrames = 1;
 
-const pixelSide = '50px';
+const pixelSide = '12.5%';
 
 export const defaultState = {
-  //initialFrame: createFrame(),
   activeFrameIndex: 0,
   color: emptyColor,
   isMouseDown: false,
