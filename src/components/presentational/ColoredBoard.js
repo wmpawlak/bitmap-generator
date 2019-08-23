@@ -13,7 +13,7 @@ import MultipleItems from '../containers/Carousel';
 import AddBeforeButton from '../buttons/AddBeforeButton';
 import AddAfterButton from '../buttons/AddAfterButton';
 import AddCopyButton from '../buttons/AddCopyButton';
-import ChangeSize from '../buttons/ChangeSize';
+import SetSize from '../buttons/SetSize';
 import ModalSwitch from '../buttons/ModalSwitch';
 import Modal from './Modal';
 
@@ -23,7 +23,7 @@ const ColoredBoard = ({ mouseUp }) => {
       <div className="brd" onMouseLeave={mouseUp}>
         <div className="ui raised segment" id="gridOne">
           <Board />
-          <ChangeSize />
+          <SetSize />
         </div>
         <div id="gridTwo">
           <div id="gridThree">

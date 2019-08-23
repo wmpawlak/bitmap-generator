@@ -1,4 +1,4 @@
-import { defaultState } from './index';
+import { defaultState, createFrame } from './index';
 import { saveAs } from 'file-saver';
 import {
   ASSIGN_COLOR,
@@ -16,11 +16,11 @@ import {
   PLAY_ANIMATION,
   PAUSE_ANIMATION,
   STOP_ANIMATION,
-  CHANGE_SIZE_16,
-  CHANGE_SIZE_64,
-  CHANGE_SIZE_144,
+  SET_SIZE,
   EDIT_FRAME
 } from '../actions/actionTypes';
+
+const PIXEL_SIDES = { 16: '25%', 64: '12.5%', 144: '8.3%' };
 
 const reducer = (state = defaultState, action) => {
   if (action.type === ASSIGN_COLOR) {
@@ -71,15 +71,23 @@ const reducer = (state = defaultState, action) => {
     return { ...state, isMouseDown: false };
   } else if (action.type === ADD_BEFORE) {
     let listOfFramesCopy = [...state.listOfFrames];
-    listOfFramesCopy.splice(state.activeFrameIndex, 0, state.initialFrame);
+    listOfFramesCopy.splice(
+      state.activeFrameIndex,
+      0,
+      createFrame(state.numberOfPixels)
+    );
     return {
       ...state,
       listOfFrames: listOfFramesCopy,
       activeFrameIndex: state.activeFrameIndex
     };
   } else if (action.type === ADD_AFTER) {
-    let listOfFramesCopy = [...state.listOfFrames];
-    listOfFramesCopy.splice(state.activeFrameIndex + 1, 0, state.initialFrame);
+    const listOfFramesCopy = [...state.listOfFrames];
+    listOfFramesCopy.splice(
+      state.activeFrameIndex + 1,
+      0,
+      createFrame(state.numberOfPixels)
+    );
     return {
       ...state,
       listOfFrames: listOfFramesCopy,
@@ -114,44 +122,20 @@ const reducer = (state = defaultState, action) => {
   } else if (action.type === PAUSE_ANIMATION) {
     const newframeIndexAnimation = state.frameIndexAnimation;
     return { ...state, frameIndexAnimation: newframeIndexAnimation };
-  } else if (action.type === CHANGE_SIZE_16) {
-    const activeFrameIndex = new Array(16).fill([0, 0, 0]);
-    let listOfFrames = [...state.listOfFrames];
-    listOfFrames[state.activeFrameIndex] = activeFrameIndex;
+  } else if (action.type === SET_SIZE) {
+    const numberOfPixels = action.numberOfPixels;
+    const pixelSide = PIXEL_SIDES[numberOfPixels];
     return {
       ...state,
-      listOfFrames,
-      numberOfPixels: 16,
-      pixelSide: '25%',
-      initialFrame: activeFrameIndex
+      listOfFrames: [createFrame(numberOfPixels)],
+      numberOfPixels,
+      pixelSide
     };
   } else if (action.type === EDIT_FRAME) {
     return {
       ...state,
       activeFrameIndex: state.frameIndexAnimation,
       isModalOn: false
-    };
-  } else if (action.type === CHANGE_SIZE_64) {
-    const activeFrameIndex = new Array(64).fill([0, 0, 0]);
-    let listOfFrames = [...state.listOfFrames];
-    listOfFrames[state.activeFrameIndex] = activeFrameIndex;
-    return {
-      ...state,
-      listOfFrames,
-      numberOfPixels: 64,
-      pixelSide: '12.5%',
-      initialFrame: activeFrameIndex
-    };
-  } else if (action.type === CHANGE_SIZE_144) {
-    const activeFrameIndex = new Array(144).fill([0, 0, 0]);
-    let listOfFrames = [...state.listOfFrames];
-    listOfFrames[state.activeFrameIndex] = activeFrameIndex;
-    return {
-      ...state,
-      listOfFrames,
-      numberOfPixels: 144,
-      pixelSide: '8.334%',
-      initialFrame: activeFrameIndex
     };
   } else {
     return state;

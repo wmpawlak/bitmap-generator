@@ -236,7 +236,14 @@ div:focus {
   margin-left: 46px;
   /* transform: scale(12); */
   /* border: 1px solid; */
-  box-shadow: 0px 0px 1px black;
+  box-shadow: 0px 0px 1px black
+}
+
+.previewFrameBorder {
+  width: 100px;
+  height: 100px;
+  padding-top: 1px;
+  border-radius: 5px;
 }
 
 #delButton {
@@ -270,7 +277,7 @@ div:focus {
   z-index: 1;
 }
 
-#changeSize {
+#setSize {
   background: #999999bd;
   width: 300px;
   height: 270px;
@@ -282,7 +289,7 @@ div:focus {
   z-index: 10;
 }
 
-#changeSizeText {
+#setSizeText {
   height: 135px;
   width: 270px;
   border-radius: 5px;
@@ -297,7 +304,7 @@ div:focus {
   z-index: 10;
 }
 
-#changeSizeButtons {
+#setSizeButtons {
   margin-top: 6%;
   margin-left: 10%;
   height: 50px;
@@ -305,7 +312,7 @@ div:focus {
   z-index: 10;
 }
 
-#changeSizeButtons * {
+#setSizeButtons * {
   z-index: 10;
 }
 

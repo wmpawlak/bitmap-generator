@@ -32,7 +32,7 @@ const PreviewFrame = ({
 
     size = Math.sqrt(numberOfPixels);
 
-    const imgData = new ImageData(pixels, 8);
+    const imgData = new ImageData(pixels, size);
 
     const scale = window.devicePixelRatio;
     canvas.width = size * 1;
@@ -49,20 +49,26 @@ const PreviewFrame = ({
 
   return (
     <div
-      className="preview-frame"
-      onClick={handleClick}
+      className="previewFrameBorder"
       style={{
-        width: size,
-        height: size,
-        transform: 'scale(12)',
-        background: 'url(' + background + ')',
         boxShadow:
           activeFrameIndex === index
-            ? '0px 0px 1px 1px white'
+            ? '0px 0px 2px 5px white'
             : '0px 0px 1px rgb(140, 140, 140)'
       }}
     >
-      {numberOfFrames > 1 && <DeleteButton index={index} />}
+      <div
+        className="preview-frame"
+        onClick={handleClick}
+        style={{
+          width: size,
+          height: size,
+          transform: 'scale(12)',
+          background: 'url(' + background + ')'
+        }}
+      >
+        {numberOfFrames > 1 && <DeleteButton index={index} />}
+      </div>
     </div>
   );
 };
