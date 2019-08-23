@@ -30,6 +30,7 @@ const Modal = ({
     const frame = background[frameIndexAnimation];
     return (
       <div className="modalBoard">
+
         {frame.map((pixel, i) => (
           <div
             className="frame"
