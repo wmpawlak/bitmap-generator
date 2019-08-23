@@ -5,24 +5,31 @@ import PropTypes from 'prop-types';
 
 import Frame from '../presentational/Frame';
 
-class Board extends React.Component {
-  renderFrame(i) {
+const Board = ({ pixelSide, currentFrame }) => {
+  const renderFrame = i => {
     return <Frame index={i} />;
-  }
-
-  render() {
-    return (
-      <div className="board">
-        {this.props.currentFrame.map((s, i) => (
-          <div key={i}>{this.renderFrame(i)}</div>
-        ))}
-      </div>
-    );
-  }
-}
+  };
+  return (
+    <div className="board">
+      {currentFrame.map((s, i) => (
+        <div
+          style={{
+            width: pixelSide,
+            height: pixelSide,
+            float: 'left'
+          }}
+          key={i}
+        >
+          {renderFrame(i)}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 Board.propTypes = { currentFrame: PropTypes.array };
 
 export default connect(state => ({
-  currentFrame: state.reducer.listOfFrames[state.reducer.activeFrameIndex]
+  currentFrame: state.reducer.listOfFrames[state.reducer.activeFrameIndex],
+  pixelSide: state.reducer.pixelSide
 }))(Board);

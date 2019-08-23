@@ -29,7 +29,8 @@ const Modal = ({
   const renderAnimation = () => {
     const frame = background[frameIndexAnimation];
     return (
-      <div className="board" style={{ width: '400px', margin: '24px' }}>
+      <div className="modalBoard">
+
         {frame.map((pixel, i) => (
           <div
             className="frame"
