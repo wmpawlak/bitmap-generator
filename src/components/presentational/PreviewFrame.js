@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import DeleteButton from '../buttons/DeleteButton';
+import { DeleteButton } from '../buttons';
 import { chooseFrame } from '../../actions';
 
 const PreviewFrame = ({

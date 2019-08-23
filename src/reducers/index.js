@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 import reducer from './reducer';
+import animationReducer from './animationReducer';
 
 const emptyColor = [0, 0, 0];
 
@@ -27,7 +28,8 @@ export const defaultState = {
 };
 
 const rootReducer = combineReducers({
-  reducer
+  reducer,
+  animationReducer
 });
 
 export default rootReducer;

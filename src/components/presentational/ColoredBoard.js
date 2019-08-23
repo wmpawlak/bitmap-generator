@@ -5,17 +5,19 @@ import PropTypes from 'prop-types';
 
 import ColorsPalette from '../containers/ColorsPalette';
 import Board from '../containers/Board';
-import ResetButton from '../buttons/ResetButton';
 import Canvas from './Canvas';
-import DownloadButton from '../buttons/DownloadButton';
 import { mouseUp } from '../../actions';
 import MultipleItems from '../containers/Carousel';
-import AddBeforeButton from '../buttons/AddBeforeButton';
-import AddAfterButton from '../buttons/AddAfterButton';
-import AddCopyButton from '../buttons/AddCopyButton';
-import SetSize from '../buttons/SetSize';
-import ModalSwitch from '../buttons/ModalSwitch';
 import Modal from './Modal';
+import {
+  AddAfterButton,
+  AddBeforeButton,
+  AddCopyButton,
+  DownloadButton,
+  ModalSwitch,
+  ResetButton,
+  SetSize
+} from '../buttons';
 
 const ColoredBoard = ({ mouseUp }) => {
   return (

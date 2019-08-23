@@ -13,11 +13,7 @@ import {
   ADD_COPY,
   CHOOSE_FRAME,
   MODAL_SWITCH,
-  PLAY_ANIMATION,
-  PAUSE_ANIMATION,
-  STOP_ANIMATION,
-  SET_SIZE,
-  EDIT_FRAME
+  SET_SIZE
 } from '../actions/actionTypes';
 
 const PIXEL_SIDES = { 16: '25%', 64: '12.5%', 144: '8.3%' };
@@ -114,14 +110,6 @@ const reducer = (state = defaultState, action) => {
       isModalOn: !state.isModalOn,
       frameIndexAnimation: 0
     };
-  } else if (action.type === PLAY_ANIMATION) {
-    const newframeIndexAnimation = state.frameIndexAnimation;
-    return { ...state, frameIndexAnimation: newframeIndexAnimation + 1 };
-  } else if (action.type === STOP_ANIMATION) {
-    return { ...state, frameIndexAnimation: 0 };
-  } else if (action.type === PAUSE_ANIMATION) {
-    const newframeIndexAnimation = state.frameIndexAnimation;
-    return { ...state, frameIndexAnimation: newframeIndexAnimation };
   } else if (action.type === SET_SIZE) {
     const numberOfPixels = action.numberOfPixels;
     const pixelSide = PIXEL_SIDES[numberOfPixels];
@@ -130,12 +118,6 @@ const reducer = (state = defaultState, action) => {
       listOfFrames: [createFrame(numberOfPixels)],
       numberOfPixels,
       pixelSide
-    };
-  } else if (action.type === EDIT_FRAME) {
-    return {
-      ...state,
-      activeFrameIndex: state.frameIndexAnimation,
-      isModalOn: false
     };
   } else {
     return state;
