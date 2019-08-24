@@ -13,12 +13,16 @@ import {
   ADD_COPY,
   CHOOSE_FRAME,
   MODAL_SWITCH,
-  SET_SIZE
+  SET_SIZE,
+  PLAY_ANIMATION,
+  PAUSE_ANIMATION,
+  STOP_ANIMATION,
+  EDIT_FRAME
 } from '../actions/actionTypes';
 
 const PIXEL_SIDES = { 16: '25%', 64: '12.5%', 144: '8.3%' };
 
-const reducer = (state = defaultState, action) => {
+export const reducer = (state = defaultState, action) => {
   if (action.type === ASSIGN_COLOR) {
     const framesCopy = [...state.listOfFrames[state.activeFrameIndex]];
     framesCopy[action.index] = state.color;
@@ -26,11 +30,7 @@ const reducer = (state = defaultState, action) => {
     listOfFrames[state.activeFrameIndex] = framesCopy;
     return { ...state, listOfFrames };
   } else if (action.type === RESET_BOARD) {
-    const framesClean = state.listOfFrames[state.activeFrameIndex].map(() => [
-      0,
-      0,
-      0
-    ]);
+    const framesClean = state.listOfFrames[state.activeFrameIndex].map(() => [0, 0, 0]);
     const listOfFrames = [...state.listOfFrames];
     listOfFrames[state.activeFrameIndex] = framesClean;
     return { ...state, listOfFrames };
@@ -119,9 +119,21 @@ const reducer = (state = defaultState, action) => {
       numberOfPixels,
       pixelSide
     };
+  } else if (action.type === PLAY_ANIMATION) {
+    const newframeIndexAnimation = state.frameIndexAnimation;
+    return { ...state, frameIndexAnimation: newframeIndexAnimation + 1 };
+  } else if (action.type === STOP_ANIMATION) {
+    return { ...state, frameIndexAnimation: 0 };
+  } else if (action.type === PAUSE_ANIMATION) {
+    const newframeIndexAnimation = state.frameIndexAnimation;
+    return { ...state, frameIndexAnimation: newframeIndexAnimation };
+  } else if (action.type === EDIT_FRAME) {
+    return {
+      ...state,
+      activeFrameIndex: state.frameIndexAnimation,
+      isModalOn: false
+    };
   } else {
     return state;
   }
 };
-
-export default reducer;

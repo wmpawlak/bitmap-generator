@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -84,9 +83,9 @@ PreviewFrame.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  activeFrameIndex: state.reducer.activeFrameIndex,
-  numberOfFrames: state.reducer.listOfFrames.length,
-  numberOfPixels: state.reducer.numberOfPixels
+  activeFrameIndex: state.activeFrameIndex,
+  numberOfFrames: state.listOfFrames.length,
+  numberOfPixels: state.numberOfPixels
 });
 
 const mapDispatchToProps = {

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -36,7 +35,8 @@ const SetSize = ({ handleChange }) => {
 };
 
 setSize.propTypes = {
-  setSize: PropTypes.func
+  setSize: PropTypes.func,
+  handleChange: PropTypes.func
 };
 
 const mapDispatchToProps = {

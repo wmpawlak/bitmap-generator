@@ -1,8 +1,3 @@
-import { combineReducers } from 'redux';
-
-import reducer from './reducer';
-import animationReducer from './animationReducer';
-
 const emptyColor = [0, 0, 0];
 
 const initialNumberOfPixels = 64;
@@ -26,10 +21,3 @@ export const defaultState = {
   frameIndexAnimation: 0,
   pixelSide: pixelSide
 };
-
-const rootReducer = combineReducers({
-  reducer,
-  animationReducer
-});
-
-export default rootReducer;

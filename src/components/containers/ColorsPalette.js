@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import Sketch from '../presentational/Sketch';
@@ -18,7 +17,7 @@ colorsPalette.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  color: state.reducer.color
+  color: state.color
 });
 
 const mapDispatchToProps = {
