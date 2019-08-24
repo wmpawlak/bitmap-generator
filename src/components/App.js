@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import ColorsPalette from './ColorsPalette';
 import Board from './Board';
-import Canvas from '../presentational/Canvas';
-import { mouseUp } from '../../actions';
+import Canvas from './Canvas';
+import { mouseUp } from '../actions';
 import MultipleItems from './Carousel';
-import Modal from '../presentational/Modal';
+import Modal from './Modal';
 import {
   AddAfterButton,
   AddBeforeButton,
@@ -16,7 +16,7 @@ import {
   ModalSwitch,
   ResetButton,
   SetSize
-} from '../buttons';
+} from './buttons';
 
 const App = ({ mouseUp }) => {
   return (

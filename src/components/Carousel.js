@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux';
-import { chooseFrame } from '../../actions';
+import { chooseFrame } from '../actions';
 import PropTypes from 'prop-types';
 
-import PreviewFrame from '../presentational/PreviewFrame';
+import PreviewFrame from './PreviewFrame';
 
 class MultipleItems extends React.Component {
   state = {
