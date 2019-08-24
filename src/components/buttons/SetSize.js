@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { setSize } from '../../actions';
+import { setSize } from '../../redux/actions';
 
 const SetSize = ({ handleChange }) => {
   const removeElement = () => {

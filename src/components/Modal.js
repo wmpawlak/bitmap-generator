@@ -8,7 +8,7 @@ import {
   pauseAnimation,
   stopAnimation,
   editFrame
-} from '../actions';
+} from '../redux/actions';
 
 let interval;
 

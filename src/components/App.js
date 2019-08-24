@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ColorsPalette from './ColorsPalette';
 import Board from './Board';
 import Canvas from './Canvas';
-import { mouseUp } from '../actions';
+import { mouseUp } from '../redux/actions';
 import MultipleItems from './Carousel';
 import Modal from './Modal';
 import {
@@ -21,8 +21,8 @@ import {
 const App = ({ mouseUp }) => {
   return (
     <div>
-      <div className="brd" onMouseLeave={mouseUp}>
-        <div className="ui raised segment" id="gridOne">
+      <div className="brd">
+        <div className="ui raised segment" id="gridOne" onMouseLeave={mouseUp}>
           <Board />
           <SetSize />
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { resetBoard } from '../../actions';
+import { resetBoard } from '../../redux/actions';
 
 const ResetButton = ({ resetBoard }) => {
   return (

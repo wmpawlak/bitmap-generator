@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux';
-import { chooseFrame } from '../actions';
+import { chooseFrame } from '../redux/actions';
 import PropTypes from 'prop-types';
 
 import PreviewFrame from './PreviewFrame';

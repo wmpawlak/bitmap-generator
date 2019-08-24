@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { addAfter } from '../../actions';
+import { addAfter } from '../../redux/actions';
 
 const AddAfterButton = ({ addAfter }) => {
   return (

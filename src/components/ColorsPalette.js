@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Sketch from './Sketch';
 import PropTypes from 'prop-types';
 
-import { chooseColor } from '../actions';
+import { chooseColor } from '../redux/actions';
 
 const colorsPalette = ({ color, onChange }) => {
   const rgb = { r: color[0], g: color[1], b: color[2] };

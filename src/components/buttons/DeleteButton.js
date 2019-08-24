@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { deleteFrame } from '../../actions';
+import { deleteFrame } from '../../redux/actions';
 
 const DeleteButton = ({ deleteFrame, index }) => {
   const handleClick = e => {
