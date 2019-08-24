@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-//import Board from "../presentational/Board";
-import Modal from '../presentational/Modal';
+import Modal from './Modal';
 
 class FrameAnimation extends React.Component {
   intervalID = null;
@@ -15,7 +14,7 @@ class FrameAnimation extends React.Component {
   }
 
   render() {
-    return <Modal></Modal>;
+    return <Modal />;
   }
 }
 

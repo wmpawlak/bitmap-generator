@@ -1,11 +1,10 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux';
-import { chooseFrame } from '../../actions';
+import { chooseFrame } from '../redux/actions';
 import PropTypes from 'prop-types';
 
-import PreviewFrame from '../presentational/PreviewFrame';
+import PreviewFrame from './PreviewFrame';
 
 class MultipleItems extends React.Component {
   state = {
@@ -14,8 +13,8 @@ class MultipleItems extends React.Component {
 
   renderPreviewFrame(i) {
     const mapStateToProps = state => ({
-      activeFrame: state.reducer.activeFrameIndex,
-      activeFrameData: state.reducer.listOfFrames[i]
+      activeFrame: state.activeFrameIndex,
+      activeFrameData: state.listOfFrames[i]
     });
 
     const mapDispatchToProps = {
@@ -71,7 +70,7 @@ class MultipleItems extends React.Component {
 MultipleItems.propTypes = { listOfFrames: PropTypes.array };
 
 const mapStateToProps = state => ({
-  listOfFrames: state.reducer.listOfFrames
+  listOfFrames: state.listOfFrames
 });
 
 const ConnectedMultipleItem = connect(

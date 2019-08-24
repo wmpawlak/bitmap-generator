@@ -1,27 +1,28 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import ColorsPalette from '../containers/ColorsPalette';
-import Board from '../containers/Board';
-import ResetButton from '../buttons/ResetButton';
+import ColorsPalette from './ColorsPalette';
+import Board from './Board';
 import Canvas from './Canvas';
-import DownloadButton from '../buttons/DownloadButton';
-import { mouseUp } from '../../actions';
-import MultipleItems from '../containers/Carousel';
-import AddBeforeButton from '../buttons/AddBeforeButton';
-import AddAfterButton from '../buttons/AddAfterButton';
-import AddCopyButton from '../buttons/AddCopyButton';
-import SetSize from '../buttons/SetSize';
-import ModalSwitch from '../buttons/ModalSwitch';
+import { mouseUp } from '../redux/actions';
+import MultipleItems from './Carousel';
 import Modal from './Modal';
+import {
+  AddAfterButton,
+  AddBeforeButton,
+  AddCopyButton,
+  DownloadButton,
+  ModalSwitch,
+  ResetButton,
+  SetSize
+} from './buttons';
 
-const ColoredBoard = ({ mouseUp }) => {
+const App = ({ mouseUp }) => {
   return (
     <div>
-      <div className="brd" onMouseLeave={mouseUp}>
-        <div className="ui raised segment" id="gridOne">
+      <div className="brd">
+        <div className="ui raised segment" id="gridOne" onMouseLeave={mouseUp}>
           <Board />
           <SetSize />
         </div>
@@ -57,9 +58,9 @@ const ColoredBoard = ({ mouseUp }) => {
   );
 };
 
-ColoredBoard.propTypes = { mouseUp: PropTypes.func };
+App.propTypes = { mouseUp: PropTypes.func };
 
 export default connect(
   null,
   { mouseUp }
-)(ColoredBoard);
+)(App);

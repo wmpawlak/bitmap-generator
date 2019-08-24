@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import DeleteButton from '../buttons/DeleteButton';
-import { chooseFrame } from '../../actions';
+import { DeleteButton } from './buttons';
+import { chooseFrame } from '../redux/actions';
 
 const PreviewFrame = ({
   index,
@@ -84,9 +83,9 @@ PreviewFrame.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  activeFrameIndex: state.reducer.activeFrameIndex,
-  numberOfFrames: state.reducer.listOfFrames.length,
-  numberOfPixels: state.reducer.numberOfPixels
+  activeFrameIndex: state.activeFrameIndex,
+  numberOfFrames: state.listOfFrames.length,
+  numberOfPixels: state.numberOfPixels
 });
 
 const mapDispatchToProps = {

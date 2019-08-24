@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
-import Sketch from '../presentational/Sketch';
+import Sketch from './Sketch';
 import PropTypes from 'prop-types';
 
-import { chooseColor } from '../../actions';
+import { chooseColor } from '../redux/actions';
 
 const colorsPalette = ({ color, onChange }) => {
   const rgb = { r: color[0], g: color[1], b: color[2] };
@@ -18,7 +17,7 @@ colorsPalette.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  color: state.reducer.color
+  color: state.color
 });
 
 const mapDispatchToProps = {

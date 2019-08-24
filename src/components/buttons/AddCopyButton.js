@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { addCopy } from '../../actions';
+import { addCopy } from '../../redux/actions';
 
 const AddCopyButton = ({ addCopy }) => {
   return (

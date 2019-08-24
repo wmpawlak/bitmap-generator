@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Frame from '../presentational/Frame';
+import Frame from './Frame';
 
 const Board = ({ pixelSide, currentFrame }) => {
   const renderFrame = i => {
@@ -27,9 +26,12 @@ const Board = ({ pixelSide, currentFrame }) => {
   );
 };
 
-Board.propTypes = { currentFrame: PropTypes.array };
+Board.propTypes = {
+  currentFrame: PropTypes.array,
+  pixelSide: PropTypes.string
+};
 
 export default connect(state => ({
-  currentFrame: state.reducer.listOfFrames[state.reducer.activeFrameIndex],
-  pixelSide: state.reducer.pixelSide
+  currentFrame: state.listOfFrames[state.activeFrameIndex],
+  pixelSide: state.pixelSide
 }))(Board);

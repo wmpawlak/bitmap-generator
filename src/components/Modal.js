@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -9,7 +8,7 @@ import {
   pauseAnimation,
   stopAnimation,
   editFrame
-} from '../../actions';
+} from '../redux/actions';
 
 let interval;
 
@@ -111,15 +110,16 @@ Modal.propTypes = {
   pauseAnimation: PropTypes.func,
   stopAnimation: PropTypes.func,
   editFrame: PropTypes.func,
-  numberOfFrames: PropTypes.number
+  numberOfFrames: PropTypes.number,
+  pixelSide: PropTypes.string
 };
 
 const mapStateToProps = state => ({
-  isModalOn: state.reducer.isModalOn,
-  background: state.reducer.listOfFrames,
-  frameIndexAnimation: state.reducer.frameIndexAnimation,
-  numberOfFrames: state.reducer.listOfFrames.length,
-  pixelSide: state.reducer.pixelSide
+  isModalOn: state.isModalOn,
+  background: state.listOfFrames,
+  frameIndexAnimation: state.frameIndexAnimation,
+  numberOfFrames: state.listOfFrames.length,
+  pixelSide: state.pixelSide
 });
 
 const mapDispatchToProps = {
