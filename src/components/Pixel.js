@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { mouseDown, mouseUp, assignColor } from '../redux/actions';
 import PropTypes from 'prop-types';
 
-const Frame = ({
+const Pixel = ({
   index,
   mouseDown,
   isMouseDown,
@@ -48,7 +48,7 @@ const Frame = ({
 
   return (
     <div
-      className="frame"
+      className="pixel"
       style={{
         backgroundColor: `rgb( ${background[0]}, ${background[1]}, ${
           background[2]
@@ -63,7 +63,7 @@ const Frame = ({
   );
 };
 
-Frame.propTypes = {
+Pixel.propTypes = {
   index: PropTypes.number,
   mouseDown: PropTypes.func,
   isMouseDown: PropTypes.bool,
@@ -89,4 +89,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Frame);
+)(Pixel);

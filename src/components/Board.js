@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Frame from './Frame';
+import Pixel from './Pixel';
 
 const Board = ({ pixelSide, currentFrame }) => {
-  const renderFrame = i => {
-    return <Frame index={i} />;
+  const renderPixel = i => {
+    return <Pixel index={i} />;
   };
   return (
     <div className="board">
@@ -19,7 +19,7 @@ const Board = ({ pixelSide, currentFrame }) => {
           }}
           key={i}
         >
-          {renderFrame(i)}
+          {renderPixel(i)}
         </div>
       ))}
     </div>
