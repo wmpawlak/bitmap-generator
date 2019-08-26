@@ -31,7 +31,7 @@ const Modal = ({
       <div className="modalBoard">
         {frame.map((pixel, i) => (
           <div
-            className="frame"
+            className="pixel"
             key={i}
             style={{
               width: pixelSide,
