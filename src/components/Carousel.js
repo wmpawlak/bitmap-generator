@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import PreviewFrame from './PreviewFrame';
 
-class MultipleItems extends React.Component {
+class Carousel extends React.Component {
   state = {
     canvas: null
   };
@@ -67,7 +67,7 @@ class MultipleItems extends React.Component {
   }
 }
 
-MultipleItems.propTypes = { listOfFrames: PropTypes.array };
+Carousel.propTypes = { listOfFrames: PropTypes.array };
 
 const mapStateToProps = state => ({
   listOfFrames: state.listOfFrames
@@ -76,6 +76,6 @@ const mapStateToProps = state => ({
 const ConnectedMultipleItem = connect(
   mapStateToProps,
   null
-)(MultipleItems);
+)(Carousel);
 
 export default ConnectedMultipleItem;
