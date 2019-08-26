@@ -24,7 +24,6 @@ const Modal = ({
   pixelSide,
   editFrame
 }) => {
-  //*************************************wrzucić style do odpowiedniego CSS @Mateusz!!!************************//
   const renderAnimation = () => {
     const frame = background[frameIndexAnimation];
     return (
