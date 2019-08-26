@@ -29,7 +29,7 @@ exports[`<Container/> matches the snapshot 1`] = `
         <div
           id="gridThree"
         >
-          <Connect(colorsPalette) />
+          <Connect(ColorsPalette) />
         </div>
         <div
           id="gridFour"
