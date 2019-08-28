@@ -24,7 +24,8 @@
         "linebreak-style": "lf"
       }
     ],
-    "react/prop-types": ["warn"]
+    "react/prop-types": ["warn"],
+    "array-element-newline": ["error", "consistent"]
   },
   "settings": {
     "react": {
