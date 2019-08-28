@@ -5,20 +5,29 @@ import PropTypes from 'prop-types';
 import ColorsPalette from '../components/ColorsPalette/ColorsPalette';
 import Board from '../components/Board';
 import Canvas from '../components/Canvas';
-import { mouseUp } from '../redux/actions';
 import Carousel from '../components/Carousel';
 import Modal from '../components/Modal';
+import SetSize from '../components/buttons/SetSize';
+import ReusableButton from './buttons/ReusableButton';
 import {
-  AddAfterButton,
-  AddBeforeButton,
-  AddCopyButton,
-  DownloadButton,
-  ModalSwitch,
-  ResetButton,
-  SetSize
-} from '../components/buttons';
+  mouseUp,
+  addAfter,
+  addBefore,
+  addCopy,
+  downloadBoard,
+  modalSwitch,
+  resetBoard
+} from '../redux/actions';
 
-const Container = ({ mouseUp }) => {
+const Container = ({
+  mouseUp,
+  addAfter,
+  addBefore,
+  addCopy,
+  downloadBoard,
+  modalSwitch,
+  resetBoard
+}) => {
   return (
     <div>
       <div className="header">
@@ -43,14 +52,17 @@ const Container = ({ mouseUp }) => {
               <div className="grid-container">
                 <div className="buttonMainContainer">
                   <div className="ui raised segment vertical buttons buttonColumnOne">
-                    <DownloadButton />
-                    <ResetButton />
-                    <ModalSwitch />
+                    <ReusableButton name={'download'} onClick={downloadBoard} />
+                    <ReusableButton name={'reset frame'} onClick={resetBoard} />
+                    <ReusableButton
+                      name={'show animation'}
+                      onClick={modalSwitch}
+                    />
                   </div>
                   <div className="ui raised segment vertical buttons buttonColumnTwo">
-                    <AddBeforeButton />
-                    <AddAfterButton />
-                    <AddCopyButton />
+                    <ReusableButton name={'add after'} onClick={addAfter} />
+                    <ReusableButton name={'add before'} onClick={addBefore} />
+                    <ReusableButton name={'copy frame'} onClick={addCopy} />
                   </div>
                 </div>
               </div>
@@ -67,9 +79,27 @@ const Container = ({ mouseUp }) => {
   );
 };
 
-Container.propTypes = { mouseUp: PropTypes.func };
+Container.propTypes = {
+  mouseUp: PropTypes.func,
+  addAfter: PropTypes.func,
+  addBefore: PropTypes.func,
+  addCopy: PropTypes.func,
+  downloadBoard: PropTypes.func,
+  modalSwitch: PropTypes.func,
+  resetBoard: PropTypes.func
+};
+
+const mapDispatchToProps = {
+  mouseUp: mouseUp,
+  addAfter: addAfter,
+  addBefore: addBefore,
+  addCopy: addCopy,
+  downloadBoard: downloadBoard,
+  modalSwitch: modalSwitch,
+  resetBoard: resetBoard
+};
 
 export default connect(
   null,
-  { mouseUp }
+  mapDispatchToProps
 )(Container);
