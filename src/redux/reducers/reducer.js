@@ -31,7 +31,6 @@ export const reducer = (state = defaultState, action) => {
     return { ...state, listOfFrames };
   }
   if (action.type === RESET_BOARD) {
-    // eslint-disable-next-line prettier/prettier
     const framesClean = state.listOfFrames[state.activeFrameIndex].map(() => [0, 0, 0]);
     const listOfFrames = [...state.listOfFrames];
     listOfFrames[state.activeFrameIndex] = framesClean;
