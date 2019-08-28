@@ -10,6 +10,6 @@ configure({ adapter: new Adapter() });
 describe('<ColorsPalette /> props', () => {
   it('contains props with black rgb color', () => {
     const wrapper = shallow(<ColorsPalette store={store} />).dive();
-    expect(wrapper.instance().props.color).toBe('{r: 0, g: 0, b: 0}');
+    expect(wrapper.prop('color')).toEqual([0, 0, 0]);
   });
 });

@@ -7,7 +7,6 @@ import { chooseColor } from '../../redux/actions';
 
 const ColorsPalette = ({ color, onChange }) => {
   const rgb = { r: color[0], g: color[1], b: color[2] };
-
   return <Sketch color={rgb} onChangeComplete={onChange} />;
 };
 

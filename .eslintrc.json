@@ -16,6 +16,7 @@
     "jest": true
   },
   "rules": {
+    "array-element-newline": ["error", "consistent"],
     "prettier/prettier": [
       "error",
       {
@@ -24,8 +25,7 @@
         "linebreak-style": "lf"
       }
     ],
-    "react/prop-types": ["warn"],
-    "array-element-newline": ["error", "consistent"]
+    "react/prop-types": ["warn"]
   },
   "settings": {
     "react": {
