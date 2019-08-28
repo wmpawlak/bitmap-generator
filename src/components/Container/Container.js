@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import ColorsPalette from '../components/ColorsPalette/ColorsPalette';
-import Board from '../components/Board';
-import Canvas from '../components/Canvas';
-import { mouseUp } from '../redux/actions';
-import Carousel from '../components/Carousel';
-import Modal from '../components/Modal';
+import ColorsPalette from '../ColorsPalette/ColorsPalette';
+import Board from '../Board';
+import Canvas from '../Canvas';
+import { mouseUp } from '../../redux/actions';
+import Carousel from '../Carousel';
+import Modal from '../Modal';
 import {
   AddAfterButton,
   AddBeforeButton,
@@ -16,7 +16,7 @@ import {
   ModalSwitch,
   ResetButton,
   SetSize
-} from '../components/buttons';
+} from '../buttons';
 
 const Container = ({ mouseUp }) => {
   return (

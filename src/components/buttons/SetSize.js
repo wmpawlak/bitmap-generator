@@ -34,7 +34,7 @@ const SetSize = ({ handleChange }) => {
   );
 };
 
-setSize.propTypes = {
+SetSize.propTypes = {
   setSize: PropTypes.func,
   handleChange: PropTypes.func
 };

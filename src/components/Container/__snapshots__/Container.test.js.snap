@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Container/> matches the snapshot 1`] = `
+<div>
+  <div
+    className="header"
+  >
+    <div
+      className="innerHeader"
+    >
+      PIXEL ART
+    </div>
+  </div>
+  <div>
+    <div
+      className="brd"
+    >
+      <div
+        className="ui raised segment"
+        id="gridOne"
+        onMouseLeave={[Function]}
+      >
+        <Connect(Board) />
+        <Connect(SetSize) />
+      </div>
+      <div
+        id="gridTwo"
+      >
+        <div
+          id="gridThree"
+        >
+          <Connect(ColorsPalette) />
+        </div>
+        <div
+          id="gridFour"
+        >
+          <div
+            className="grid-container"
+          >
+            <div
+              className="buttonMainContainer"
+            >
+              <div
+                className="ui raised segment vertical buttons buttonColumnOne"
+              >
+                <Connect(DownloadButton) />
+                <Connect(ResetButton) />
+                <Connect(ModalSwitch) />
+              </div>
+              <div
+                className="ui raised segment vertical buttons buttonColumnTwo"
+              >
+                <Connect(AddBeforeButton) />
+                <Connect(AddAfterButton) />
+                <Connect(AddCopyButton) />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <Connect(Carousel) />
+    </div>
+    <Canvas />
+    <Connect(Modal)>
+      TEXT
+    </Connect(Modal)>
+  </div>
+</div>
+`;

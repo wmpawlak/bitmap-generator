@@ -16,6 +16,7 @@
     "jest": true
   },
   "rules": {
+    "array-element-newline": ["error", "consistent"],
     "prettier/prettier": [
       "error",
       {
