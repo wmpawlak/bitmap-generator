@@ -124,7 +124,7 @@ body {
   border: 1px solid rgb(140, 140, 140);
   border-bottom: 2px solid rgb(140, 140, 140);
   width: 95px;
-  height: 35px;
+  height: 38px;
   font-size: 12px;
   line-height: 12px;
   text-transform: uppercase;
@@ -406,8 +406,8 @@ div:focus {
     background: rgb(95, 95, 95);
     border: 1px solid rgb(140, 140, 140);
     border-bottom: 2px solid rgb(140, 140, 140);
-    width: 180px;
-    height: 30px;
+    width: 185px;
+    height: 33px;
   }
 
   .carousel {
