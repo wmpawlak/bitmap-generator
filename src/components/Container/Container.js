@@ -69,7 +69,7 @@ const Container = ({
             </div>
           </div>
         </div>
-        <div>
+        <div className="carouselWrapper">
           <Carousel />
         </div>
         <Canvas />
