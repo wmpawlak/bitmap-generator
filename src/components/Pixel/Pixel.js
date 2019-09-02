@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { mouseDown, mouseUp, assignColor } from '../redux/actions';
+import { mouseDown, mouseUp, assignColor } from '../../redux/actions';
 import PropTypes from 'prop-types';
 
 const Pixel = ({
