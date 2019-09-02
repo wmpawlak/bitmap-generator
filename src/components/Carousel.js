@@ -49,7 +49,7 @@ class Carousel extends React.Component {
       infinite: false,
       centerPadding: '0px',
       slidesToScroll: 1,
-      slidesToShow: 4,
+      slidesToShow: 1,
       speed: 500,
       variableWidth: true,
       initalSlide: 1
