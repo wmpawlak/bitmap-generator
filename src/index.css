@@ -229,29 +229,15 @@ div:focus {
   right: -35px;
 }
 
-.preview-frame {
-  /* height: 8px;
-    width: 8px; */
-  margin: 2px;
-  margin-top: 45px;
-  margin-left: 45px;
-  /* transform: scale(12); */
-  /* border: 1px solid; */
-  box-shadow: 0px 0px 1px rgb(180, 180, 180)
-}
-
 .previewFrameBorder {
-  width: 98px;
-  height: 98px;
-  padding-top: 1px;
-  border-radius: 5px;
+  position: relative;
 }
 
 #delButton {
-  float: right;
-  color: #aaa8a8;
-  margin: 0;
-  font-size: 0.12em;
+  color:white;
+  top: 4px;
+  position: absolute;
+  right: -1px;
 }
 
 #delButton:hover {
@@ -319,7 +305,7 @@ div:focus {
 
 .close.icon {
   float: right;
-  font-size: 1.6em;
+  font-size: 1.2em;
 }
 
 .close.icon:hover {
@@ -348,6 +334,11 @@ div:focus {
   border-radius: 5px;
   margin-top: 10px;
   padding-top: 1px;
+}
+
+.previewFrameWrapper {
+  border-radius: 3px;
+  box-shadow: rgb(220, 220, 220) 0px 0px 5px;
 }
 
 @media screen and (max-width: 700px) {
@@ -418,6 +409,7 @@ div:focus {
     border-bottom: 2px solid rgb(140, 140, 140);
     width: 185px;
     height: 33px;
+    font-size: 15px;
   }
 
   .carouselWrapper {
@@ -441,10 +433,6 @@ div:focus {
   .ui.raised.segment.vertical.buttons:nth-child(2) {
     margin-left: 0px;
     margin-top: 10px;
-  }
-
-  .preview-frame {
-    margin-top: 44px;
   }
   
 }
