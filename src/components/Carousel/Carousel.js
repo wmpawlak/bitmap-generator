@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux';
-import { chooseFrame } from '../redux/actions';
+import { chooseFrame } from '../../redux/actions';
 import PropTypes from 'prop-types';
 
-import PreviewFrame from './PreviewFrame';
+import PreviewFrame from '../PreviewFrame';
 
 class Carousel extends React.Component {
   state = {
@@ -57,6 +57,7 @@ class Carousel extends React.Component {
 
     return (
       <div className="carousel">
+        <p></p>
         <Slider {...settings}>
           {this.props.listOfFrames.map((s, i) => (
             <div key={i}>{this.renderPreviewFrame(i)}</div>

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ColorsPalette from '../ColorsPalette/ColorsPalette';
 import Board from '../Board';
 import Canvas from '../Canvas';
-import Carousel from '../Carousel';
+import Carousel from '../Carousel/Carousel';
 import Modal from '../Modal';
 import SetSize from '../buttons/SetSize';
 import ReusableButton from '../buttons/ReusableButton';
