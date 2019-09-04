@@ -43,23 +43,43 @@ exports[`<Container/> matches the snapshot 1`] = `
               <div
                 className="ui raised segment vertical buttons buttonColumnOne"
               >
-                <Connect(DownloadButton) />
-                <Connect(ResetButton) />
-                <Connect(ModalSwitch) />
+                <ReusableButton
+                  name="download"
+                  onClick={[Function]}
+                />
+                <ReusableButton
+                  name="reset frame"
+                  onClick={[Function]}
+                />
+                <ReusableButton
+                  name="show animation"
+                  onClick={[Function]}
+                />
               </div>
               <div
                 className="ui raised segment vertical buttons buttonColumnTwo"
               >
-                <Connect(AddBeforeButton) />
-                <Connect(AddAfterButton) />
-                <Connect(AddCopyButton) />
+                <ReusableButton
+                  name="add after"
+                  onClick={[Function]}
+                />
+                <ReusableButton
+                  name="add before"
+                  onClick={[Function]}
+                />
+                <ReusableButton
+                  name="copy frame"
+                  onClick={[Function]}
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div>
+    <div
+      className="carouselWrapper"
+    >
       <Connect(Carousel) />
     </div>
     <Canvas />

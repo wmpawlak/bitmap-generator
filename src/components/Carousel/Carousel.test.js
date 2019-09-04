@@ -1,14 +1,11 @@
 import React from 'react';
-import Carousel from './Carousel';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import store from '../../store';
-
-configure({ adapter: new Adapter() });
+import { Carousel } from './Carousel';
+import { shallow } from 'enzyme';
 
 describe('<Carousel/>', () => {
-  const wrapper = shallow(<Carousel store={store} />);
-  it('renders one <PreviewFrame />', () => {
-    expect(wrapper.find('<div>').exists()).toEqual(true);
+  const wrapper = shallow(<Carousel listOfFrames={[]} />);
+  it('should contain element', () => {
+    console.log(wrapper.debug());
+    expect(wrapper.find('Slider').exists()).toBe(true);
   });
 });

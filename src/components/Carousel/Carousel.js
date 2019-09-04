@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import PreviewFrame from '../PreviewFrame';
 
-class Carousel extends React.Component {
+export class Carousel extends React.Component {
   state = {
     canvas: null
   };
@@ -57,7 +57,6 @@ class Carousel extends React.Component {
 
     return (
       <div className="carousel">
-        <p></p>
         <Slider {...settings}>
           {this.props.listOfFrames.map((s, i) => (
             <div key={i}>{this.renderPreviewFrame(i)}</div>
