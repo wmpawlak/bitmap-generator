@@ -26,20 +26,15 @@ const PreviewFrame = ({
     const context = canvas.getContext('2d');
 
     const pixels = Uint8ClampedArray.from(
-      activeFrameData.map(p => [...p, 100]).flat()
+      activeFrameData.map(p => [...p, 255]).flat()
     );
 
     size = Math.sqrt(numberOfPixels);
 
     const imgData = new ImageData(pixels, size);
 
-    const scale = window.devicePixelRatio;
-    canvas.width = size * 1;
-    canvas.height = size * 1;
-
-    context.scale(scale, scale);
-
-    context.imageSmoothingEnabled = false;
+    canvas.width = size;
+    canvas.height = size;
 
     context.putImageData(imgData, 0, 0);
 
@@ -48,24 +43,24 @@ const PreviewFrame = ({
 
   return (
     <div
-      className="previewFrameBorder"
+      className="previewFrameWrapper"
       style={{
         boxShadow:
           activeFrameIndex === index
             ? '0px 0px 2px 5px white'
-            : '0px 0px 1px rgb(140, 140, 140)'
+            : '0px 0px 5px 1px black'
       }}
     >
-      <div
-        className="preview-frame"
-        onClick={handleClick}
-        style={{
-          width: size,
-          height: size,
-          transform: 'scale(12)',
-          background: 'url(' + background + ')'
-        }}
-      >
+      <div className="previewFrameBorder">
+        <div
+          className="preview-frame"
+          onClick={handleClick}
+          style={{
+            background: 'url(' + background + ')',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover'
+          }}
+        ></div>
         {numberOfFrames > 1 && <DeleteButton index={index} />}
       </div>
     </div>
