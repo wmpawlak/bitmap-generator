@@ -1,12 +1,12 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux';
-import { chooseFrame } from '../redux/actions';
+import { chooseFrame } from '../../redux/actions';
 import PropTypes from 'prop-types';
 
-import PreviewFrame from './PreviewFrame';
+import PreviewFrame from '../PreviewFrame';
 
-class Carousel extends React.Component {
+export class Carousel extends React.Component {
   state = {
     canvas: null
   };
