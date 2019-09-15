@@ -20,7 +20,7 @@ import {
   EDIT_FRAME
 } from '../actions/actionTypes';
 
-const PIXEL_SIDES = { 16: '25%', 64: '12.5%', 144: '8.3%' };
+const PIXEL_SIDES = { 16: '25%', 64: '12.5%', 256: '6.2%' };
 
 export const reducer = (state = defaultState, action) => {
   if (action.type === ASSIGN_COLOR) {
