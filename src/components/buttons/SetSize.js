@@ -10,7 +10,7 @@ const SetSize = ({ handleChange }) => {
     el.remove();
   };
 
-  const frameSizes = [['4:4', 16], ['8:8', 64], ['12:12', 144]];
+  const frameSizes = [['4:4', 16], ['8:8', 64], ['16:16', 256]];
 
   return (
     <div id="setSize">
