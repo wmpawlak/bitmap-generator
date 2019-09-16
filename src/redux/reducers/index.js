@@ -1,4 +1,4 @@
-const emptyColor = [0, 0, 0];
+export const emptyColor = [0, 0, 0];
 
 const initialNumberOfPixels = 64;
 
