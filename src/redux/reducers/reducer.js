@@ -17,7 +17,8 @@ import {
   PLAY_ANIMATION,
   PAUSE_ANIMATION,
   STOP_ANIMATION,
-  EDIT_FRAME
+  EDIT_FRAME,
+  ANIMATION_SPEED
 } from '../actions/actionTypes';
 
 const PIXEL_SIDES = { 16: '25%', 64: '12.5%', 256: '6.2%' };
@@ -144,6 +145,9 @@ export const reducer = (state = defaultState, action) => {
   if (action.type === PAUSE_ANIMATION) {
     const newframeIndexAnimation = state.frameIndexAnimation;
     return { ...state, frameIndexAnimation: newframeIndexAnimation };
+  }
+  if (action.type === ANIMATION_SPEED) {
+    return { ...state, animationSpeed: action.animationSpeed };
   }
   if (action.type === EDIT_FRAME) {
     return {

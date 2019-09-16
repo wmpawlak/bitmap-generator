@@ -7,7 +7,8 @@ import {
   playAnimation,
   pauseAnimation,
   stopAnimation,
-  editFrame
+  editFrame,
+  editAnimationSpeed
 } from '../redux/actions';
 
 let interval;
@@ -22,7 +23,9 @@ const Modal = ({
   stopAnimation,
   numberOfFrames,
   pixelSide,
-  editFrame
+  editFrame,
+  animationInterval,
+  editAnimationSpeed
 }) => {
   const renderAnimation = () => {
     const frame = background[frameIndexAnimation];
@@ -45,7 +48,7 @@ const Modal = ({
 
   const playAnimationHandler = () => {
     if (frameIndexAnimation !== numberOfFrames - 1) {
-      interval = setInterval(playAnimation, 500);
+      interval = setInterval(playAnimation, animationInterval);
     }
   };
 
@@ -96,6 +99,14 @@ const Modal = ({
           edit
         </button>
       </div>
+      <div className="ui right labeled input">
+        <input
+          type="text"
+          onClick={editAnimationSpeed(interval)}
+          placeholder="Enter interval..."
+        />
+        <div className="ui basic label">ms</div>
+      </div>
     </div>
   ) : null;
 };
@@ -110,7 +121,9 @@ Modal.propTypes = {
   stopAnimation: PropTypes.func,
   editFrame: PropTypes.func,
   numberOfFrames: PropTypes.number,
-  pixelSide: PropTypes.string
+  pixelSide: PropTypes.string,
+  animationInterval: PropTypes.number,
+  editAnimationSpeed: PropTypes.func
 };
 
 const mapStateToProps = state => ({
@@ -118,7 +131,8 @@ const mapStateToProps = state => ({
   background: state.listOfFrames,
   frameIndexAnimation: state.frameIndexAnimation,
   numberOfFrames: state.listOfFrames.length,
-  pixelSide: state.pixelSide
+  pixelSide: state.pixelSide,
+  animationInterval: state.animationInterval
 });
 
 const mapDispatchToProps = {
@@ -126,7 +140,8 @@ const mapDispatchToProps = {
   playAnimation: playAnimation,
   pauseAnimation: pauseAnimation,
   stopAnimation: stopAnimation,
-  editFrame: editFrame
+  editFrame: editFrame,
+  editAnimationSpeed: editAnimationSpeed
 };
 
 export default connect(

@@ -15,7 +15,8 @@ import {
   PAUSE_ANIMATION,
   STOP_ANIMATION,
   SET_SIZE,
-  EDIT_FRAME
+  EDIT_FRAME,
+  ANIMATION_SPEED
 } from './actionTypes';
 
 export const assignColor = index => ({
@@ -89,4 +90,9 @@ export const stopAnimation = () => ({
 
 export const editFrame = () => ({
   type: EDIT_FRAME
+});
+
+export const editAnimationSpeed = animationSpeed => ({
+  type: ANIMATION_SPEED,
+  payload: animationSpeed
 });
