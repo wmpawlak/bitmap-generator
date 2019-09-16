@@ -1,4 +1,4 @@
-import { defaultState, createFrame } from './index';
+import { defaultState, createFrame, emptyColor } from './index';
 import { saveAs } from 'file-saver';
 import {
   ASSIGN_COLOR,
@@ -31,7 +31,9 @@ export const reducer = (state = defaultState, action) => {
     return { ...state, listOfFrames };
   }
   if (action.type === RESET_BOARD) {
-    const framesClean = state.listOfFrames[state.activeFrameIndex].map(() => [0, 0, 0]);
+    const framesClean = state.listOfFrames[state.activeFrameIndex].map(
+      () => emptyColor
+    );
     const listOfFrames = [...state.listOfFrames];
     listOfFrames[state.activeFrameIndex] = framesClean;
     return { ...state, listOfFrames };
