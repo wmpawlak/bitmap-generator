@@ -59,7 +59,12 @@ export const reducer = (state = defaultState, action) => {
     return { ...state, color: action.color };
   }
   if (action.type === DOWNLOAD_BOARD) {
-    const framesDownload = JSON.stringify(state.listOfFrames);
+    const framesInfo = {
+      Width: Math.sqrt(state.numberOfPixels),
+      Height: Math.sqrt(state.numberOfPixels),
+      Frames: state.listOfFrames
+    };
+    const framesDownload = JSON.stringify(framesInfo);
     const fileName = 'file';
     const fileToSave = new Blob([framesDownload], {
       type: 'application/json',
