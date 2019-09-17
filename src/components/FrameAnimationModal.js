@@ -103,6 +103,7 @@ const FrameAnimationModal = ({
         <input
           type="number"
           onChange={e => editAnimationSpeed(parseInt(e.target.value, 10))}
+          placeholder={animationSpeed}
         />
         <div className="ui basic label">ms</div>
       </div>
