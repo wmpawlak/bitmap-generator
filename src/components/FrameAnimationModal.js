@@ -13,7 +13,7 @@ import {
 
 let interval;
 
-const Modal = ({
+const FrameAnimationModal = ({
   isModalOn,
   modalSwitch,
   background,
@@ -24,7 +24,7 @@ const Modal = ({
   numberOfFrames,
   pixelSide,
   editFrame,
-  animationInterval,
+  animationSpeed,
   editAnimationSpeed
 }) => {
   const renderAnimation = () => {
@@ -48,7 +48,7 @@ const Modal = ({
 
   const playAnimationHandler = () => {
     if (frameIndexAnimation !== numberOfFrames - 1) {
-      interval = setInterval(playAnimation, animationInterval);
+      interval = setInterval(playAnimation, animationSpeed);
     }
   };
 
@@ -101,9 +101,8 @@ const Modal = ({
       </div>
       <div className="ui right labeled input">
         <input
-          type="text"
-          onClick={editAnimationSpeed(interval)}
-          placeholder="Enter interval..."
+          type="number"
+          onChange={e => editAnimationSpeed(parseInt(e.target.value, 10))}
         />
         <div className="ui basic label">ms</div>
       </div>
@@ -111,7 +110,7 @@ const Modal = ({
   ) : null;
 };
 
-Modal.propTypes = {
+FrameAnimationModal.propTypes = {
   isModalOn: PropTypes.bool,
   modalSwitch: PropTypes.func,
   background: PropTypes.array,
@@ -122,7 +121,7 @@ Modal.propTypes = {
   editFrame: PropTypes.func,
   numberOfFrames: PropTypes.number,
   pixelSide: PropTypes.string,
-  animationInterval: PropTypes.number,
+  animationSpeed: PropTypes.number,
   editAnimationSpeed: PropTypes.func
 };
 
@@ -132,7 +131,7 @@ const mapStateToProps = state => ({
   frameIndexAnimation: state.frameIndexAnimation,
   numberOfFrames: state.listOfFrames.length,
   pixelSide: state.pixelSide,
-  animationInterval: state.animationInterval
+  animationSpeed: state.animationSpeed
 });
 
 const mapDispatchToProps = {
@@ -147,4 +146,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Modal);
+)(FrameAnimationModal);

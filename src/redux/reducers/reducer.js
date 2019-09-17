@@ -147,6 +147,7 @@ export const reducer = (state = defaultState, action) => {
     return { ...state, frameIndexAnimation: newframeIndexAnimation };
   }
   if (action.type === ANIMATION_SPEED) {
+    console.log(action);
     return { ...state, animationSpeed: action.animationSpeed };
   }
   if (action.type === EDIT_FRAME) {

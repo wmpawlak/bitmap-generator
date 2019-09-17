@@ -83,9 +83,9 @@ exports[`<Container/> matches the snapshot 1`] = `
       <Connect(Carousel) />
     </div>
     <Canvas />
-    <Connect(Modal)>
+    <Connect(FrameAnimationModal)>
       TEXT
-    </Connect(Modal)>
+    </Connect(FrameAnimationModal)>
   </div>
 </div>
 `;

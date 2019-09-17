@@ -20,5 +20,5 @@ export const defaultState = {
   isModalOn: false,
   frameIndexAnimation: 0,
   pixelSide: pixelSide,
-  animationSpeed: 200
+  animationSpeed: 500
 };

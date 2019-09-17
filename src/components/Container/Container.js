@@ -6,7 +6,7 @@ import ColorsPalette from '../ColorsPalette/ColorsPalette';
 import Board from '../Board';
 import Canvas from '../Canvas';
 import Carousel from '../Carousel/Carousel';
-import Modal from '../Modal';
+import FrameAnimationModal from '../FrameAnimationModal';
 import SetSize from '../buttons/SetSize';
 import ReusableButton from '../buttons/ReusableButton';
 import {
@@ -73,7 +73,7 @@ const Container = ({
           <Carousel />
         </div>
         <Canvas />
-        <Modal>TEXT</Modal>
+        <FrameAnimationModal>TEXT</FrameAnimationModal>
       </div>
     </div>
   );

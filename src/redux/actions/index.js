@@ -94,5 +94,5 @@ export const editFrame = () => ({
 
 export const editAnimationSpeed = animationSpeed => ({
   type: ANIMATION_SPEED,
-  payload: animationSpeed
+  animationSpeed
 });
