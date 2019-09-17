@@ -15,3 +15,4 @@ export const PAUSE_ANIMATION = 'PAUSE_ANIMATION';
 export const STOP_ANIMATION = 'STOP_ANIMATION';
 export const SET_SIZE = 'SET_SIZE';
 export const EDIT_FRAME = 'EDIT_FRAME';
+export const ANIMATION_SPEED = 'ANIMATION_SPEED';

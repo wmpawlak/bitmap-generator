@@ -19,5 +19,6 @@ export const defaultState = {
   numberOfPixels: initialNumberOfPixels,
   isModalOn: false,
   frameIndexAnimation: 0,
-  pixelSide: pixelSide
+  pixelSide: pixelSide,
+  animationSpeed: 500
 };

@@ -7,12 +7,13 @@ import {
   playAnimation,
   pauseAnimation,
   stopAnimation,
-  editFrame
+  editFrame,
+  editAnimationSpeed
 } from '../redux/actions';
 
 let interval;
 
-const Modal = ({
+const FrameAnimationModal = ({
   isModalOn,
   modalSwitch,
   background,
@@ -22,7 +23,9 @@ const Modal = ({
   stopAnimation,
   numberOfFrames,
   pixelSide,
-  editFrame
+  editFrame,
+  animationSpeed,
+  editAnimationSpeed
 }) => {
   const renderAnimation = () => {
     const frame = background[frameIndexAnimation];
@@ -45,7 +48,7 @@ const Modal = ({
 
   const playAnimationHandler = () => {
     if (frameIndexAnimation !== numberOfFrames - 1) {
-      interval = setInterval(playAnimation, 500);
+      interval = setInterval(playAnimation, animationSpeed);
     }
   };
 
@@ -96,11 +99,18 @@ const Modal = ({
           edit
         </button>
       </div>
+      <div className="ui right labeled input">
+        <input
+          type="number"
+          onChange={e => editAnimationSpeed(parseInt(e.target.value, 10))}
+        />
+        <div className="ui basic label">ms</div>
+      </div>
     </div>
   ) : null;
 };
 
-Modal.propTypes = {
+FrameAnimationModal.propTypes = {
   isModalOn: PropTypes.bool,
   modalSwitch: PropTypes.func,
   background: PropTypes.array,
@@ -110,7 +120,9 @@ Modal.propTypes = {
   stopAnimation: PropTypes.func,
   editFrame: PropTypes.func,
   numberOfFrames: PropTypes.number,
-  pixelSide: PropTypes.string
+  pixelSide: PropTypes.string,
+  animationSpeed: PropTypes.number,
+  editAnimationSpeed: PropTypes.func
 };
 
 const mapStateToProps = state => ({
@@ -118,7 +130,8 @@ const mapStateToProps = state => ({
   background: state.listOfFrames,
   frameIndexAnimation: state.frameIndexAnimation,
   numberOfFrames: state.listOfFrames.length,
-  pixelSide: state.pixelSide
+  pixelSide: state.pixelSide,
+  animationSpeed: state.animationSpeed
 });
 
 const mapDispatchToProps = {
@@ -126,10 +139,11 @@ const mapDispatchToProps = {
   playAnimation: playAnimation,
   pauseAnimation: pauseAnimation,
   stopAnimation: stopAnimation,
-  editFrame: editFrame
+  editFrame: editFrame,
+  editAnimationSpeed: editAnimationSpeed
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Modal);
+)(FrameAnimationModal);
