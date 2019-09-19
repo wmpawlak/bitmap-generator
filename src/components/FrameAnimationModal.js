@@ -98,14 +98,15 @@ const FrameAnimationModal = ({
           <i className="edit icon" />
           edit
         </button>
-      </div>
-      <div className="ui right labeled input">
-        <input
-          type="number"
-          onChange={e => editAnimationSpeed(parseInt(e.target.value, 10))}
-          placeholder={animationSpeed}
-        />
-        <div className="ui basic label">ms</div>
+        <div className="ui right labeled input" id="setSpeed">
+          <input
+            className="setSpeedInput"
+            type="number"
+            onChange={e => editAnimationSpeed(parseInt(e.target.value, 10))}
+            placeholder={animationSpeed}
+          />
+          <div className="ui basic label">SET SPEED IN MS</div>
+        </div>
       </div>
     </div>
   ) : null;
