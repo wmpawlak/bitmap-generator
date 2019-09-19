@@ -102,6 +102,7 @@ const FrameAnimationModal = ({
           <input
             className="setSpeedInput"
             type="number"
+            min="0"
             onChange={e => editAnimationSpeed(parseInt(e.target.value, 10))}
             placeholder={animationSpeed}
           />
