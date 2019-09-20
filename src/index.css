@@ -48,12 +48,37 @@ body {
 
 .modal .container {
   width: 448px;
-  height: 480px;
+  height: 525px;
   background: rgb(140, 140, 140);
   border-radius: 5px;
   border: 2px solid grey;
 }
 
+#setSpeed {
+  left: 25px;
+  top: 10px;
+  border-radius: 10px;
+  height: 30px;
+}
+
+.setSpeedInput {
+  width: 276px;
+  background-color: rgb(224, 225, 226);
+}
+
+.ui.basic.label {
+  border: none;
+  padding: 0;
+  color: black;
+  width: 120px;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  background-color: #e0e1e2;
+  padding-left: 10px;
+}
+
+.ui.labeled.input>.label {
+  font-size: 12px;
+}
 .board {
   width: 400px;
   height: 400px;
