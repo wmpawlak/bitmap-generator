@@ -10,6 +10,34 @@ body {
   display: table;
 }
 
+.background {
+  width: 200px;
+  height: 720px;
+  background-size: 100%;
+  background-image: url('../src/img/back.png')
+}
+
+.background2 {
+  width: 200px;
+  height: 720px;
+  background-size: 100%;
+  background-image: url('../src/img/back.png');
+  text-align: right;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 25% 1fr 200px;
+  grid-template-rows: 1fr;
+  grid-template-areas: "background appContainer background2";
+}
+
+.background { grid-area: background; }
+
+.background2 { grid-area: background2; }
+
+.appContainer { grid-area: appContainer; }
+
 .pixel {
   border-radius: 3px;
   background: #fff;
@@ -364,6 +392,23 @@ div:focus {
 .previewFrameWrapper {
   border-radius: 3px;
   box-shadow: rgb(220, 220, 220) 0px 0px 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: " appContainer";
+  }
+
+  .background {
+    display: none
+  }
+
+  .background2 {
+    display: none
+  }
 }
 
 @media screen and (max-width: 700px) {
