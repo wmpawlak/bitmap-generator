@@ -32,56 +32,61 @@ const Container = ({
     <div className="container">
       <div className="background"></div>
       <div className="appContainer">
-        <div className="header">
-          <div className="innerHeader">PIXEL ART</div>
-        </div>
-        <div>
-          <div className="brd">
-            <div
-              className="ui raised segment"
-              id="gridOne"
-              onMouseLeave={mouseUp}
-            >
-              <Board />
-              <SetSize />
-            </div>
-            <div id="gridTwo">
-              <div id="gridThree">
-                <ColorsPalette />
+        <div className="appInnerContainer">
+          <div className="header">
+            <div className="innerHeader">PIXEL ART</div>
+          </div>
+          <div>
+            <div className="brd">
+              <div
+                className="ui raised segment"
+                id="gridOne"
+                onMouseLeave={mouseUp}
+              >
+                <Board />
+                <SetSize />
               </div>
+              <div id="gridTwo">
+                <div id="gridThree">
+                  <ColorsPalette />
+                </div>
 
-              <div id="gridFour">
-                <div className="grid-container">
-                  <div className="buttonMainContainer">
-                    <div className="ui raised segment vertical buttons buttonColumnOne">
-                      <ReusableButton
-                        name={'download'}
-                        onClick={downloadBoard}
-                      />
-                      <ReusableButton
-                        name={'reset frame'}
-                        onClick={resetBoard}
-                      />
-                      <ReusableButton
-                        name={'show animation'}
-                        onClick={modalSwitch}
-                      />
-                    </div>
-                    <div className="ui raised segment vertical buttons buttonColumnTwo">
-                      <ReusableButton name={'add after'} onClick={addAfter} />
-                      <ReusableButton name={'add before'} onClick={addBefore} />
-                      <ReusableButton name={'copy frame'} onClick={addCopy} />
+                <div id="gridFour">
+                  <div className="grid-container">
+                    <div className="buttonMainContainer">
+                      <div className="ui raised segment vertical buttons buttonColumnOne">
+                        <ReusableButton
+                          name={'download'}
+                          onClick={downloadBoard}
+                        />
+                        <ReusableButton
+                          name={'reset frame'}
+                          onClick={resetBoard}
+                        />
+                        <ReusableButton
+                          name={'show animation'}
+                          onClick={modalSwitch}
+                        />
+                      </div>
+                      <div className="ui raised segment vertical buttons buttonColumnTwo">
+                        <ReusableButton name={'add after'} onClick={addAfter} />
+                        <ReusableButton
+                          name={'add before'}
+                          onClick={addBefore}
+                        />
+                        <ReusableButton name={'copy frame'} onClick={addCopy} />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div className="carouselWrapper">
+              <Carousel />
+            </div>
+            <Canvas />
+            <FrameAnimationModal>TEXT</FrameAnimationModal>
           </div>
-          <div className="carouselWrapper">
-            <Carousel />
-          </div>
-          <Canvas />
-          <FrameAnimationModal>TEXT</FrameAnimationModal>
         </div>
       </div>
       <div className="background2"></div>
