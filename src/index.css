@@ -11,15 +11,15 @@ body {
 }
 
 .background {
-  width: 200px;
-  height: 720px;
+  width: 13vw;
+  height: 98vh;
   background-size: 100%;
   background-image: url('../src/img/back.png')
 }
 
 .background2 {
-  width: 200px;
-  height: 720px;
+  width: 13vw;
+  height: 98vh;
   background-size: 100%;
   background-image: url('../src/img/back.png');
   text-align: right;
@@ -27,7 +27,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 25% 1fr 200px;
+  grid-template-columns: 13vw 1fr 13vw;
   grid-template-rows: 1fr;
   grid-template-areas: "background appContainer background2";
 }
@@ -36,7 +36,14 @@ body {
 
 .background2 { grid-area: background2; }
 
-.appContainer { grid-area: appContainer; }
+.appContainer { 
+  grid-area: appContainer;
+  text-align: center;
+}
+
+.appInnerContainer {
+  display: inline-block;
+}
 
 .pixel {
   border-radius: 3px;
