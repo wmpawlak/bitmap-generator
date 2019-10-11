@@ -34,8 +34,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm test
+      - run: 
+      name: run tests
+      command: npm test
 
       - run:
-          name: Run ESLint
-          command: npm run eslint
+          name: run lint
+          command: npm run lint
