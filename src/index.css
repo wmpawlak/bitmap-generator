@@ -10,6 +10,7 @@ body {
   display: table;
 }
 
+/* repair here to put the pixelated background on deeper layer
 .background {
   width: 13vw;
   height: 98vh;
@@ -25,6 +26,8 @@ body {
   text-align: right;
 }
 
+change this to flex?
+
 .container {
   display: grid;
   grid-template-columns: 13vw 1fr 13vw;
@@ -38,8 +41,10 @@ body {
 
 .appContainer { 
   grid-area: appContainer;
-  text-align: center;
-}
+  repair here to put all of the stuff behind modal in the middle use flex?
+} */
+
+
 
 .appInnerContainer {
   display: inline-block;
@@ -89,7 +94,7 @@ body {
   border: 2px solid grey;
 }
 
-#setSpeed {
+.setSpeed {
   left: 25px;
   top: 10px;
   border-radius: 10px;
@@ -293,7 +298,7 @@ div:focus {
   position: relative;
 }
 
-#delButton {
+.delButton {
   color:white;
   top: 4px;
   position: absolute;
@@ -305,7 +310,7 @@ div:focus {
   cursor: pointer;
 }
 
-#canvas {
+.canvas {
   display: none;
   height: 100px;
   width: 100px;

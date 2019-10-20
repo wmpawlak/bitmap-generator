@@ -98,7 +98,7 @@ const FrameAnimationModal = ({
           <i className="edit icon" />
           edit
         </button>
-        <div className="ui right labeled input" id="setSpeed">
+        <div className="ui right labeled input setSpeed">
           <input
             className="setSpeedInput"
             type="number"

@@ -1,4 +1,5 @@
 {
   "presets": ["@babel/preset-env", "@babel/preset-react"],
-  "plugins": ["@babel/plugin-proposal-class-properties"]
+  "plugins": ["@babel/plugin-proposal-class-properties"],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
