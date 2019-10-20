@@ -56,12 +56,14 @@ export class Carousel extends React.Component {
     };
 
     return (
-      <div className="carousel">
-        <Slider {...settings}>
-          {this.props.listOfFrames.map((s, i) => (
-            <div key={i}>{this.renderPreviewFrame(i)}</div>
-          ))}
-        </Slider>
+      <div className="carouselWrapper">
+        <div className="carousel">
+          <Slider {...settings}>
+            {this.props.listOfFrames.map((s, i) => (
+              <div key={i}>{this.renderPreviewFrame(i)}</div>
+            ))}
+          </Slider>
+        </div>
       </div>
     );
   }

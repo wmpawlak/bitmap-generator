@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class ReusableButton extends React.Component {
+class Button extends React.Component {
   render() {
     return (
       <button className="small ui grey button" onClick={this.props.onClick}>
@@ -11,9 +11,9 @@ class ReusableButton extends React.Component {
   }
 }
 
-ReusableButton.propTypes = {
+Button.propTypes = {
   name: PropTypes.string,
   onClick: PropTypes.func
 };
 
-export default ReusableButton;
+export default Button;

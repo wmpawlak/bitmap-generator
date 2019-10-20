@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Canvas = () => {
-  return <canvas id="canvas"></canvas>;
+  return <canvas className="canvas"></canvas>;
 };
 
 export default Canvas;

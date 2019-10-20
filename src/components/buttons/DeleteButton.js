@@ -9,7 +9,7 @@ const DeleteButton = ({ deleteFrame, index }) => {
     deleteFrame(index);
     e.stopPropagation();
   };
-  return <i id="delButton" className="close icon" onClick={handleClick}></i>;
+  return <i className="close icon delButton" onClick={handleClick}></i>;
 };
 
 DeleteButton.propTypes = {
