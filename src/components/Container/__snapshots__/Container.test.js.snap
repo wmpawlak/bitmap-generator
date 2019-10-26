@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Container/> matches the snapshot 1`] = `
-<div>
+<div
+  className="appInnerContainer"
+>
   <div
     className="header"
   >
@@ -11,81 +13,75 @@ exports[`<Container/> matches the snapshot 1`] = `
       PIXEL ART
     </div>
   </div>
-  <div>
+  <div
+    className="brd"
+  >
     <div
-      className="brd"
+      className="ui raised segment"
+      id="gridOne"
+      onMouseLeave={[Function]}
+    >
+      <Connect(Board) />
+      <Connect(SetSize) />
+    </div>
+    <div
+      id="gridTwo"
     >
       <div
-        className="ui raised segment"
-        id="gridOne"
-        onMouseLeave={[Function]}
+        id="gridThree"
       >
-        <Connect(Board) />
-        <Connect(SetSize) />
+        <Connect(ColorsPalette) />
       </div>
       <div
-        id="gridTwo"
+        id="gridFour"
       >
         <div
-          id="gridThree"
-        >
-          <Connect(ColorsPalette) />
-        </div>
-        <div
-          id="gridFour"
+          className="grid-container"
         >
           <div
-            className="grid-container"
+            className="buttonMainContainer"
           >
             <div
-              className="buttonMainContainer"
+              className="ui raised segment vertical buttons buttonColumnOne"
             >
-              <div
-                className="ui raised segment vertical buttons buttonColumnOne"
-              >
-                <ReusableButton
-                  name="download"
-                  onClick={[Function]}
-                />
-                <ReusableButton
-                  name="reset frame"
-                  onClick={[Function]}
-                />
-                <ReusableButton
-                  name="show animation"
-                  onClick={[Function]}
-                />
-              </div>
-              <div
-                className="ui raised segment vertical buttons buttonColumnTwo"
-              >
-                <ReusableButton
-                  name="add after"
-                  onClick={[Function]}
-                />
-                <ReusableButton
-                  name="add before"
-                  onClick={[Function]}
-                />
-                <ReusableButton
-                  name="copy frame"
-                  onClick={[Function]}
-                />
-              </div>
+              <Button
+                name="download"
+                onClick={[Function]}
+              />
+              <Button
+                name="reset frame"
+                onClick={[Function]}
+              />
+              <Button
+                name="show animation"
+                onClick={[Function]}
+              />
+            </div>
+            <div
+              className="ui raised segment vertical buttons buttonColumnTwo"
+            >
+              <Button
+                name="add after"
+                onClick={[Function]}
+              />
+              <Button
+                name="add before"
+                onClick={[Function]}
+              />
+              <Button
+                name="copy frame"
+                onClick={[Function]}
+              />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div
-      className="carouselWrapper"
-    >
-      <Connect(Carousel) />
-    </div>
-    <Canvas />
-    <Connect(FrameAnimationModal)>
-      TEXT
-    </Connect(FrameAnimationModal)>
   </div>
+  <Connect(Carousel) />
+  <Canvas />
+  <Connect(FrameAnimationModal)>
+    TEXT
+  </Connect(FrameAnimationModal)>
 </div>
 `;
