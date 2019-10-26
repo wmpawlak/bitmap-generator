@@ -14,9 +14,9 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
 
-      - run: 
-            - npm install    
-            - npm test
+      - run: npm install    
+      - run: npm test    
+
 
       - save_cache:
           paths:
