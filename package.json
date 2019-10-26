@@ -8,8 +8,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:fix": "eslint --fix ./src",
-    "lint-debug": "eslint --debug ./src",
-    "lint": "eslint ./src"
+    "eslint-debug": "eslint --debug ./src",
+    "eslint": "eslint ./src"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",
