@@ -1,6 +1,6 @@
 body {
   font: 14px 'Century Gothic', Futura, sans-serif;
-  background: rgb(34, 34, 34);
+  background-image: url("./img/bg1.png");
   padding: 10px;
 }
 
@@ -45,6 +45,10 @@ change this to flex?
 } */
 
 
+#root{
+  display: flex;
+  justify-content: center;
+}
 
 .appInnerContainer {
   display: inline-block;
