@@ -17,3 +17,6 @@ Some development tips:
 https://www.youtube.com/watch?v=n8gwJe68GUE
 
 You can use the app at: https://bitmap-generator.herokuapp.com/
+
+
+If you have any feedback, please let me know :)
