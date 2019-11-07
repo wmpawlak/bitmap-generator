@@ -10,41 +10,6 @@ body {
   display: table;
 }
 
-/* repair here to put the pixelated background on deeper layer
-.background {
-  width: 13vw;
-  height: 98vh;
-  background-size: 100%;
-  background-image: url('../src/img/back.png')
-}
-
-.background2 {
-  width: 13vw;
-  height: 98vh;
-  background-size: 100%;
-  background-image: url('../src/img/back.png');
-  text-align: right;
-}
-
-change this to flex?
-
-.container {
-  display: grid;
-  grid-template-columns: 13vw 1fr 13vw;
-  grid-template-rows: 1fr;
-  grid-template-areas: "background appContainer background2";
-}
-
-.background { grid-area: background; }
-
-.background2 { grid-area: background2; }
-
-.appContainer { 
-  grid-area: appContainer;
-  repair here to put all of the stuff behind modal in the middle use flex?
-} */
-
-
 #root{
   display: flex;
   justify-content: center;
