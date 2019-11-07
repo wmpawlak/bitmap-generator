@@ -15,3 +15,5 @@ Some development tips:
 4. There are also some test: npm run test.
 
 https://www.youtube.com/watch?v=n8gwJe68GUE
+
+You can use the app at: https://bitmap-generator.herokuapp.com/
